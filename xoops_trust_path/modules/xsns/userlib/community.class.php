@@ -12,8 +12,8 @@ class XsnsCommunity extends XsnsRoot
 	var $handler = NULL;
 	
 	//--------------------------------------------------------------------------
-	
-	function XsnsCommunity()
+	function __construct()
+	//function XsnsCommunity()
 	{
 		// $key, $data_type, $default, $required, $size
 		$this->initVar('c_commu_id', XOBJ_DTYPE_INT);
@@ -29,7 +29,7 @@ class XsnsCommunity extends XsnsRoot
 		$this->initVar('update_freq', XOBJ_DTYPE_FLOAT);
 		$this->initVar('popularity', XOBJ_DTYPE_FLOAT);
 		$this->initVar('up_datetime', XOBJ_DTYPE_DATETIME);
-		
+
 		$this->handler = array(
 			'community' => XsnsCommunityHandler::getInstance(),
 			'user' => XsnsUserHandler::getInstance(),
@@ -41,7 +41,7 @@ class XsnsCommunity extends XsnsRoot
 			'access_log' => XsnsAccessLogHandler::getInstance(),
 		);
 	}
-	
+
 	//--------------------------------------------------------------------------
 	
 	function &getInfo()
@@ -365,9 +365,9 @@ class XsnsCommunityHandler extends XsnsRootHandler
 	var $errors = array();
 	//--------------------------------------------------------------------------
 	
-	function XsnsCommunityHandler()
+	function __construct()
 	{
-		parent::XsnsRootHandler();
+		parent::__construct();
 		$this->obj_class = "XsnsCommunity";
 		$this->table_name = "c_commu";
 		$this->primary_key = "c_commu_id";
@@ -469,12 +469,12 @@ class XsnsCommunityHandler extends XsnsRootHandler
 		
 		$this->errors = array();
 		
-		// Ì¾Á°¤¬ÆþÎÏ¤µ¤ì¤Æ¤¤¤Ê¤¤
+		// Ì¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¤ï¿½ï¿½ï¿½Æ¤ï¿½ï¿½Ê¤ï¿½
 		if(empty($name)){
 			$this->errors[] = _MD_XSNS_INDEX_NAME_NG;
 		}
 		
-		// Æ±¤¸Ì¾Á°¤¬´û¤ËÂ¸ºß¤¹¤ë
+		// Æ±ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¸ï¿½ß¤ï¿½ï¿½ï¿½
 		if($this->nameExists($name)){
 			if($cid == 0){
 				$this->errors[] = _MD_XSNS_INDEX_NAME_EXISTS_NG;
@@ -487,12 +487,12 @@ class XsnsCommunityHandler extends XsnsRootHandler
 			}
 		}
 		
-		// ÀâÌÀÊ¸¤¬ÆþÎÏ¤µ¤ì¤Æ¤¤¤Ê¤¤
+		// ï¿½ï¿½ï¿½ï¿½Ê¸ï¿½ï¿½ï¿½ï¿½ï¿½Ï¤ï¿½ï¿½ï¿½Æ¤ï¿½ï¿½Ê¤ï¿½
 		if(empty($info)){
 			$this->errors[] = _MD_XSNS_INDEX_DESC_NG;
 		}
 		
-		// ¥«¥Æ¥´¥ê¤¬ÁªÂò¤µ¤ì¤Æ¤¤¤Ê¤¤
+		// ï¿½ï¿½ï¿½Æ¥ï¿½ï¿½ê¤¬ï¿½ï¿½ï¿½ò¤µ¤ï¿½Æ¤ï¿½ï¿½Ê¤ï¿½
 		if($cat_id < 1){
 			$this->errors[] = _MD_XSNS_INDEX_CATEGORY_NG;
 		}
@@ -512,7 +512,3 @@ class XsnsCommunityHandler extends XsnsRootHandler
 	
 	//------------------------------------------------------------------------------
 }
-
-//******************************************************************************
-
-?>

@@ -9,7 +9,7 @@ class XsnsCategory extends XsnsRoot
 	
 	//--------------------------------------------------------------------------
 	
-	function XsnsCategory()
+	function __construct()
 	{
 		// $key, $data_type, $default, $required, $size
 		$this->initVar('c_commu_category_id', XOBJ_DTYPE_INT);
@@ -29,9 +29,9 @@ class XsnsCategoryHandler extends XsnsRootHandler
 	var $handler = NULL;
 	//--------------------------------------------------------------------------
 	
-	function XsnsCategoryHandler()
+	function __construct()
 	{
-		parent::XsnsRootHandler();
+		parent::__construct();
 		$this->obj_class = "XsnsCategory";
 		$this->table_name = "c_commu_category";
 		$this->primary_key = "c_commu_category_id";
@@ -145,6 +145,3 @@ class XsnsCategoryHandler extends XsnsRootHandler
 	}
 }
 
-//******************************************************************************
-
-?>

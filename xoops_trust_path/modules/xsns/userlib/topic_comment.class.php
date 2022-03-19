@@ -11,7 +11,7 @@ class XsnsTopicComment extends XsnsRoot
 	
 	//--------------------------------------------------------------------------
 	
-	function XsnsTopicComment()
+	function __construct()
 	{
 		// $key, $data_type, $default, $required, $size
 		$this->initVar('c_commu_topic_comment_id', XOBJ_DTYPE_INT);
@@ -63,9 +63,9 @@ class XsnsTopicCommentHandler extends XsnsRootHandler
 {
 	//--------------------------------------------------------------------------
 	
-	function XsnsTopicCommentHandler()
+	function __construct()
 	{
-		parent::XsnsRootHandler();
+		parent::__construct();
 		$this->obj_class = "XsnsTopicComment";
 		$this->table_name = "c_commu_topic_comment";
 		$this->primary_key = "c_commu_topic_comment_id";
@@ -153,7 +153,3 @@ class XsnsTopicCommentHandler extends XsnsRootHandler
 	
 	//--------------------------------------------------------------------------
 }
-
-//******************************************************************************
-
-?>

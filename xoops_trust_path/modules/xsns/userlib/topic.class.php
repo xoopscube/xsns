@@ -9,8 +9,8 @@ class XsnsTopic extends XsnsRoot
 	var $handler = NULL;
 	
 	//--------------------------------------------------------------------------
-	
-	function XsnsTopic()
+	function __construct()
+	//function XsnsTopic()
 	{
 		// $key, $data_type, $default, $required, $size
 		$this->initVar('c_commu_topic_id', XOBJ_DTYPE_INT);
@@ -70,7 +70,7 @@ class XsnsTopic extends XsnsRoot
 	
 	function deleteCommentsAll()
 	{
-		// ¥È¥Ô¥Ã¥¯Æâ¤Î¥³¥á¥ó¥È¤ËÅºÉÕ¤µ¤ì¤¿²èÁü/¥Õ¥¡¥¤¥ë¤òÁ´¤Æºï½ü
+		// ï¿½È¥Ô¥Ã¥ï¿½ï¿½ï¿½Î¥ï¿½ï¿½ï¿½ï¿½È¤ï¿½Åºï¿½Õ¤ï¿½ï¿½ì¤¿ï¿½ï¿½ï¿½ï¿½/ï¿½Õ¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æºï¿½ï¿½
 		$comment_list =& $this->getCommentList();
 		$comment_ids = array();
 		foreach($comment_list as $comment){
@@ -83,7 +83,7 @@ class XsnsTopic extends XsnsRoot
 			$this->handler['file']->deleteObjects($criteria);
 		}
 		
-		// ¥È¥Ô¥Ã¥¯Æâ¤Î¥³¥á¥ó¥È¤òÁ´¤Æºï½ü
+		// ï¿½È¥Ô¥Ã¥ï¿½ï¿½ï¿½Î¥ï¿½ï¿½ï¿½ï¿½È¤ï¿½ï¿½ï¿½ï¿½Æºï¿½ï¿½
 		$criteria = new Criteria('c_commu_topic_id', $this->getVar('c_commu_topic_id'));
 		return $this->handler['comment']->deleteObjects($criteria);
 	}
@@ -97,9 +97,9 @@ class XsnsTopicHandler extends XsnsRootHandler
 	
 	//--------------------------------------------------------------------------
 	
-	function XsnsTopicHandler()
+	function __construct()
 	{
-		parent::XsnsRootHandler();
+		parent::__construct();
 		$this->obj_class = "XsnsTopic";
 		$this->table_name = "c_commu_topic";
 		$this->primary_key = "c_commu_topic_id";
@@ -207,7 +207,3 @@ class XsnsTopicHandler extends XsnsRootHandler
 	//--------------------------------------------------------------------------
 	
 }
-
-//******************************************************************************
-
-?>

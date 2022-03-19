@@ -89,5 +89,3 @@ function xsns_message_append_onupdate( &$module_obj , &$log )
 }
 
 }
-
-?>

@@ -35,5 +35,3 @@ foreach ($_requires as $_require) {
 		}
 	}
 }
-
-?>

@@ -9,7 +9,7 @@ class XsnsAccessLog extends XsnsRoot
 	
 	//--------------------------------------------------------------------------
 	
-	function XsnsAccessLog()
+	function __construct()
 	{
 		// $key, $data_type, $default, $required, $size
 		$this->initVar('c_access_log_id', XOBJ_DTYPE_INT);
@@ -30,9 +30,9 @@ class XsnsAccessLogHandler extends XsnsRootHandler
 	
 	//--------------------------------------------------------------------------
 	
-	function XsnsAccessLogHandler()
+	function __construct()
 	{
-		parent::XsnsRootHandler();
+		parent::__construct();
 		$this->obj_class = "XsnsAccessLog";
 		$this->table_name = "c_commu_access_log";
 		$this->primary_key = "c_access_log_id";

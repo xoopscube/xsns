@@ -11,5 +11,3 @@ require $mydirpath.'/mytrustdirname.php';
 
 // NOT require_once
 require XOOPS_TRUST_PATH.'/modules/'.$mytrustdirname.'/'.basename(__FILE__);
-
-?>

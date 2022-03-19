@@ -11,8 +11,8 @@ class XsnsModuleConfig extends XsnsRoot
 {
 	
 	//--------------------------------------------------------------------------
-	
-	function XsnsModuleConfig()
+	function __construct()
+	//function XsnsModuleConfig()
 	{
 		// $key, $data_type, $default, $required, $size
 		$this->initVar('config_id', XOBJ_DTYPE_INT);
@@ -31,9 +31,9 @@ class XsnsModuleConfigHandler extends XsnsRootHandler
 	
 	//--------------------------------------------------------------------------
 	
-	function XsnsModuleConfigHandler()
+	function __construct()
 	{
-		parent::XsnsRootHandler();
+		parent::__construct();
 		$this->obj_class = "XsnsModuleConfig";
 		$this->table_name = "c_mypage_config";
 		$this->primary_key = "config_id";
@@ -75,7 +75,7 @@ class XsnsModuleConfigHandler extends XsnsRootHandler
 		$module_handler =& xoops_gethandler('module');
 		$groups = is_object($xoopsUser) ? $xoopsUser->getGroups() : XOOPS_GROUP_ANONYMOUS;
 		
-		// ¥â¥¸¥å¡¼¥ëÉ½¼¨½çÀßÄê¤Î¼èÆÀ
+		// ï¿½â¥¸ï¿½å¡¼ï¿½ï¿½É½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î¼ï¿½ï¿½ï¿½
 		$module_config =& $this->getOne($uid);
 		if(is_object($module_config)){
 			$config_arr = $module_config->getVar('config_values');
@@ -96,7 +96,7 @@ class XsnsModuleConfigHandler extends XsnsRootHandler
 		$mids = array_keys($module_handler->getList($criteria));
 		$checked = array();
 		
-		// DB¤ËÅÐÏ¿¤µ¤ì¤Æ¤¤¤ëÀßÄê½ç¤Ç¥â¥¸¥å¡¼¥ë¤òÉ½¼¨
+		// DBï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½ï¿½Æ¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç¥â¥¸ï¿½å¡¼ï¿½ï¿½ï¿½É½ï¿½ï¿½
 		foreach($config_arr as $mid => $config){
 			if(!isset($config[XSNS_MOD_CONFIG_ORDER]) || !isset($config[XSNS_MOD_CONFIG_VIEW])){
 				continue;
@@ -142,7 +142,7 @@ class XsnsModuleConfigHandler extends XsnsRootHandler
 			unset($module, $results);
 		}
 		
-		// DB¤ËÌ¤ÅÐÏ¿¤Î¥â¥¸¥å¡¼¥ë¤òÄÉ²ÃÉ½¼¨
+		// DBï¿½ï¿½Ì¤ï¿½ï¿½Ï¿ï¿½Î¥â¥¸ï¿½å¡¼ï¿½ï¿½ï¿½ï¿½É²ï¿½É½ï¿½ï¿½
 		foreach($mids as $mid) {
 			if(isset($checked[$mid]) || !$gperm_handler->checkRight('module_read', $mid, $groups)) {
 				continue;
@@ -186,7 +186,3 @@ class XsnsModuleConfigHandler extends XsnsRootHandler
 	}
 	
 }
-
-//******************************************************************************
-
-?>

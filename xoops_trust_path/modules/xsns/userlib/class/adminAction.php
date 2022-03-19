@@ -2,7 +2,7 @@
 class Xsns_Admin_Action extends XsnsCommonAction
 {
 
-// ƒfƒBƒŒƒNƒgƒŠ‚ÌŒ ŒÀ‚ðƒ`ƒFƒbƒN
+// ï¿½fï¿½Bï¿½ï¿½ï¿½Nï¿½gï¿½ï¿½ï¿½ÌŒï¿½ï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½Fï¿½bï¿½N
 function checkPermission()
 {
 	global $xoopsModuleConfig;
@@ -27,4 +27,4 @@ function checkPermission()
 }
 
 }
-?>
+

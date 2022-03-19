@@ -8,4 +8,3 @@ function notify_iteminfo($category, $item_id)
 	$item['url'] = '';
 	return $item;
 }
-?>

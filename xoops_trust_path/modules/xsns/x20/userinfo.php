@@ -47,5 +47,3 @@ else{
 
 header('Location: '.XSNS_BASE_URL.'/?'.XSNS_PAGE_ARG.'=mypage'.$uid_str);
 exit();
-
-?>

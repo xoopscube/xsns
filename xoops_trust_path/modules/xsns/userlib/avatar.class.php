@@ -32,7 +32,7 @@ require_once XOOPS_ROOT_PATH.'/kernel/avatar.php';
 class XsnsAvatar extends XoopsAvatar
 {
 	
-	function XsnsAvatar()
+	function __construct()
 	{
 		$this->XoopsAvatar();
 	}

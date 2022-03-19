@@ -7,8 +7,8 @@ require_once 'root.class.php';
 class XsnsFile extends XsnsRoot
 {
 	//--------------------------------------------------------------------------
-	
-	function XsnsFile()
+	function __construct()
+	//function XsnsFile()
 	{
 		// $key, $data_type, $default, $required, $size
 		$this->initVar('c_file_id', XOBJ_DTYPE_INT);
@@ -112,9 +112,9 @@ class XsnsFileHandler extends XsnsRootHandler
 	
 	//--------------------------------------------------------------------------
 	
-	function XsnsFileHandler()
+	function __construct()
 	{
-		parent::XsnsRootHandler();
+		parent::__construct();
 		$this->obj_class = "XsnsFile";
 		$this->table_name = "c_file";
 		$this->primary_key = "c_file_id";
@@ -300,14 +300,14 @@ class XsnsFileHandler extends XsnsRootHandler
 				continue;
 			}
 			
-			// °ì»þ¥Õ¥¡¥¤¥ë¤ÎÌ¾Á°¤ò¥¿¥¤¥à¥¹¥¿¥ó¥×¤Ë´ð¤Å¤¤¤ÆÊÑ´¹
+			// ï¿½ï¿½ï¿½ï¿½Õ¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ò¥¿¥ï¿½ï¿½à¥¹ï¿½ï¿½ï¿½ï¿½×¤Ë´ï¿½Å¤ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½
 			$timestamp_name = uniqid($prefix).$index.'.'.$fileinfo['extension'];
 			$new_filename = $this->upload_dir.'/'.$timestamp_name;
 			if(!@rename($temp_filepath, $new_filename)){
 				continue;
 			}
 			
-			// ¥Õ¥¡¥¤¥ëÌ¾¤ò¥Æ¡¼¥Ö¥ë¤Ë³ÊÇ¼
+			// ï¿½Õ¥ï¿½ï¿½ï¿½ï¿½ï¿½Ì¾ï¿½ï¿½Æ¡ï¿½ï¿½Ö¥ï¿½Ë³ï¿½Ç¼
 			$new_file =& $this->create();
 			$new_file->setVars(array(
 				'filename' => $timestamp_name,
@@ -351,7 +351,3 @@ class XsnsFileHandler extends XsnsRootHandler
 	//--------------------------------------------------------------------------
 	
 }
-
-//******************************************************************************
-
-?>

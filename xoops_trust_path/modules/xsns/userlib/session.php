@@ -7,7 +7,7 @@ class XsnsSessionHandler
 	
 	//--------------------------------------------------------------------------
 	
-	function XsnsSessionHandler($mydirname)
+	function __construct($mydirname)
 	{
 		$this->_mydirname = $mydirname;
 	}
@@ -70,5 +70,3 @@ class XsnsSessionHandler
 	//--------------------------------------------------------------------------
 	
 }
-
-?>

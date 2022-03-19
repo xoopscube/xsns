@@ -8,8 +8,8 @@ class XsnsFootprint extends XsnsRoot
 {
 	
 	//--------------------------------------------------------------------------
-	
-	function XsnsFootprint()
+	function __construct()
+	//function XsnsFootprint()
 	{
 		// $key, $data_type, $default, $required, $size
 		$this->initVar('c_footprint_id', XOBJ_DTYPE_INT);
@@ -28,9 +28,9 @@ class XsnsFootprintHandler extends XsnsRootHandler
 	
 	//--------------------------------------------------------------------------
 	
-	function XsnsFootprintHandler()
+	function __construct()
 	{
-		parent::XsnsRootHandler();
+		parent::__construct();
 		$this->obj_class = "XsnsFootprint";
 		$this->table_name = "c_mypage_footprint";
 		$this->primary_key = "c_footprint_id";
@@ -115,7 +115,3 @@ class XsnsFootprintHandler extends XsnsRootHandler
 	//--------------------------------------------------------------------------
 	
 }
-
-//******************************************************************************
-
-?>

@@ -37,5 +37,3 @@ if (!is_object($xoopsUser)) {
 
 header('Location: '.XSNS_BASE_URL.'/?'.XSNS_PAGE_ARG.'=mypage&'.XSNS_ACTION_ARG.'=profile');
 exit();
-
-?>

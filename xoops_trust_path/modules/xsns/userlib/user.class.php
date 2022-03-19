@@ -12,7 +12,7 @@ class XsnsUser extends XoopsUser
 	var $friend_blog_count = NULL;
 	//--------------------------------------------------------------------------
 	
-	function XsnsUser()
+	function __construct()
 	{
 		$this->XoopsUser();
 		
@@ -447,7 +447,7 @@ class XsnsUserHandler extends XoopsUserHandler
 	
 	//--------------------------------------------------------------------------
 	
-	function XsnsUserHandler()
+	function __construct()
 	{
 		$this->db =& Database::getInstance();
 	}
@@ -484,7 +484,3 @@ class XsnsUserHandler extends XoopsUserHandler
 	//--------------------------------------------------------------------------
 	
 }
-
-//******************************************************************************
-
-?>

@@ -5,7 +5,7 @@ class XsnsBlogModuleManager
 	var $module_dirname = NULL;
 	var $user_blog_url = NULL;
 	
-	function XsnsBlogModuleManager()
+	function __construct()
 	{
 		global $xoopsModuleConfig;
 		
@@ -144,7 +144,7 @@ class XsnsBlogModuleManager
 				'time' => isset($result['time'])? date("Y-m-d H:i:s", $result['time']) : '',
 				'author' => $uname,
 			);
-			$order[$blog_count] = isset($result['time'])? $result['time'] : 0;
+			$order[$blog_count] = $result['time'] ?? 0;
 			$blog_count++;
 		}
 		
@@ -210,7 +210,7 @@ class XsnsBlogModuleManager
 					'time' => isset($result['time'])? date("Y-m-d H:i:s", $result['time']) : '',
 					'author' => $friend['name'],
 				);
-				$order[$blog_count] = isset($result['time'])? $result['time'] : 0;
+				$order[$blog_count] = $result['time'] ?? 0;
 				$blog_count++;
 			}
 			unset($results);

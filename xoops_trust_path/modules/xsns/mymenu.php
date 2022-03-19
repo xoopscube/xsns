@@ -1,8 +1,5 @@
 <?php
 
-// Skip for ORETEKI XOOPS
-if( defined( 'XOOPS_ORETEKI' ) ) return ;
-
 global $xoopsModule ;
 if( ! is_object( $xoopsModule ) ) die( '$xoopsModule is not set' )  ;
 
@@ -92,5 +89,3 @@ foreach( $adminmenu as $menuitem ) {
 	echo "<div style='float:left;height:1.5em;'><nobr><a href='".htmlspecialchars($menuitem['link'],ENT_QUOTES)."' style='background-color:{$menuitem['color']};font:normal normal bold 9pt/12pt;'>".htmlspecialchars($menuitem['title'],ENT_QUOTES)."</a> | </nobr></div>\n" ;
 }
 echo "</div>\n<hr style='clear:left;display:block;' />\n" ;
-
-?>

@@ -8,8 +8,8 @@ class XsnsFriend extends XsnsRoot
 {
 	
 	//--------------------------------------------------------------------------
-	
-	function XsnsFriend()
+	function __construct()
+	//function XsnsFriend()
 	{
 		// $key, $data_type, $default, $required, $size
 		$this->initVar('c_friend_id', XOBJ_DTYPE_INT);
@@ -28,9 +28,9 @@ class XsnsFriendHandler extends XsnsRootHandler
 	
 	//--------------------------------------------------------------------------
 	
-	function XsnsFriendHandler()
+	function __construct()
 	{
-		parent::XsnsRootHandler();
+		parent::__construct();
 		$this->obj_class = "XsnsFriend";
 		$this->table_name = "c_friend";
 		$this->primary_key = "c_friend_id";
@@ -124,7 +124,3 @@ class XsnsFriendHandler extends XsnsRootHandler
 	
 	//--------------------------------------------------------------------------
 }
-
-//******************************************************************************
-
-?>

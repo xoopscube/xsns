@@ -26,7 +26,8 @@
 //  ------------------------------------------------------------------------ //
 
 
-require_once XOOPS_ROOT_PATH.'/class/module.textsanitizer.php';
+//require_once XOOPS_ROOT_PATH.'/class/module.textsanitizer.php';
+include_once( XOOPS_ROOT_PATH . '/class/module.textsanitizer.php' ) ;
 
 define('XSNS_URL_LENGTH_MAX', 55);
 

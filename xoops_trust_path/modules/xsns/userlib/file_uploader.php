@@ -8,7 +8,7 @@ class XsnsFileUploader extends XoopsMediaUploader
 	
 	//--------------------------------------------------------------------------
 
-	function XsnsFileUploader($uploadDir, $allowedMimeTypes, $maxFileSize=0)
+	function __construct($uploadDir, $allowedMimeTypes, $maxFileSize=0)
 	{
 		@$this->extensionToMime = include( XOOPS_ROOT_PATH . '/class/mimetypes.inc.php' );
 		if ( !is_array( $this->extensionToMime ) ) {
@@ -40,5 +40,3 @@ class XsnsFileUploader extends XoopsMediaUploader
 	//--------------------------------------------------------------------------
 	
 }
-
-?>

@@ -9,7 +9,7 @@ class XsnsIntroduction extends XsnsRoot
 	
 	//--------------------------------------------------------------------------
 	
-	function XsnsIntroduction()
+	function __construct()
 	{
 		// $key, $data_type, $default, $required, $size
 		$this->initVar('c_intro_id', XOBJ_DTYPE_INT);
@@ -30,9 +30,9 @@ class XsnsIntroductionHandler extends XsnsRootHandler
 	
 	//--------------------------------------------------------------------------
 	
-	function XsnsIntroductionHandler()
+	function __construct()
 	{
-		parent::XsnsRootHandler();
+		parent::__construct();
 		$this->obj_class = "XsnsIntroduction";
 		$this->table_name = "c_mypage_introduction";
 		$this->primary_key = "c_intro_id";
@@ -127,7 +127,3 @@ class XsnsIntroductionHandler extends XsnsRootHandler
 	
 	//--------------------------------------------------------------------------
 }
-
-//******************************************************************************
-
-?>

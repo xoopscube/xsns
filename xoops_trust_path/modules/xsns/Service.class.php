@@ -63,5 +63,3 @@ class '.ucfirst($mydirname).'_Service extends Xsns_Service_Base
 ');
 
 }
-
-?>

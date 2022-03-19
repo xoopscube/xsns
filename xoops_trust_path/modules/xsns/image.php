@@ -92,5 +92,3 @@ if (isset($_GET['f']) && (strpos(@$_SERVER['HTTP_REFERER'], XOOPS_URL)!==false |
 	}
 }
 exit();
-
-?>

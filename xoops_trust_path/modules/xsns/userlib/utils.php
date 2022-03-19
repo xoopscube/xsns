@@ -63,5 +63,3 @@ public static function getRadioHtml($name, $options, $default=NULL)
 //------------------------------------------------------------------------------
 
 }
-
-?>

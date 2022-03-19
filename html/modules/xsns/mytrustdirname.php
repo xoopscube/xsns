@@ -1,5 +1,2 @@
 <?php
-
 $mytrustdirname = 'xsns';
-
-?>

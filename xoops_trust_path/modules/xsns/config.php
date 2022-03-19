@@ -2,52 +2,50 @@
 
 define('XSNS_TRUST_PATH', dirname(__FILE__));
 
-// ƒ‚ƒWƒ…[ƒ‹‚ÌƒpƒX
+// ï¿½ï¿½ï¿½Wï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½Ìƒpï¿½X
 define('XSNS_BASE_DIR', XOOPS_ROOT_PATH.'/modules/'.$mydirname);
 
-// ƒ‚ƒWƒ…[ƒ‹‚ÌURL
+// ï¿½ï¿½ï¿½Wï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½URL
 define('XSNS_BASE_URL', XOOPS_URL.'/modules/'.$mydirname);
 
-// ƒXƒ^ƒCƒ‹ƒV[ƒg‚ÌURL
+// ï¿½Xï¿½^ï¿½Cï¿½ï¿½ï¿½Vï¿½[ï¿½gï¿½ï¿½URL
 define('XSNS_CSS_URL', XSNS_BASE_URL.'/css.php?f=');
 
-// JavaScript‚ÌURL
+// JavaScriptï¿½ï¿½URL
 define('XSNS_JS_URL', XSNS_BASE_URL.'/js.php?f=');
 
-// ƒtƒŒ[ƒ€ƒ[ƒN‚ÌƒfƒBƒŒƒNƒgƒŠ
+// ï¿½tï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½Nï¿½Ìƒfï¿½Bï¿½ï¿½ï¿½Nï¿½gï¿½ï¿½
 define('XSNS_FRAMEWORK_DIR', XSNS_TRUST_PATH.'/framework');
 define('XSNS_FRAMEWORK_CLASS_DIR', XSNS_FRAMEWORK_DIR.'/class');
 
-// ƒ†[ƒU[’è‹`‚ÌƒNƒ‰ƒXƒtƒ@ƒCƒ‹‚ÌƒpƒX
+// ï¿½ï¿½ï¿½[ï¿½Uï¿½[ï¿½ï¿½`ï¿½ÌƒNï¿½ï¿½ï¿½Xï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½Ìƒpï¿½X
 define('XSNS_USERLIB_DIR', XSNS_TRUST_PATH.'/userlib');
 define('XSNS_USERLIB_CLASS_DIR', XSNS_USERLIB_DIR.'/class');
 
-// ƒy[ƒWØ‚è‘Ö‚¦—p‚Ìˆø”–¼
+// ï¿½yï¿½[ï¿½Wï¿½Ø‚ï¿½Ö‚ï¿½ï¿½pï¿½Ìˆï¿½ï¿½ï¿½ï¿½ï¿½
 define('XSNS_PAGE_ARG', 'p');
 
-// Action, View Ø‚è‘Ö‚¦—p‚Ìˆø”–¼
+// Action, View ï¿½Ø‚ï¿½Ö‚ï¿½ï¿½pï¿½Ìˆï¿½ï¿½ï¿½ï¿½ï¿½
 define('XSNS_ACTION_ARG', 'act');
 
-// Action ƒtƒ@ƒCƒ‹‚ÌƒfƒBƒŒƒNƒgƒŠ
+// Action ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½Ìƒfï¿½Bï¿½ï¿½ï¿½Nï¿½gï¿½ï¿½
 define('XSNS_ACTION_DIR', XSNS_TRUST_PATH.'/act/');
 
-// ƒfƒtƒHƒ‹ƒg‚Ì Action –¼
+// ï¿½fï¿½tï¿½Hï¿½ï¿½ï¿½gï¿½ï¿½ Action ï¿½ï¿½
 define('XSNS_DEFAULT_ACTION', 'default');
 
-// ƒfƒtƒHƒ‹ƒg‚Ì Action ƒtƒ@ƒCƒ‹
+// ï¿½fï¿½tï¿½Hï¿½ï¿½ï¿½gï¿½ï¿½ Action ï¿½tï¿½@ï¿½Cï¿½ï¿½
 define('XSNS_DEFAULT_ACTION_FILE', XSNS_ACTION_DIR.XSNS_DEFAULT_ACTION.'Action.php');
 
-// View ƒtƒ@ƒCƒ‹‚ª‚ ‚éƒfƒBƒŒƒNƒgƒŠ
+// View ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½fï¿½Bï¿½ï¿½ï¿½Nï¿½gï¿½ï¿½
 define('XSNS_VIEW_DIR', XSNS_TRUST_PATH.'/act/');
 
-// ƒfƒtƒHƒ‹ƒg‚Ì View –¼
+// ï¿½fï¿½tï¿½Hï¿½ï¿½ï¿½gï¿½ï¿½ View ï¿½ï¿½
 define('XSNS_DEFAULT_VIEW', 'default');
 
-// ƒfƒtƒHƒ‹ƒg‚Ì View ƒtƒ@ƒCƒ‹
+// ï¿½fï¿½tï¿½Hï¿½ï¿½ï¿½gï¿½ï¿½ View ï¿½tï¿½@ï¿½Cï¿½ï¿½
 define('XSNS_DEFAULT_VIEW_FILE', XSNS_VIEW_DIR.XSNS_DEFAULT_VIEW.'View.php');
 
 define('XSNS_REQUEST_POST', 1);
 define('XSNS_REQUEST_GET', 2);
 define('XSNS_REQUEST_SESSION', 3);
-
-?>

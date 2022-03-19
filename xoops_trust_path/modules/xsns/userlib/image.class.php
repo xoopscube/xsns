@@ -8,8 +8,8 @@ class XsnsImage extends XsnsRoot
 {
 	
 	//--------------------------------------------------------------------------
-	
-	function XsnsImage()
+	function __construct()
+	//function XsnsImage()
 	{
 		// $key, $data_type, $default, $required, $size
 		$this->initVar('c_image_id', XOBJ_DTYPE_INT);
@@ -50,9 +50,9 @@ class XsnsImageHandler extends XsnsRootHandler
 	var $handler = array();
 	//--------------------------------------------------------------------------
 	
-	function XsnsImageHandler()
+	function __construct()
 	{
-		parent::XsnsRootHandler();
+		parent::__construct();
 		$this->obj_class = "XsnsImage";
 		$this->table_name = "c_image";
 		$this->primary_key = "c_image_id";
@@ -192,7 +192,7 @@ class XsnsImageHandler extends XsnsRootHandler
 	
 	//--------------------------------------------------------------------------
 	
-	// °ì»þ²èÁü¤Îºï½ü
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îºï¿½ï¿½
 	function deleteImageTemp()
 	{
 		$image_list = $this->handler['session']->getVar('image');
@@ -211,7 +211,7 @@ class XsnsImageHandler extends XsnsRootHandler
 	
 	//--------------------------------------------------------------------------
 	
-	// ²èÁü¤Î¥¢¥Ã¥×¥í¡¼¥É
+	// ï¿½ï¿½ï¿½ï¿½ï¿½Î¥ï¿½ï¿½Ã¥×¥ï¿½ï¿½ï¿½
 	function uploadImage($prefix, $target, $target_id, $thumb_id = XSNS_IMAGE_SIZE_M)
 	{
 		global $xoopsUser;
@@ -238,29 +238,29 @@ class XsnsImageHandler extends XsnsRootHandler
 				continue;
 			}
 			
-			// °ì»þ¥Õ¥¡¥¤¥ë¤ÎÌ¾Á°¤ò¥¿¥¤¥à¥¹¥¿¥ó¥×¤Ë´ð¤Å¤¤¤ÆÊÑ´¹
+			// ï¿½ï¿½ï¿½ï¿½Õ¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ò¥¿¥ï¿½ï¿½à¥¹ï¿½ï¿½ï¿½ï¿½×¤Ë´ï¿½Å¤ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½
 			$timestamp_name = uniqid($prefix).$index.'.'.$fileinfo['extension'];
 			$new_filename = $this->upload_dir.'/'.$timestamp_name;
 			if(!@rename($this->upload_dir.'/'.$image['filename'], $new_filename)){
 				continue;
 			}
 			
-			// °ì»þ¥µ¥à¥Í¥¤¥ë²èÁü(Ãæ)¤ò¥ê¥Í¡¼¥à
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½)ï¿½ï¿½ï¿½Í¡ï¿½ï¿½ï¿½
 			$thumb_dir = $this->upload_dir.'/thumbnail'.$thumb_id.'/';
 			if(!@rename($thumb_dir.$image['filename'], $thumb_dir.$timestamp_name)){
 				continue;
 			}
 			
-			// ¥µ¥à¥Í¥¤¥ë²èÁü(¾®)¤òÀ¸À®
+			// ï¿½ï¿½ï¿½ï¿½Í¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½)ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			if(!$this->createThumbnail($new_filename, XSNS_IMAGE_SIZE_S, $this->upload_dir.'/thumbnail1/'.$timestamp_name)){
 				continue;
 			}
-			// ¥µ¥à¥Í¥¤¥ë²èÁü(Âç)¤òÀ¸À®
+			// ï¿½ï¿½ï¿½ï¿½Í¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½)ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			if(!$this->createThumbnail($new_filename, XSNS_IMAGE_SIZE_L, $this->upload_dir.'/thumbnail3/'.$timestamp_name)){
 				continue;
 			}
 			
-			// ÊÝÂ¸¥Õ¥¡¥¤¥ëÌ¾¤ò¥Æ¡¼¥Ö¥ë¤Ë³ÊÇ¼
+			// ï¿½ï¿½Â¸ï¿½Õ¥ï¿½ï¿½ï¿½ï¿½ï¿½Ì¾ï¿½ï¿½Æ¡ï¿½ï¿½Ö¥ï¿½Ë³ï¿½Ç¼
 			$new_file =& $this->create();
 			$new_file->setVars(array(
 				'filename' => $timestamp_name,
@@ -382,7 +382,3 @@ class XsnsImageHandler extends XsnsRootHandler
 	}
 	
 }
-
-//******************************************************************************
-
-?>

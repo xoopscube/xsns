@@ -1,46 +1,45 @@
 <?php
 
 
-// ¥¢¥Ð¥¿¡¼¤ÎÉ½¼¨¥µ¥¤¥º
+// ï¿½ï¿½ï¿½Ð¥ï¿½ï¿½ï¿½ï¿½ï¿½É½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 define('XSNS_AVATAR_MAX_WIDTH',	75);
 define('XSNS_AVATAR_MAX_HEIGHT', 75);
 
 
-// ²èÁü¡¦¥Õ¥¡¥¤¥ëÆÉ¤ß¹þ¤ßÍÑ¥¹¥¯¥ê¥×¥È
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¤ß¹ï¿½ï¿½ï¿½ï¿½Ñ¥ï¿½ï¿½ï¿½ï¿½ï¿½×¥ï¿½
 define('XSNS_IMAGE_URL', XSNS_BASE_URL.'/image.php');
 define('XSNS_FILE_URL',  XSNS_BASE_URL.'/file.php');
 
 
-// ¥µ¥à¥Í¥¤¥ë¤Î¥µ¥¤¥ºÄê¿ô
+// ï¿½ï¿½ï¿½ï¿½Í¥ï¿½ï¿½ï¿½Î¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 define('XSNS_IMAGE_SIZE_S', 1);
 define('XSNS_IMAGE_SIZE_M', 2);
 define('XSNS_IMAGE_SIZE_L', 3);
 
 
-// ¥³¥ß¥å¥Ë¥Æ¥£¤Ë´Ø¤¹¤ë¸¢¸Â
-define('XSNS_AUTH_XOOPS_ADMIN',	32);	// XOOPS´ÉÍý¼Ô
-define('XSNS_AUTH_ADMIN',		16);	// ¥³¥ß¥å¥Ë¥Æ¥£´ÉÍý¼Ô
-define('XSNS_AUTH_SUB_ADMIN',	 8);	// ¥³¥ß¥å¥Ë¥Æ¥£Éû´ÉÍý¼Ô
-define('XSNS_AUTH_MEMBER',		 4);	// ¥³¥ß¥å¥Ë¥Æ¥£¥á¥ó¥Ð¡¼
-define('XSNS_AUTH_NON_MEMBER',	 2);	// Èó¥³¥ß¥å¥Ë¥Æ¥£¥á¥ó¥Ð¡¼
-define('XSNS_AUTH_GUEST',		 1);	// ¥²¥¹¥È
+// ï¿½ï¿½ï¿½ß¥ï¿½Ë¥Æ¥ï¿½ï¿½Ë´Ø¤ï¿½ï¿½ë¸¢ï¿½ï¿½
+define('XSNS_AUTH_XOOPS_ADMIN',	32);	// XOOPSï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+define('XSNS_AUTH_ADMIN',		16);	// ï¿½ï¿½ï¿½ß¥ï¿½Ë¥Æ¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+define('XSNS_AUTH_SUB_ADMIN',	 8);	// ï¿½ï¿½ï¿½ß¥ï¿½Ë¥Æ¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+define('XSNS_AUTH_MEMBER',		 4);	// ï¿½ï¿½ï¿½ß¥ï¿½Ë¥Æ¥ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½
+define('XSNS_AUTH_NON_MEMBER',	 2);	// ï¿½ó¥³¥ß¥ï¿½Ë¥Æ¥ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½
+define('XSNS_AUTH_GUEST',		 1);	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 
-// ¥Ú¡¼¥¸URLÄê¿ô
-define('XSNS_URL_COMMU',		XSNS_BASE_URL.'/');
-define('XSNS_URL_ADMIN',		XSNS_BASE_URL.'/admin/index.php');
-define('XSNS_URL_TOPIC',		XSNS_BASE_URL.'/?'.XSNS_PAGE_ARG.'=topic');
+// ï¿½Ú¡ï¿½ï¿½ï¿½URLï¿½ï¿½ï¿½
+define('XSNS_URL_COMMU',	XSNS_BASE_URL.'/');
+define('XSNS_URL_ADMIN',	XSNS_BASE_URL.'/admin/index.php');
+define('XSNS_URL_TOPIC',	XSNS_BASE_URL.'/?'.XSNS_PAGE_ARG.'=topic');
 define('XSNS_URL_MEMBER',	XSNS_BASE_URL.'/?'.XSNS_PAGE_ARG.'=member');
 define('XSNS_URL_FILE',		XSNS_BASE_URL.'/?'.XSNS_PAGE_ARG.'=file');
 
 define('XSNS_URL_MYPAGE',			XSNS_BASE_URL.'/?'.XSNS_PAGE_ARG.'=mypage');
-define('XSNS_URL_MYPAGE_FRIEND',		XSNS_URL_MYPAGE.'&'.XSNS_ACTION_ARG.'=friend_list');
+define('XSNS_URL_MYPAGE_FRIEND',	XSNS_URL_MYPAGE.'&'.XSNS_ACTION_ARG.'=friend_list');
 define('XSNS_URL_MYPAGE_CONFIRM',	XSNS_URL_MYPAGE.'&'.XSNS_ACTION_ARG.'=confirm');
 define('XSNS_URL_MYPAGE_NEWS',		XSNS_URL_MYPAGE.'&'.XSNS_ACTION_ARG.'=news');
 define('XSNS_URL_MYPAGE_FOOTPRINT',	XSNS_URL_MYPAGE.'&'.XSNS_ACTION_ARG.'=footprint');
 define('XSNS_URL_MYPAGE_INTRO',		XSNS_URL_MYPAGE.'&'.XSNS_ACTION_ARG.'=intro_list');
-define('XSNS_URL_MYPAGE_CONFIG',		XSNS_URL_MYPAGE.'&'.XSNS_ACTION_ARG.'=config');
+define('XSNS_URL_MYPAGE_CONFIG',	XSNS_URL_MYPAGE.'&'.XSNS_ACTION_ARG.'=config');
 define('XSNS_URL_MYPAGE_PROFILE',	XSNS_URL_MYPAGE.'&'.XSNS_ACTION_ARG.'=profile');
 define('XSNS_URL_MYPAGE_COMMU',		XSNS_URL_MYPAGE.'&'.XSNS_ACTION_ARG.'=commu_list');
 
-?>

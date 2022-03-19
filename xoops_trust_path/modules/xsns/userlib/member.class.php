@@ -10,7 +10,7 @@ class XsnsMember extends XsnsRoot
 	
 	//--------------------------------------------------------------------------
 	
-	function XsnsMember()
+	function __construct()
 	{
 		// $key, $data_type, $default, $required, $size
 		$this->initVar('c_commu_member_id', XOBJ_DTYPE_INT);
@@ -48,9 +48,9 @@ class XsnsMemberHandler extends XsnsRootHandler
 	
 	//--------------------------------------------------------------------------
 	
-	function XsnsMemberHandler()
+	function __construct()
 	{
-		parent::XsnsRootHandler();
+		parent::__construct();
 		$this->obj_class = "XsnsMember";
 		$this->table_name = "c_commu_member";
 		$this->primary_key = "c_commu_member_id";
@@ -171,7 +171,3 @@ class XsnsMemberHandler extends XsnsRootHandler
 	//--------------------------------------------------------------------------
 	
 }
-
-//******************************************************************************
-
-?>

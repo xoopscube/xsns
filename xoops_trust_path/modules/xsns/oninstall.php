@@ -125,7 +125,7 @@ function xsns_oninstall($module, $mydirname)
 	
 	// Set default categories
 	$ini_category_list = array(
-		// ¾®¥«¥Æ¥´¥êÌ¾, É½¼¨½ç, Ãæ¥«¥Æ¥´¥êID
+		// ï¿½ï¿½ï¿½ï¿½ï¿½Æ¥ï¿½ï¿½ï¿½Ì¾, É½ï¿½ï¿½ï¿½ï¿½, ï¿½æ¥«ï¿½Æ¥ï¿½ï¿½ï¿½ID
 		array(constant($constpref.'_CATEGORY_1'), 1, 1),
 		array(constant($constpref.'_CATEGORY_2'), 2, 1),
 		array(constant($constpref.'_CATEGORY_3'), 3, 1),
@@ -173,5 +173,3 @@ function xsns_message_append_oninstall( &$module_obj , &$log )
 }
 
 }
-
-?>

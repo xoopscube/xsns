@@ -1,10 +1,5 @@
 <?php
-eval('
-function '.$mydirname.'_global_search( $keywords , $andor , $limit , $offset , $userid )
-{
-	return xsns_search( "'.$mydirname.'" , $keywords , $andor , $limit , $offset , $userid ) ;
-}
-');
+eval('function '.$mydirname.'_global_search( $keywords , $andor , $limit , $offset , $userid ){	return xsns_search( "'.$mydirname.'" , $keywords , $andor , $limit , $offset , $userid ) ;}');
 
 if(!function_exists('xsns_search')){
 
@@ -147,5 +142,3 @@ function xsns_search($mydirname, $queryarray, $andor, $limit, $offset, $userid)
 }
 
 }
-
-?>

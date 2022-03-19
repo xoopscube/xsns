@@ -9,7 +9,7 @@ class XsnsConfirm extends XsnsRoot
 	
 	//--------------------------------------------------------------------------
 	
-	function XsnsConfirm()
+	function __construct()
 	{
 		// $key, $data_type, $default, $required, $size
 		$this->initVar('c_commu_confirm_id', XOBJ_DTYPE_INT);
@@ -34,9 +34,9 @@ class XsnsConfirmHandler extends XsnsRootHandler
 	
 	//--------------------------------------------------------------------------
 	
-	function XsnsConfirmHandler()
+	function __construct()
 	{
-		parent::XsnsRootHandler();
+		parent::__construct();
 		$this->obj_class = "XsnsConfirm";
 		$this->table_name = "c_commu_confirm";
 		$this->primary_key = "c_commu_confirm_id";
@@ -73,7 +73,3 @@ class XsnsConfirmHandler extends XsnsRootHandler
 	//--------------------------------------------------------------------------
 	
 }
-
-//******************************************************************************
-
-?>

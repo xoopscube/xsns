@@ -55,7 +55,7 @@ class XsnsRoot extends XoopsObject
 	var $doImage = true;
 	var $doBr = true;
 	
-	function XsnsRoot()
+	function __construct()
 	{
 	
 	}
@@ -352,7 +352,7 @@ class XsnsRootHandler
 	
 	//--------------------------------------------------------------------------
 	
-	function XsnsRootHandler()
+	function __construct()
 	{
 		global $xoopsModuleConfig, $mydirname;
 		if($xoopsModuleConfig){
@@ -562,7 +562,3 @@ class XsnsRootHandler
 	//--------------------------------------------------------------------------
 	
 }
-
-//******************************************************************************
-
-?>
