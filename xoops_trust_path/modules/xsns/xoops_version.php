@@ -7,10 +7,10 @@ if( file_exists( dirname(__FILE__).'/language/'.@$xoopsConfig['language'].'/modi
 $constpref = '_MI_'.strtoupper($mydirname);
 
 $modversion['name'] = $mydirname;
-$modversion['version'] = 1.15;
-$modversion['detailed_version'] = "1.15.0";
+$modversion['version'] = 2.30;
+$modversion['detailed_version'] = "2.30.0";
 $modversion['description'] = constant($constpref.'_MODULE_DESC');
-$modversion['credits'] = 'BraTech (http://www.bratech.co.jp/), XOOPS X(ten) Distibution ( https://github.com/XoopsX )';
+$modversion['credits'] = 'BraTech (https://www.bratech.co.jp/), XOOPS X(ten) Distibution ( https://github.com/XoopsX ), @gigamaster (XCL7)';
 $modversion['author'] = 'A. Aikawa, XOOPS X developers';
 $modversion['help'] = '';
 $modversion['license'] = 'GPL';
@@ -244,5 +244,3 @@ $modversion['onUninstall'] = 'admin/onuninstall.php';
 if( ! defined( 'XOOPS_CUBE_LEGACY' ) && substr( XOOPS_VERSION , 6 , 3 ) < 2.1 && ! empty( $_POST['fct'] ) && ! empty( $_POST['op'] ) && $_POST['fct'] == 'modulesadmin' && $_POST['op'] == 'update_ok' && $_POST['dirname'] == $modversion['dirname'] ) {
 	include dirname(__FILE__).'/include/x20_keepblockoptions.inc.php' ;
 }
-
-?>

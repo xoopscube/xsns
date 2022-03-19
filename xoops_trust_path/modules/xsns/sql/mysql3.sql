@@ -19,7 +19,7 @@ CREATE TABLE `c_commu`
   KEY `uid_admin` (`uid_admin`),
   KEY `r_datetime` (`r_datetime`)
 
-) TYPE=MyISAM;
+) ENGINE=InnoDB;
 
 
 CREATE TABLE `c_commu_category`
@@ -31,7 +31,7 @@ CREATE TABLE `c_commu_category`
   PRIMARY KEY  (`c_commu_category_id`),
   KEY `c_commu_category_parent_id` (`c_commu_category_parent_id`)
 
-) TYPE=MyISAM;
+) ENGINE=InnoDB;
 
 
 CREATE TABLE `c_commu_category_parent`
@@ -43,7 +43,7 @@ CREATE TABLE `c_commu_category_parent`
   PRIMARY KEY  (`c_commu_category_parent_id`),
   KEY `sort_order` (`sort_order`)
 
-) TYPE=MyISAM;
+) ENGINE=InnoDB;
 
 
 CREATE TABLE `c_commu_topic`
@@ -58,7 +58,7 @@ CREATE TABLE `c_commu_topic`
   KEY `uid` (`uid`),
   KEY `c_commu_id` (`c_commu_id`)
 
-) TYPE=MyISAM;
+) ENGINE=InnoDB;
 
 
 CREATE TABLE `c_commu_topic_comment`
@@ -75,7 +75,7 @@ CREATE TABLE `c_commu_topic_comment`
   KEY `c_commu_id` (`c_commu_id`),
   KEY `uid` (`uid`)
 
-) TYPE=MyISAM;
+) ENGINE=InnoDB;
 
 
 CREATE TABLE `c_commu_member`
@@ -87,7 +87,7 @@ CREATE TABLE `c_commu_member`
   PRIMARY KEY  (`c_commu_member_id`),
   KEY `c_commu_id_r_datetime` (`c_commu_id`,`r_datetime`)
 
-) TYPE=MyISAM;
+) ENGINE=InnoDB;
 
 
 CREATE TABLE `c_image`
@@ -99,7 +99,7 @@ CREATE TABLE `c_image`
   `uid` int(11) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY  (`c_image_id`)
 
-) TYPE=MyISAM;
+) ENGINE=InnoDB;
 
 
 CREATE TABLE `c_file`
@@ -112,7 +112,7 @@ CREATE TABLE `c_file`
   `uid` int(11) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY  (`c_file_id`)
 
-) TYPE=MyISAM;
+) ENGINE=InnoDB;
 
 
 CREATE TABLE `c_commu_confirm`
@@ -127,7 +127,7 @@ CREATE TABLE `c_commu_confirm`
   PRIMARY KEY  (`c_commu_confirm_id`),
   KEY `uid_to` (`uid_to`)
 
-) TYPE=MyISAM;
+) ENGINE=InnoDB;
 
 
 CREATE TABLE `c_friend`
@@ -137,7 +137,7 @@ CREATE TABLE `c_friend`
   `uid_to` int(11) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY  (`c_friend_id`)
 
-) TYPE=MyISAM;
+) ENGINE=InnoDB;
 
 
 CREATE TABLE `c_mypage_config`
@@ -147,7 +147,7 @@ CREATE TABLE `c_mypage_config`
   `config_values` text NOT NULL,
   PRIMARY KEY  (`config_id`)
 
-) TYPE=MyISAM;
+) ENGINE=InnoDB;
 
 
 CREATE TABLE `c_commu_access_log`
@@ -158,7 +158,7 @@ CREATE TABLE `c_commu_access_log`
   `r_datetime` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`c_access_log_id`)
 
-) TYPE=MyISAM;
+) ENGINE=InnoDB;
 
 
 CREATE TABLE `c_mypage_footprint`
@@ -170,7 +170,7 @@ CREATE TABLE `c_mypage_footprint`
 	`r_date` date NOT NULL DEFAULT '0000-00-00',
 	PRIMARY KEY (`c_footprint_id`)
 
-) TYPE=MyISAM;
+) ENGINE=InnoDB;
 
 
 CREATE TABLE `c_mypage_introduction`
@@ -182,6 +182,6 @@ CREATE TABLE `c_mypage_introduction`
 	`r_datetime` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
 	PRIMARY KEY (`c_intro_id`)
 
-) TYPE=MyISAM;
+) ENGINE=InnoDB;
 
 
