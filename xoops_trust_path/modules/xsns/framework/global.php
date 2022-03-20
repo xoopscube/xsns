@@ -5,4 +5,3 @@ global $xoopsOption, $xoopsTpl, $xoopsConfig, $xoopsDB, $xoopsModule, $xoopsModu
 
 global $mydirname, $mytrustdirname, $mydirpath, $mytrustdirpath;
 
-?>

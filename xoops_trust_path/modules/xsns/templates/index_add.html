@@ -1,12 +1,17 @@
+<div class="ui-dev-mode"><{$smarty.template}></div>
+
 <div id="mainFrame">
 <{if $mydirname}><{include file="db:`$mydirname`_inc_breadcrumbs.html"}><{/if}>
 
 <{$form_commu_add}>
 
 <table class="outer commuEdit">
-
-<tr class="even"><th colspan="2"><{$smarty.const._MD_XSNS_TITLE_INDEX_ADD}></th></tr>
-<tr class="head"><td colspan="2" style="text-align:right;"><{$smarty.const._MD_XSNS_REQUIRED_ITEM_DESC}></td></tr>
+    <tr class="even">
+        <th colspan="2"><{$smarty.const._MD_XSNS_TITLE_INDEX_ADD}></th>
+    </tr>
+    <tr class="head">
+        <td colspan="2" style="text-align:right;"><{$smarty.const._MD_XSNS_REQUIRED_ITEM_DESC}></td>
+    </tr>
 
 <{if $errors|@count > 0}>
 <tr class="head"><td colspan="2" class="centerH">
@@ -52,7 +57,7 @@
 <tr class="foot">
 <td colspan="2" class="centerH">
 <div style="margin-top:20px;margin-bottom:20px">
-<input type="submit" class="submit" value="<{$smarty.const._MD_XSNS_BTN_ADD}>">
+<input type="submit" class="ui-button" value="<{$smarty.const._MD_XSNS_BTN_ADD}>">
 </div>
 </td>
 </tr>

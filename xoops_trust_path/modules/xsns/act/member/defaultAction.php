@@ -14,14 +14,14 @@ function dispatch()
 		redirect_header(XOOPS_URL, 2, _NOPERM);
 	}
 	
-	// ¥³¥ß¥å¥Ë¥Æ¥£¤Î¼èÆÀ
+	// ï¿½ï¿½ï¿½ß¥ï¿½Ë¥Æ¥ï¿½ï¿½Î¼ï¿½ï¿½ï¿½
 	$commu_handler =& XsnsCommunityHandler::getInstance();
 	$community =& $commu_handler->get($cid);
 	if(!is_object($community)){
 		redirect_header(XOOPS_URL, 2, _NOPERM);
 	}
 	
-	// ¥³¥ß¥å¥Ë¥Æ¥£¥á¥ó¥Ð¡¼°ìÍ÷¤Î¼èÆÀ
+	// ï¿½ï¿½ï¿½ß¥ï¿½Ë¥Æ¥ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î¼ï¿½ï¿½ï¿½
 	$c_member_obj_list =& $community->getMemberObjects($limit, $start);
 	$c_member_list = array();
 	foreach($c_member_obj_list as $c_member_obj){
@@ -38,4 +38,3 @@ function dispatch()
 	$this->context->setAttribute('pager', $pager);
 }
 }
-?>

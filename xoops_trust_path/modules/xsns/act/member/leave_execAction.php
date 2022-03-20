@@ -17,7 +17,7 @@ function dispatch()
 		redirect_header(XOOPS_URL, 2, _NOPERM);
 	}
 	
-	// ¥³¥ß¥å¥Ë¥Æ¥£¤Î¼èÆÀ
+	// ï¿½ï¿½ï¿½ß¥ï¿½Ë¥Æ¥ï¿½ï¿½Î¼ï¿½ï¿½ï¿½
 	$perm = XSNS_AUTH_XOOPS_ADMIN | XSNS_AUTH_ADMIN;
 	$commu_handler =& XsnsCommunityHandler::getInstance();
 	$community =& $commu_handler->get($cid);
@@ -25,7 +25,7 @@ function dispatch()
 		redirect_header(XOOPS_URL, 2, _NOPERM);
 	}
 	
-	// ÂÐ¾Ý¥³¥ß¥å¥Ë¥Æ¥£¥á¥ó¥Ð¡¼¤Î¼èÆÀ
+	// ï¿½Ð¾Ý¥ï¿½ï¿½ß¥ï¿½Ë¥Æ¥ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½Î¼ï¿½ï¿½ï¿½
 	$c_member_handler =& XsnsMemberHandler::getInstance();
 	$c_member =& $c_member_handler->getOne($cid, $uid);
 	if(!is_object($c_member)){
@@ -33,24 +33,24 @@ function dispatch()
 	}
 	$c_member_info =& $c_member->getInfo();
 	
-	// ¥³¥ß¥å¥Ë¥Æ¥£¥á¥ó¥Ð¡¼¤Î¶¯À©Âà²ñ
+	// ï¿½ï¿½ï¿½ß¥ï¿½Ë¥Æ¥ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½Î¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	if($c_member_handler->delete($c_member)){
 		
-		// ´ûÂ¸¤Î°ÍÍê¤òºï½ü
+		// ï¿½ï¿½Â¸ï¿½Î°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		$confirm_handler =& XsnsConfirmHandler::getInstance();
 		$criteria = new CriteriaCompo(new Criteria('c_commu_id', $cid));
 		$criteria->add(new Criteria('uid_from', $own_uid));
 		$criteria->add(new Criteria('uid_to', $uid));
-		$criteria->add(new Criteria('mode', '(1,2)', 'IN'));	// ´ÉÍý¼Ô¸òÂå or Éû´ÉÍý¼Ô½¢Ç¤
+		$criteria->add(new Criteria('mode', '(1,2)', 'IN'));	// ï¿½ï¿½ï¿½ï¿½ï¿½Ô¸ï¿½ï¿½ï¿½ or ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô½ï¿½Ç¤
 		$confirm_handler->deleteObjects($criteria);
 		
-		// XOOPS´ÉÍý¼Ô¤Ë¤è¤ëÆÃÊÌ¤Ê½èÍý
+		// XOOPSï¿½ï¿½ï¿½ï¿½ï¿½Ô¤Ë¤ï¿½ï¿½ï¿½ï¿½ï¿½Ì¤Ê½ï¿½ï¿½ï¿½
 		if($xoopsUserIsAdmin){
-			// ÂÐ¾Ý¤¬´ÉÍý¼Ô¤Î¾ì¹ç¡¢¼«Ê¬¤¬´ÉÍý¼Ô¤ËÂå¤ï¤ë
+			// ï¿½Ð¾Ý¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¤Î¾ï¿½ç¡¢ï¿½ï¿½Ê¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½ï¿½ï¿½ï¿½
 			if($uid == $community->getVar('uid_admin')){
 				$community->setVar('uid_admin', $own_uid);
 			}
-			// ÂÐ¾Ý¤¬Éû´ÉÍý¼Ô¤Î¾ì¹ç¡¢Éû´ÉÍý¼Ô¤ÏÌµ¤·¤Ë¤¹¤ë
+			// ï¿½Ð¾Ý¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¤Î¾ï¿½ç¡¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½Ìµï¿½ï¿½ï¿½Ë¤ï¿½ï¿½ï¿½
 			elseif($uid == $community->getVar('uid_sub_admin')){
 				$community->setVar('uid_sub_admin', 0);
 			}
@@ -63,4 +63,3 @@ function dispatch()
 }
 
 }
-?>

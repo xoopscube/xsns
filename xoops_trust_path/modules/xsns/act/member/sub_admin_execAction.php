@@ -19,7 +19,7 @@ function dispatch()
 		redirect_header(XOOPS_URL, 2, _NOPERM);
 	}
 	
-	// ¥³¥ß¥å¥Ë¥Æ¥£¤Î¼èÆÀ
+	// ï¿½ï¿½ï¿½ß¥ï¿½Ë¥Æ¥ï¿½ï¿½Î¼ï¿½ï¿½ï¿½
 	$perm = XSNS_AUTH_XOOPS_ADMIN | XSNS_AUTH_ADMIN;
 	$commu_handler =& XsnsCommunityHandler::getInstance();
 	$community =& $commu_handler->get($cid);
@@ -31,7 +31,7 @@ function dispatch()
 		redirect_header(XOOPS_URL, 2, _NOPERM);
 	}
 	
-	// ÂÐ¾Ý¥³¥ß¥å¥Ë¥Æ¥£¥á¥ó¥Ð¡¼¤Î¼èÆÀ
+	// ï¿½Ð¾Ý¥ï¿½ï¿½ß¥ï¿½Ë¥Æ¥ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½Î¼ï¿½ï¿½ï¿½
 	$c_member_handler =& XsnsMemberHandler::getInstance();
 	$c_member =& $c_member_handler->getOne($cid, $uid);
 	if(!is_object($c_member)){
@@ -39,21 +39,21 @@ function dispatch()
 	}
 	$c_member_info =& $c_member->getInfo();
 	
-	// ´ûÂ¸¤Î°ÍÍê¤òºï½ü¡Ê½ÅÊ£¤òËÉ¤°¤¿¤á¡Ë
+	// ï¿½ï¿½Â¸ï¿½Î°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½ï¿½Ê£ï¿½ï¿½ï¿½É¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	$confirm_handler =& XsnsConfirmHandler::getInstance();
 	$criteria = new CriteriaCompo(new Criteria('c_commu_id', $cid));
 	$criteria->add(new Criteria('uid_from', $own_uid));
 	$criteria->add(new Criteria('uid_to', $uid));
-	$criteria->add(new Criteria('mode', '(1,2)', 'IN'));	// ´ÉÍý¼Ô¸òÂå or Éû´ÉÍý¼Ô½¢Ç¤
+	$criteria->add(new Criteria('mode', '(1,2)', 'IN'));	// ï¿½ï¿½ï¿½ï¿½ï¿½Ô¸ï¿½ï¿½ï¿½ or ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô½ï¿½Ç¤
 	$confirm_handler->deleteObjects($criteria);
 	
-	// ¿·µ¬°ÍÍê¤ÎÁ÷¿®
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	$confirm =& $confirm_handler->create();
 	$confirm->setVars(array(
 		'c_commu_id' => $cid,
 		'uid_from' => $own_uid,
 		'uid_to' => $uid,
-		'mode' => 2,	// Éû´ÉÍý¼Ô½¢Ç¤
+		'mode' => 2,	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô½ï¿½Ç¤
 		'r_datetime' => date('Y-m-d H:i:s'),
 		'message' => $message,
 	));
@@ -66,4 +66,3 @@ function dispatch()
 }
 
 }
-?>

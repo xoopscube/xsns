@@ -1,18 +1,18 @@
 <?php
 
 /**
- * View ´ÉÍýÍÑ¥¯¥é¥¹
+ * View ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¥ï¿½ï¿½é¥¹
  *
  * @package ViewManager
  */
 class XsnsViewManager
 {
 	/**
-	 * Å¬ÀÚ¤ÊView¤ò¼Â¹Ô¤¹¤ë
+	 * Å¬ï¿½Ú¤ï¿½Viewï¿½ï¿½Â¹Ô¤ï¿½ï¿½ï¿½
 	 * 
 	 * @param &$context
-	 * @param $target_dir	View¥Õ¥¡¥¤¥ë¤Î¥Ç¥£¥ì¥¯¥È¥êÌ¾
-	 * @param $target		ÂÐ¾Ý¤ÎViewÌ¾
+	 * @param $target_dir	Viewï¿½Õ¥ï¿½ï¿½ï¿½ï¿½ï¿½Î¥Ç¥ï¿½ï¿½ì¥¯ï¿½È¥ï¿½Ì¾
+	 * @param $target		ï¿½Ð¾Ý¤ï¿½ViewÌ¾
 	 * @return void
 	 */
 	public static function dispatch(&$context, $target_dir="", $target="")
@@ -23,7 +23,7 @@ class XsnsViewManager
 			$target_dir = $target_dir.'/';
 		}
 		
-		// ÂÐ¾ÝView¤Î·èÄê
+		// ï¿½Ð¾ï¿½Viewï¿½Î·ï¿½ï¿½ï¿½
 		if(empty($target)){
 			if(isset($_REQUEST[XSNS_ACTION_ARG])){
 				$target = preg_replace("/[^0-9a-zA-Z_]/", "", $_REQUEST[XSNS_ACTION_ARG]);
@@ -37,17 +37,17 @@ class XsnsViewManager
 			$args[] = $target;
 		}
 		
-		// ÂÐ¾ÝView¥¯¥é¥¹Ì¾¡¢¥Õ¥¡¥¤¥ëÌ¾¤ò·èÄê
+		// ï¿½Ð¾ï¿½Viewï¿½ï¿½ï¿½é¥¹Ì¾ï¿½ï¿½ï¿½Õ¥ï¿½ï¿½ï¿½ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ï¿½ï¿½
 		$viewFile  = XSNS_VIEW_DIR. $target_dir. $target. "View.php";
 		
-		// ÂÐ¾Ý¥Õ¥¡¥¤¥ëÆÉ¤ß¹þ¤ß
+		// ï¿½Ð¾Ý¥Õ¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¤ß¹ï¿½ï¿½ï¿½
 		if (is_readable($viewFile) && is_file($viewFile)) {
 			require_once($viewFile);
 			$viewClass = "Xsns_".ucfirst($target)."_View";
-			// ÂÐ¾Ý¥¯¥é¥¹¥¤¥ó¥¹¥¿¥ó¥¹ºîÀ®
+			// ï¿½Ð¾Ý¥ï¿½ï¿½é¥¹ï¿½ï¿½ï¿½ó¥¹¥ï¿½ï¿½ó¥¹ºï¿½ï¿½ï¿½
 			if (class_exists($viewClass)) {
 				$o = new $viewClass($context, $args);
-				// ÂÐ¾Ý¥¯¥é¥¹¤Îdispatch¥á¥½¥Ã¥É¼Â¹Ô
+				// ï¿½Ð¾Ý¥ï¿½ï¿½é¥¹ï¿½ï¿½dispatchï¿½á¥½ï¿½Ã¥É¼Â¹ï¿½
 				if (method_exists($o, "dispatch")) {
 					$o->dispatch();
 					return;
@@ -58,5 +58,3 @@ class XsnsViewManager
 		exit();
 	}
 }
-
-?>

@@ -16,7 +16,7 @@ function dispatch()
 		redirect_header(XOOPS_URL, 2, _NOPERM);
 	}
 	
-	// ¥³¥ß¥å¥Ë¥Æ¥£¤Î¼èÆÀ
+	// ï¿½ï¿½ï¿½ß¥ï¿½Ë¥Æ¥ï¿½ï¿½Î¼ï¿½ï¿½ï¿½
 	$perm = XSNS_AUTH_NON_MEMBER;
 	$commu_handler =& XsnsCommunityHandler::getInstance();
 	$community =& $commu_handler->get($cid);
@@ -31,7 +31,7 @@ function dispatch()
 	if($public_flag > 1){
 		$is_public = false;
 		
-		// °ÍÍêÁ÷¿®ºÑ¤ß¤«¤É¤¦¤«¤Î³ÎÇ§
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¤ß¤ï¿½ï¿½É¤ï¿½ï¿½ï¿½ï¿½Î³ï¿½Ç§
 		$uid_admin = $community->getVar('uid_admin');
 		$confirm_handler =& XsnsConfirmHandler::getInstance();
 		if($confirm_handler->getOne($cid, $own_uid, $uid_admin, 0)){
@@ -47,4 +47,3 @@ function dispatch()
 	$this->context->setAttribute('commu', $commu);
 }
 }
-?>

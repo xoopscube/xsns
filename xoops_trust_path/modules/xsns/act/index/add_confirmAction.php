@@ -57,7 +57,7 @@ function dispatch()
 		$this->context->setAttribute('category_selector', $category_selector);
 		$this->context->setAttribute('default', $default);
 		$this->context->setAttribute('errors', $errors);
-		return "add";	// ¨ index/addView.php
+		return "add";	// ï¿½ï¿½ index/addView.php
 	}
 	
 	// check input : OK
@@ -87,4 +87,3 @@ function dispatch()
 //------------------------------------------------------------------------------
 
 }
-?>

@@ -39,13 +39,13 @@ function dispatch()
 		}
 		
 		if($action=='edit'){
-			// Ãæ¥«¥Æ¥´¥ê¤ÎÊÔ½¸
+			// ï¿½æ¥«ï¿½Æ¥ï¿½ï¿½ï¿½ï¿½ï¿½Ô½ï¿½
 			$cat_parent->setVar('name', $title);
 			$cat_parent->setVar('sort_order', $order);
 			$ret = $cat_parent_handler->insert($cat_parent);
 		}
 		else{
-			// Ãæ¥«¥Æ¥´¥ê¤Îºï½ü
+			// ï¿½æ¥«ï¿½Æ¥ï¿½ï¿½ï¿½Îºï¿½ï¿½
 			$criteria = new Criteria('c_commu_category_parent_id', $id);
 			$cat_obj_list =& $cat_handler->getObjects($criteria);
 			foreach($cat_obj_list as $cat_obj){
@@ -61,13 +61,13 @@ function dispatch()
 		}
 		
 		if($action=='edit'){
-			// ¾®¥«¥Æ¥´¥ê¤ÎÊÔ½¸
+			// ï¿½ï¿½ï¿½ï¿½ï¿½Æ¥ï¿½ï¿½ï¿½ï¿½ï¿½Ô½ï¿½
 			$cat->setVar('name', $title);
 			$cat->setVar('sort_order', $order);
 			$ret = $cat_handler->insert($cat);
 		}
 		else{
-			// ¾®¥«¥Æ¥´¥ê¤Îºï½ü
+			// ï¿½ï¿½ï¿½ï¿½ï¿½Æ¥ï¿½ï¿½ï¿½Îºï¿½ï¿½
 			$ret = $cat_handler->delete($cat);
 		}
 	}
@@ -77,7 +77,5 @@ function dispatch()
 	}
 	redirect_header(XSNS_URL_ADMIN.'?'.XSNS_ACTION_ARG.'=category', 2, $msg_ng);
 }
-//------------------------------------------------------------------------------
 
 }
-?>

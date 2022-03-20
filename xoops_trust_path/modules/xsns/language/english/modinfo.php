@@ -64,6 +64,7 @@ define($constpref.'_BLOG1', 'Weblog');
 define($constpref.'_BLOG2', 'WeblodD3');
 define($constpref.'_BLOG3', 'WordPress ME (for XOOPS2)');
 define($constpref.'_BLOG4', 'd3blog');
+define($constpref.'_BLOG5', 'minidiary');
 
 define($constpref.'_BLOGDIR', 'Directory name of the blog module');
 define($constpref.'_BLOGDIRDSC', 'When directory name of the blog module has been modified, please input the value.<br>In case of blank it becomes directory name of default.');

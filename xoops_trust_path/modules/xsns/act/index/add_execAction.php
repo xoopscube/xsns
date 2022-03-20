@@ -34,12 +34,12 @@ function dispatch()
 	
 	if(($cid = $commu_handler->insert($new_community)) && $category_handler->updateSelector()){
 		
-		// ºîÀ®¤·¤¿¥³¥ß¥å¥Ë¥Æ¥£¤ËÂÐ¤·¤Æ²èÁü¤òÄÉ²Ã
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß¥ï¿½Ë¥Æ¥ï¿½ï¿½ï¿½ï¿½Ð¤ï¿½ï¿½Æ²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É²ï¿½
 		$image_handler =& XsnsImageHandler::getInstance();
 		$image_handler->setFormLimit(1);
 		$image_handler->uploadImage('c', 1, $cid);
 		
-		// ¥³¥ß¥å¥Ë¥Æ¥£¤ÎºîÀ®¼Ô¤ò¥á¥ó¥Ð¡¼¤ËÄÉ²Ã
+		// ï¿½ï¿½ï¿½ß¥ï¿½Ë¥Æ¥ï¿½ï¿½Îºï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½É²ï¿½
 		$c_member_handler =& XsnsMemberHandler::getInstance();
 		$new_member =& $c_member_handler->create();
 		$new_member->setVars(array(
@@ -57,4 +57,3 @@ function dispatch()
 }
 
 }
-?>

@@ -16,7 +16,7 @@ function dispatch()
 		redirect_header(XOOPS_URL, 2, _NOPERM);
 	}
 	
-	// ¥³¥ß¥å¥Ë¥Æ¥£¤Î¼èÆÀ
+	// ï¿½ï¿½ï¿½ß¥ï¿½Ë¥Æ¥ï¿½ï¿½Î¼ï¿½ï¿½ï¿½
 	$perm = XSNS_AUTH_MEMBER | XSNS_AUTH_SUB_ADMIN;
 	$commu_handler =& XsnsCommunityHandler::getInstance();
 	$community =& $commu_handler->get($cid);
@@ -25,14 +25,14 @@ function dispatch()
 		redirect_header(XOOPS_URL, 2, _NOPERM);
 	}
 	
-	// ÂÐ¾Ý¥³¥ß¥å¥Ë¥Æ¥£¥á¥ó¥Ð¡¼¤Î¼èÆÀ
+	// ï¿½Ð¾Ý¥ï¿½ï¿½ß¥ï¿½Ë¥Æ¥ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½Î¼ï¿½ï¿½ï¿½
 	$c_member_handler =& XsnsMemberHandler::getInstance();
 	$c_member =& $c_member_handler->getOne($cid, $own_uid);
 	if(!is_object($c_member)){
 		redirect_header(XOOPS_URL, 2, _NOPERM);
 	}
 	
-	// Âà²ñ½èÍý
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	if($c_member_handler->delete($c_member)){
 		if($community->getVar('uid_sub_admin') == $own_uid){
 			$community->setVar('uid_sub_admin', 0);
@@ -44,4 +44,3 @@ function dispatch()
 }
 
 }
-?>

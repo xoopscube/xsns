@@ -6,7 +6,7 @@ function dispatch()
 	require XSNS_FRAMEWORK_DIR.'/global.php';
 	xoops_cp_header();
 	
-	// Ãæ¥«¥Æ¥´¥ê
+	// ï¿½æ¥«ï¿½Æ¥ï¿½ï¿½ï¿½
 	$category_p = $this->context->getAttribute('category_p');
 	$category = $this->context->getAttribute('category');
 	
@@ -71,7 +71,7 @@ function dispatch()
 	
 	echo "<div style='width:400px; margin-left:auto; margin-right:auto;'>";
 	
-	// ¾®¥«¥Æ¥´¥ê
+	// ï¿½ï¿½ï¿½ï¿½ï¿½Æ¥ï¿½ï¿½ï¿½
 	echo "<div style='text-align:center; font-size:14px; padding-bottom:15px;'><b>"._AM_XSNS_CATEGORY2._AM_XSNS_CATEGORY_LIST."</b></div>";
 	
 	$token_handler = new XoopsMultiTokenHandler();
@@ -136,4 +136,3 @@ function dispatch()
 }
 
 }
-?>

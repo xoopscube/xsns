@@ -168,13 +168,15 @@ function dispatch()
 	
 	// Time zone
 	$timezone_offset = $xoopsUser->getVar('timezone_offset');
-	$timezone_select = new XoopsFormSelectTimezone(_US_TIMEZONE, 'timezone_offset', $timezone_offset);
+    // TODO fix select timezone
+	//$timezone_select = new XoopsFormSelectTimezone(_US_TIMEZONE, 'timezone_offset', $timezone_offset);
 	$elements['timezone'] = array(
 		'name' => 'timezone_offset',
 		'value' => $timezone_offset,
 		'html' => XsnsUtils::getSelectBoxHtml('timezone_offset', $timezone_select->_options, $timezone_offset),
 	);
-	
+
+
 	// Event notify method
 	$not_method = $xoopsUser->getVar('notify_method');
 	$not_method_arr = array(
@@ -256,5 +258,3 @@ function dispatch()
 }
 
 }
-
-?>

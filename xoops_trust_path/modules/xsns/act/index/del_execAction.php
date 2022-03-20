@@ -12,7 +12,7 @@ function dispatch()
 		redirect_header(XOOPS_URL, 2, _NOPERM);
 	}
 	
-	// ¥³¥ß¥å¥Ë¥Æ¥£¤Î¼èÆÀ
+	// ï¿½ï¿½ï¿½ß¥ï¿½Ë¥Æ¥ï¿½ï¿½Î¼ï¿½ï¿½ï¿½
 	$perm = XSNS_AUTH_XOOPS_ADMIN | XSNS_AUTH_ADMIN;
 	$commu_handler =& XsnsCommunityHandler::getInstance();
 	$community =& $commu_handler->get($cid);
@@ -29,19 +29,19 @@ function dispatch()
 			
 			$criteria = new Criteria('c_commu_id', $cid);
 			
-			// ½êÂ°¥á¥ó¥Ð¡¼¥Ç¡¼¥¿¤Îºï½ü
+			// ï¿½ï¿½Â°ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½Ç¡ï¿½ï¿½ï¿½ï¿½Îºï¿½ï¿½
 			$c_member_handler =& XsnsMemberHandler::getInstance();
 			$c_member_handler->deleteObjects($criteria);
 			
-			// °ÍÍê¥Ç¡¼¥¿¤Îºï½ü
+			// ï¿½ï¿½ï¿½ï¿½Ç¡ï¿½ï¿½ï¿½ï¿½Îºï¿½ï¿½
 			$confirm_handler =& XsnsConfirmHandler::getInstance();
 			$confirm_handler->deleteObjects($criteria);
 			
-			// ¥¢¥¯¥»¥¹¥í¥°¤Îºï½ü
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îºï¿½ï¿½
 			$access_log_handler =& XsnsAccessLogHandler::getInstance();
 			$access_log_handler->deleteObjects($criteria);
 			
-			// ²èÁü¤Îºï½ü
+			// ï¿½ï¿½ï¿½ï¿½ï¿½Îºï¿½ï¿½
 			$image_criteria = new CriteriaCompo(new Criteria('target', 1));
 			$image_criteria->add(new Criteria('target_id', $cid));
 			$image_handler =& XsnsImageHandler::getInstance();
@@ -53,4 +53,3 @@ function dispatch()
 	redirect_header(XSNS_URL_COMMU, 2, _MD_XSNS_INDEX_DEL_NG);
 }
 }
-?>

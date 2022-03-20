@@ -16,7 +16,7 @@ function dispatch()
 		redirect_header(XOOPS_URL, 2, _NOPERM);
 	}
 	
-	// ¥³¥ß¥å¥Ë¥Æ¥£¤Î¼èÆÀ
+	// ï¿½ï¿½ï¿½ß¥ï¿½Ë¥Æ¥ï¿½ï¿½Î¼ï¿½ï¿½ï¿½
 	$perm = XSNS_AUTH_NON_MEMBER;
 	$commu_handler =& XsnsCommunityHandler::getInstance();
 	$community =& $commu_handler->get($cid);
@@ -30,22 +30,22 @@ function dispatch()
 	$redirect_url = XSNS_URL_COMMU.'?cid='.$cid;
 	
 	if($public_flag > 1){
-		// »²²Ã¤ÎºÝ¤Ë´ÉÍý¼Ô¤Î¾µÇ§¤¬É¬Í×¤Ê¥³¥ß¥å¥Ë¥Æ¥£
+		// ï¿½ï¿½ï¿½Ã¤ÎºÝ¤Ë´ï¿½ï¿½ï¿½ï¿½Ô¤Î¾ï¿½Ç§ï¿½ï¿½É¬ï¿½×¤Ê¥ï¿½ï¿½ß¥ï¿½Ë¥Æ¥ï¿½
 		
-		// °ÍÍêÁ÷¿®ºÑ¤ß¤«¤É¤¦¤«¤Î³ÎÇ§
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¤ß¤ï¿½ï¿½É¤ï¿½ï¿½ï¿½ï¿½Î³ï¿½Ç§
 		$uid_admin = $community->getVar('uid_admin');
 		$confirm_handler =& XsnsConfirmHandler::getInstance();
 		if($confirm_handler->getOne($cid, $own_uid, $uid_admin, 0)){
 			redirect_header($redirect_url, 2, _MD_XSNS_INDEX_JOIN_REQ_NG_ALREADY);
 		}
 		
-		// °ÍÍê¤ÎÁ÷¿®
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		$new_confirm =& $confirm_handler->create();
 		$new_confirm->setVars(array(
 			'c_commu_id' => $cid,
 			'uid_from' => $own_uid,
 			'uid_to' => $uid_admin,
-			'mode' => 0,	// ¥³¥ß¥å¥Ë¥Æ¥£»²²Ã
+			'mode' => 0,	// ï¿½ï¿½ï¿½ß¥ï¿½Ë¥Æ¥ï¿½ï¿½ï¿½ï¿½ï¿½
 			'r_datetime' => date('Y-m-d H:i:s'),
 			'message' => $this->getTextRequest('message'),
 		));
@@ -56,7 +56,7 @@ function dispatch()
 		redirect_header($redirect_url, 2, _MD_XSNS_INDEX_JOIN_REQ_NG);
 	}
 	else{
-		// Ã¯¤Ç¤â»²²Ã²ÄÇ½¤Ê¥³¥ß¥å¥Ë¥Æ¥£
+		// Ã¯ï¿½Ç¤â»²ï¿½Ã²ï¿½Ç½ï¿½Ê¥ï¿½ï¿½ß¥ï¿½Ë¥Æ¥ï¿½
 		
 		$c_member_handler =& XsnsMemberHandler::getInstance();
 		$new_member =& $c_member_handler->create();
@@ -74,4 +74,3 @@ function dispatch()
 }
 
 }
-?>

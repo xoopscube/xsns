@@ -14,7 +14,7 @@ function dispatch()
 		redirect_header(XOOPS_URL, 2, _NOPERM);
 	}
 	
-	// °ÍÍê¾ðÊó¤Î¼èÆÀ
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î¼ï¿½ï¿½ï¿½
 	$confirm_handler =& XsnsConfirmHandler::getInstance();
 	$confirm =& $confirm_handler->get($confirm_id);
 	if(!is_object($confirm)){
@@ -30,7 +30,7 @@ function dispatch()
 		redirect_header(XOOPS_URL, 2, _NOPERM);
 	}
 	
-	// ¥æ¡¼¥¶¡¼¤Î¼èÆÀ¡Ê°ÍÍê¼Ô¤¬Â¸ºß¤·¤Ê¤¯¤Æ¤â½èÍý¤òÂ³¹Ô¡Ë
+	// ï¿½æ¡¼ï¿½ï¿½ï¿½ï¿½ï¿½Î¼ï¿½ï¿½ï¿½ï¿½Ê°ï¿½ï¿½ï¿½Ô¤ï¿½Â¸ï¿½ß¤ï¿½ï¿½Ê¤ï¿½ï¿½Æ¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â³ï¿½Ô¡ï¿½
 	$user_handler =& XsnsUserHandler::getInstance();
 	$user_to =& $user_handler->get($uid_to);
 	if(!is_object($user_to)){
@@ -38,7 +38,7 @@ function dispatch()
 	}
 	
 	if($mode < 3){
-		// ¥³¥ß¥å¥Ë¥Æ¥£¤Î¼èÆÀ
+		// ï¿½ï¿½ï¿½ß¥ï¿½Ë¥Æ¥ï¿½ï¿½Î¼ï¿½ï¿½ï¿½
 		$commu_handler =& XsnsCommunityHandler::getInstance();
 		$community =& $commu_handler->get($cid);
 		if(!is_object($community) || $community->getAuthority() < XSNS_AUTH_MEMBER){
@@ -46,7 +46,7 @@ function dispatch()
 		}
 	}
 	
-	// °ÍÍê¤Îºï½ü
+	// ï¿½ï¿½ï¿½ï¿½Îºï¿½ï¿½
 	if($confirm_handler->delete($confirm)){
 		$url = ($confirm_handler->getCount(new Criteria('uid_to', $uid_to)) > 0) ?
 			XSNS_URL_MYPAGE.'&'.XSNS_ACTION_ARG.'=confirm' : XSNS_URL_MYPAGE;
@@ -56,4 +56,3 @@ function dispatch()
 }
 
 }
-?>

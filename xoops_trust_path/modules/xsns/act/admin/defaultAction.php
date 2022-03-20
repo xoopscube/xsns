@@ -27,7 +27,7 @@ function dispatch()
 }
 //------------------------------------------------------------------------------
 
-// ¥Þ¥¤¥Ú¡¼¥¸ ¢Î ¥¢¥«¥¦¥ó¥È¾ðÊó¥Ú¡¼¥¸¤Î¥Õ¥¡¥¤¥ëÃÖ¤­´¹¤¨
+// ï¿½Þ¥ï¿½ï¿½Ú¡ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¾ï¿½ï¿½ï¿½Ú¡ï¿½ï¿½ï¿½ï¿½Î¥Õ¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¤ï¿½ï¿½ï¿½ï¿½ï¿½
 function replaceMypage()
 {
 	if(defined('XOOPS_CUBE_LEGACY')){
@@ -50,7 +50,7 @@ function replaceMypage()
 		   && md5_file($userinfo_file) != md5_file($userinfo_file_r)
 		   && md5_file($edituser_file) != md5_file($edituser_file_r)){
 			
-			// ¥¢¥«¥¦¥ó¥È¾ðÊó¥Ú¡¼¥¸¤ò¥Ð¥Ã¥¯¥¢¥Ã¥× ¢Í ¥Þ¥¤¥Ú¡¼¥¸¤ËÃÖ¤­´¹¤¨
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¾ï¿½ï¿½ï¿½Ú¡ï¿½ï¿½ï¿½ï¿½ï¿½Ð¥Ã¥ï¿½ï¿½ï¿½ï¿½Ã¥ï¿½ ï¿½ï¿½ ï¿½Þ¥ï¿½ï¿½Ú¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¤ï¿½ï¿½ï¿½ï¿½ï¿½
 			@copy($userinfo_file, $userinfo_file_b);
 			@copy($edituser_file, $edituser_file_b);
 			@copy($userinfo_file_r, $userinfo_file);
@@ -70,7 +70,7 @@ function replaceMypage()
 			   && md5_file($userinfo_file) == md5_file($userinfo_file_r)
 			   && md5_file($edituser_file) == md5_file($edituser_file_r)){
 			
-			// ¸µ¤Î¾õÂÖ¡Ê¥¢¥«¥¦¥ó¥È¾ðÊó¥Ú¡¼¥¸¡Ë¤ËÌá¤¹
+			// ï¿½ï¿½ï¿½Î¾ï¿½ï¿½Ö¡Ê¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¾ï¿½ï¿½ï¿½Ú¡ï¿½ï¿½ï¿½ï¿½Ë¤ï¿½ï¿½á¤¹
 			@copy($userinfo_file_b, $userinfo_file);
 			@copy($edituser_file_b, $edituser_file);
 		}
@@ -129,4 +129,3 @@ function checkGD()
 
 }
 
-?>

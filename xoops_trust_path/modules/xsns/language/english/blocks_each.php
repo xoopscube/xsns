@@ -17,5 +17,3 @@ define($constpref.'_INDEX_INFO_MSG_3', 'There is an additional request to your f
 define($constpref.'_INDEX_INFO_MSG_4', 'The registration of your friends list was canceled. (%d request(s)) ');
 
 }
-
-?>

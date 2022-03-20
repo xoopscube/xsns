@@ -11,5 +11,3 @@ class XsnsController
 		XsnsViewManager::dispatch($context, $target_dir, $viewName);
 	}
 }
-
-?>

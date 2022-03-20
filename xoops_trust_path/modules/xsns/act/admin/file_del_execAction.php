@@ -21,4 +21,4 @@ function dispatch()
 	redirect_header(XSNS_URL_ADMIN.'?'.XSNS_ACTION_ARG.'=file', 2, _AM_XSNS_FILE_DELETE_OK);
 }
 }
-?>
+

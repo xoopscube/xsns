@@ -97,4 +97,3 @@ define($constpref.'_CATEGORY_4', 'その他');
 
 }
 
-?>

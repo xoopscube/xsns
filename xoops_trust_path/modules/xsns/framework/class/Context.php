@@ -4,7 +4,7 @@ class XsnsContext
 {
 	var $_hash = array();
 	
-	function XsnsContext(){
+	function __construct(){
 	}
 	
 	function setAttribute($name, $value){
@@ -25,5 +25,3 @@ class XsnsContext
 		}
 	}
 }
-
-?>

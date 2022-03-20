@@ -32,4 +32,3 @@ function dispatch()
 	$this->context->setAttribute('default', $default);
 }
 }
-?>

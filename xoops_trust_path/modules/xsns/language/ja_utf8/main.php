@@ -345,5 +345,3 @@ define('_MD_XSNS_PROFILE_AVATAR_UPLOAD', 'アバターのアップロード');
 define('_MD_XSNS_PROFILE_AVATAR_EDIT', 'アバター編集');
 define('_MD_XSNS_PROFILE_AVATAR_SELECT', 'アバターを一覧から選択');
 define('_MD_XSNS_PROFILE_AVATAR_UPLOAD_NG', 'アバターのアップロードに失敗しました');
-
-?>

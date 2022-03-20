@@ -27,4 +27,3 @@ function dispatch()
 	require_once XOOPS_ROOT_PATH.'/footer.php';
 }
 }
-?>

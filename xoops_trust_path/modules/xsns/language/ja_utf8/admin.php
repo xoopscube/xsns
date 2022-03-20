@@ -65,5 +65,3 @@ define('_AM_XSNS_ACCESS_COMMU', 'コミュニティ名');
 define('_AM_XSNS_ACCESS_DATE', 'アクセス日時');
 
 define('_AM_XSNS_PAGE_SELECT_DESC', '%d件中 %d-%d件を表示');
-
-?>

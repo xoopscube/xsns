@@ -14,7 +14,7 @@ function dispatch()
 		redirect_header(XOOPS_URL, 2, _NOPERM);
 	}
 	
-	// °ÍÍê¾ðÊó¤Î¼èÆÀ
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î¼ï¿½ï¿½ï¿½
 	$confirm_handler =& XsnsConfirmHandler::getInstance();
 	$confirm =& $confirm_handler->get($confirm_id);
 	if(!is_object($confirm)){
@@ -30,16 +30,16 @@ function dispatch()
 		redirect_header(XOOPS_URL, 2, _NOPERM);
 	}
 	
-	// ¥æ¡¼¥¶¡¼¤Î¼èÆÀ
+	// ï¿½æ¡¼ï¿½ï¿½ï¿½ï¿½ï¿½Î¼ï¿½ï¿½ï¿½
 	$user_handler =& XsnsUserHandler::getInstance();
-	$user_from =& $user_handler->get($uid_from);	// °ÍÍê¼Ô¡ÊÂ¾¿Í¡Ë
-	$user_to =& $user_handler->get($uid_to);		// ¼«Ê¬
+	$user_from =& $user_handler->get($uid_from);	// ï¿½ï¿½ï¿½ï¿½Ô¡ï¿½Â¾ï¿½Í¡ï¿½
+	$user_to =& $user_handler->get($uid_to);		// ï¿½ï¿½Ê¬
 	if(!is_object($user_from) || !is_object($user_to)){
 		redirect_header(XOOPS_URL, 2, _NOPERM);
 	}
 	
 	if($mode < 3){
-		// ¥³¥ß¥å¥Ë¥Æ¥£¤Î¼èÆÀ
+		// ï¿½ï¿½ï¿½ß¥ï¿½Ë¥Æ¥ï¿½ï¿½Î¼ï¿½ï¿½ï¿½
 		$commu_handler =& XsnsCommunityHandler::getInstance();
 		$community =& $commu_handler->get($cid);
 		if(!is_object($community) || $community->getAuthority() < XSNS_AUTH_MEMBER){
@@ -48,29 +48,29 @@ function dispatch()
 	}
 	
 	switch($mode){
-		case 0:	// ¥³¥ß¥å¥Ë¥Æ¥£»²²Ã
+		case 0:	// ï¿½ï¿½ï¿½ß¥ï¿½Ë¥Æ¥ï¿½ï¿½ï¿½ï¿½ï¿½
 			$ret = $user_from->joinCommunity($cid);
 			$msg = _MD_XSNS_CONFIRM_JOIN;
 			break;
 		
-		case 1:	// ´ÉÍý¼Ô¸òÂå
+		case 1:	// ï¿½ï¿½ï¿½ï¿½ï¿½Ô¸ï¿½ï¿½ï¿½
 			$ret = $user_to->setCommunityAdmin($cid);
 			$msg = _MD_XSNS_CONFIRM_ADMIN;
 			break;
 		
-		case 2:	// Éû´ÉÍý¼Ô½¢Ç¤
+		case 2:	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô½ï¿½Ç¤
 			$ret = $user_to->setCommunitySubAdmin($cid);
 			$msg = _MD_XSNS_CONFIRM_SUB_ADMIN;
 			break;
 		
-		case 3:	// Í§Ã£¥ê¥¹¥ÈÅÐÏ¿
+		case 3:	// Í§Ã£ï¿½ê¥¹ï¿½ï¿½ï¿½ï¿½Ï¿
 			$ret1 = $user_to->setFriend($uid_from);
 			$ret2 = $user_from->setFriend($uid_to);
 			$ret = $ret1 | $ret2;
 			$msg = _MD_XSNS_CONFIRM_FRIEND;
 			break;
 		
-		case 4:	// Í§Ã£¥ê¥¹¥ÈÅÐÏ¿²ò½ü¡Ê³ÎÇ§¤Î¤ß¡Ë
+		case 4:	// Í§Ã£ï¿½ê¥¹ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½ï¿½Ê³ï¿½Ç§ï¿½Î¤ß¡ï¿½
 			if($confirm_handler->delete($confirm)){
 				header("Location: ".XSNS_URL_MYPAGE);
 				exit;
@@ -92,4 +92,3 @@ function dispatch()
 }
 
 }
-?>

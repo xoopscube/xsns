@@ -136,4 +136,3 @@ function dispatch()
 	$this->context->setAttribute('confirm_list_all', $confirm_list_all);
 }
 }
-?>

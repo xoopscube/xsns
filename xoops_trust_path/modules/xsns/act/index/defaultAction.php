@@ -122,7 +122,7 @@ function getCommunityDetail($cid)
 	$topic_handler =& XsnsTopicHandler::getInstance();
 	$comment_handler =& XsnsTopicCommentHandler::getInstance();
 	
-	// ¥³¥ß¥å¥Ë¥Æ¥£¤Î¼èÆÀ
+	// ï¿½ï¿½ï¿½ß¥ï¿½Ë¥Æ¥ï¿½ï¿½Î¼ï¿½ï¿½ï¿½
 	$community =& $commu_handler->get($cid);
 	if(!is_object($community)){
 		redirect_header(XOOPS_URL, 2, _NOPERM);
@@ -130,7 +130,7 @@ function getCommunityDetail($cid)
 	
 	$community->setStatistics();
 	
-	// ¥³¥ß¥å¥Ë¥Æ¥£¥á¥ó¥Ð¡¼°ìÍ÷¤Î¼èÆÀ
+	// ï¿½ï¿½ï¿½ß¥ï¿½Ë¥Æ¥ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î¼ï¿½ï¿½ï¿½
 	$c_member_obj_list =& $community->getMemberObjects(9, 0, true);
 	$c_member_list = array();
 	foreach($c_member_obj_list as $c_member_obj){
@@ -197,5 +197,3 @@ function getCommunityDetail($cid)
 //------------------------------------------------------------------------------
 
 }
-
-?>

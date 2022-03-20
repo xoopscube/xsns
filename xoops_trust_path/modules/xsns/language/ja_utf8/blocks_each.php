@@ -17,5 +17,3 @@ define($constpref.'_INDEX_INFO_MSG_3', '友達リストへの登録希望が%d�
 define($constpref.'_INDEX_INFO_MSG_4', '友達リストの登録が%d件解除されました');
 
 }
-
-?>

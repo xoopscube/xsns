@@ -65,5 +65,3 @@ define('_AM_XSNS_ACCESS_COMMU', 'Group Name');
 define('_AM_XSNS_ACCESS_DATE', 'Access Date');
 
 define('_AM_XSNS_PAGE_SELECT_DESC', 'Listing %d-%d of %d.');
-
-?>

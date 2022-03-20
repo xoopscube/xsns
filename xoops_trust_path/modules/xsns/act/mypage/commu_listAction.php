@@ -19,7 +19,7 @@ function dispatch()
 		redirect_header(XOOPS_URL, 2, _NOPERM);
 	}
 	
-	// ÂÐ¾Ý¥æ¡¼¥¶¡¼¤Î¼èÆÀ
+	// ï¿½Ð¾Ý¥æ¡¼ï¿½ï¿½ï¿½ï¿½ï¿½Î¼ï¿½ï¿½ï¿½
 	$user_handler =& XsnsUserHandler::getInstance();
 	$user =& $user_handler->get($uid);
 	if(!is_object($user) || $user->getVar('level') < 1){
@@ -48,4 +48,3 @@ function dispatch()
 //------------------------------------------------------------------------------
 
 }
-?>

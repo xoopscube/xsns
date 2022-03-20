@@ -13,7 +13,7 @@ function dispatch()
 		redirect_header(XOOPS_URL, 2, _NOPERM);
 	}
 	
-	// ¥³¥ß¥å¥Ë¥Æ¥£¤Î¼èÆÀ
+	// ï¿½ï¿½ï¿½ß¥ï¿½Ë¥Æ¥ï¿½ï¿½Î¼ï¿½ï¿½ï¿½
 	$perm = XSNS_AUTH_XOOPS_ADMIN | XSNS_AUTH_ADMIN;
 	$commu_handler =& XsnsCommunityHandler::getInstance();
 	$community =& $commu_handler->get($cid);
@@ -21,7 +21,7 @@ function dispatch()
 		redirect_header(XOOPS_URL, 2, _NOPERM);
 	}
 	
-	// ÆþÎÏ¥Ç¡¼¥¿¤Î¥Á¥§¥Ã¥¯
+	// ï¿½ï¿½ï¿½Ï¥Ç¡ï¿½ï¿½ï¿½ï¿½Î¥ï¿½ï¿½ï¿½ï¿½Ã¥ï¿½
 	$name = $this->getTextRequest('name');
 	$info = $this->getTextRequest('info');
 	$cat_id = $this->getIntRequest('category');
@@ -40,7 +40,7 @@ function dispatch()
 	
 	$old_name = $community->getVar('name');
 	
-	// ¥³¥ß¥å¥Ë¥Æ¥£¾ðÊó¤Î¹¹¿·
+	// ï¿½ï¿½ï¿½ß¥ï¿½Ë¥Æ¥ï¿½ï¿½ï¿½ï¿½ï¿½Î¹ï¿½ï¿½ï¿½
 	$community->setVar('name', $name);
 	$community->setVar('info', $info);
 	$community->setVar('c_commu_category_id', $cat_id);
@@ -50,7 +50,7 @@ function dispatch()
 	
 	if(($cid = $commu_handler->insert($community)) && $category_handler->updateSelector()){
 		
-		// ²èÁü¤Î¥¢¥Ã¥×¥í¡¼¥É
+		// ï¿½ï¿½ï¿½ï¿½ï¿½Î¥ï¿½ï¿½Ã¥×¥ï¿½ï¿½ï¿½
 		$image_handler =& XsnsImageHandler::getInstance();
 		$image_handler->setFormLimit(1);
 		if($image_handler->uploadImageTemp('image')){
@@ -63,4 +63,3 @@ function dispatch()
 }
 
 }
-?>

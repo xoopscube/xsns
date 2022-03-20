@@ -20,7 +20,7 @@ function dispatch()
 		redirect_header(XOOPS_URL, 2, _NOPERM);
 	}
 	
-	// ¥³¥ß¥å¥Ë¥Æ¥£¤Î¼èÆÀ
+	// ï¿½ï¿½ï¿½ß¥ï¿½Ë¥Æ¥ï¿½ï¿½Î¼ï¿½ï¿½ï¿½
 	$perm = XSNS_AUTH_XOOPS_ADMIN | XSNS_AUTH_ADMIN;
 	$commu_handler =& XsnsCommunityHandler::getInstance();
 	$community =& $commu_handler->get($cid);
@@ -30,23 +30,23 @@ function dispatch()
 	
 	$commu_vars = array('id' => $cid, 'name' => $community->getVar('name'));
 	
-	// ¥³¥ß¥å¥Ë¥Æ¥£¥á¥ó¥Ð¡¼°ìÍ÷¤Î¼èÆÀ
+	// ï¿½ï¿½ï¿½ß¥ï¿½Ë¥Æ¥ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î¼ï¿½ï¿½ï¿½
 	$c_member_obj_list =& $community->getMemberObjects($limit, $start);
 	$pager = $this->getPageSelector(XSNS_URL_MEMBER."&".XSNS_ACTION_ARG."=edit&cid=".$cid, 
 						$start, $limit, count($c_member_obj_list), $community->getMemberCount());
 	
-	// ´ÉÍý¹àÌÜ
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	$menu_list = array(
-		0 => array(	// ¥á¥ó¥Ð¡¼
+		0 => array(	// ï¿½ï¿½ï¿½Ð¡ï¿½
 			0 => _MD_XSNS_MEMBER_LEAVE,
 			1 => _MD_XSNS_MEMBER_SET_ADMIN,
 			2 => _MD_XSNS_MEMBER_SET_SUB_ADMIN,
 		),
-		1 => array(	// Éû´ÉÍý¼Ô
+		1 => array(	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			0 => _MD_XSNS_MEMBER_LEAVE,
 			1 => _MD_XSNS_MEMBER_SET_ADMIN,
 		),
-		2 => array(	// ¾µÇ§ÂÔ¤Á¤Î¥á¥ó¥Ð¡¼
+		2 => array(	// ï¿½ï¿½Ç§ï¿½Ô¤ï¿½ï¿½Î¥ï¿½ï¿½Ð¡ï¿½
 			0 => _MD_XSNS_MEMBER_LEAVE,
 		),
 	);
@@ -64,20 +64,20 @@ function dispatch()
 		$c_member_list[$mid] =& $c_member_obj->getInfo();
 		$c_member_list[$mid]['form_edit'] = $this->getFormHeader('post', 'member', 'request', false, array('cid'=>$cid, 'uid'=>$mid));
 		
-		// ÂÐ¾Ý¥á¥ó¥Ð¡¼¤¬¼«Ê¬¼«¿È(´ÉÍý¼Ô)¤Î¾ì¹ç ¢ª ²¿¤âÉ½¼¨¤·¤Ê¤¤
+		// ï¿½Ð¾Ý¥ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½Ê¬ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)ï¿½Î¾ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½É½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¤ï¿½
 		if($mid==$own_uid){
 			$c_member_list[$mid]['is_editable'] = false;
 		}
 		else{
-			// XOOPS´ÉÍý¼Ô¤Ç¡¢¥³¥ß¥å¥Ë¥Æ¥£¤Î´ÉÍý¼Ô¤Ç¤Ê¤¤¾ì¹ç ¢ª [Âà²ñ¤µ¤»¤ë]¤À¤±¤òÉ½¼¨
+			// XOOPSï¿½ï¿½ï¿½ï¿½ï¿½Ô¤Ç¡ï¿½ï¿½ï¿½ï¿½ß¥ï¿½Ë¥Æ¥ï¿½ï¿½Î´ï¿½ï¿½ï¿½ï¿½Ô¤Ç¤Ê¤ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ [ï¿½ï¿½ñ¤µ¤ï¿½ï¿½ï¿½]ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É½ï¿½ï¿½
 			if($xoopsUserIsAdmin && !$is_commu_admin){
 				$menu = $menu_list[2];
 			}
-			// ÂÐ¾Ý¥á¥ó¥Ð¡¼¤¬Éû´ÉÍý¼Ô¤Î¾ì¹ç ¢ª [Éû´ÉÍý¼Ô¤Ë»ØÌ¾]°Ê³°¤Î¹àÌÜ¤òÉ½¼¨
+			// ï¿½Ð¾Ý¥ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¤Î¾ï¿½ï¿½ ï¿½ï¿½ [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¤Ë»ï¿½Ì¾]ï¿½Ê³ï¿½ï¿½Î¹ï¿½ï¿½Ü¤ï¿½É½ï¿½ï¿½
 			elseif($mid == $uid_sub_admin){
 				$menu = $menu_list[1];
 			}
-			// ÂÐ¾Ý¥á¥ó¥Ð¡¼¤¬ÄÌ¾ï¤Î¥á¥ó¥Ð¡¼¤Î¾ì¹ç ¢ª ¤¹¤Ù¤Æ¤Î¹àÌÜ¤òÉ½¼¨
+			// ï¿½Ð¾Ý¥ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½Ì¾ï¿½Î¥ï¿½ï¿½Ð¡ï¿½ï¿½Î¾ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Ù¤Æ¤Î¹ï¿½ï¿½Ü¤ï¿½É½ï¿½ï¿½
 			else{
 				$menu = $menu_list[0];
 			}
@@ -94,4 +94,3 @@ function dispatch()
 //------------------------------------------------------------------------------
 
 }
-?>

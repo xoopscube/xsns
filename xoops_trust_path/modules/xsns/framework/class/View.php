@@ -6,7 +6,7 @@ class XsnsView
 	var $context;
 	var $args;
 	
-	function XsnsView(&$context, $args)
+	function __construct(&$context, $args)
 	{
 		global $xoopsTpl;
 		$this->tpl =& $xoopsTpl;
@@ -19,5 +19,3 @@ class XsnsView
 	}
 
 }
-
-?>

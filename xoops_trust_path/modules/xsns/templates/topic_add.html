@@ -5,8 +5,10 @@
 
 <table class="outer topic">
 
-<tr class="even"><th colspan="2">[<{$commu.name}>] <{$smarty.const._MD_XSNS_TITLE_TOPIC_ADD}></th></tr>
-<tr class="head"><td colspan="2" style="text-align:right;"><{$smarty.const._MD_XSNS_REQUIRED_ITEM_DESC}></td></tr>
+<tr class="even">
+    <th colspan="2">[<{$commu.name}>] <{$smarty.const._MD_XSNS_TITLE_TOPIC_ADD}></th></tr>
+<tr class="head">
+    <td colspan="2" style="text-align:right;"><{$smarty.const._MD_XSNS_REQUIRED_ITEM_DESC}></td></tr>
 
 <{if $errors|@count > 0}>
 <tr class="head"><td colspan="2" class="centerH">
@@ -82,7 +84,7 @@
 <tr class="foot">
 <td colspan="2" class="submitFrame">
 <div style="text-align:left; padding:10px 50px 10px 50px;"><{$smarty.const._MD_XSNS_TOPIC_ADD_NOTICE}></div>
-<div><input type="submit" class="submit" value="<{$smarty.const._MD_XSNS_BTN_ADD}>"></div>
+<div><input type="submit" class="ui-button" value="<{$smarty.const._MD_XSNS_BTN_ADD}>"></div>
 </td>
 </tr>
 

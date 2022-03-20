@@ -347,4 +347,3 @@ define('_MD_XSNS_PROFILE_AVATAR_EDIT', 'Avatar edit');
 define('_MD_XSNS_PROFILE_AVATAR_SELECT', 'Avatar is selected from the list. ');
 define('_MD_XSNS_PROFILE_AVATAR_UPLOAD_NG', 'It failed in the uploading of avatar.');
 
-?>

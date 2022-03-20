@@ -12,21 +12,21 @@ function dispatch()
 	$mode = $this->context->getAttribute('mode');
 	
 	switch($mode){
-		case 0:		// ¶¯À©Âà²ñ
+		case 0:		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			$page = array(
 				'lang_req_title' => _MD_XSNS_TITLE_MEMBER_REQUEST_LEAVE,
 				'lang_req_desc' => _MD_XSNS_MEMBER_REQUEST_LEAVE_DESC,
 				'target_act' => 'leave_exec',
 			);
 			break;
-		case 1:		// ´ÉÍý¼Ô¸òÂå
+		case 1:		// ï¿½ï¿½ï¿½ï¿½ï¿½Ô¸ï¿½ï¿½ï¿½
 			$page = array(
 				'lang_req_title' => _MD_XSNS_TITLE_MEMBER_REQUEST_ADMIN,
 				'lang_req_desc' => _MD_XSNS_MEMBER_REQUEST_ADMIN_DESC,
 				'target_act' => 'admin_exec',
 			);
 			break;
-		case 2:	// Éû´ÉÍý¼Ô¤Ë»ØÌ¾
+		case 2:	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¤Ë»ï¿½Ì¾
 			$page = array(
 				'lang_req_title' => _MD_XSNS_TITLE_MEMBER_REQUEST_SUB_ADMIN,
 				'lang_req_desc' => _MD_XSNS_MEMBER_REQUEST_SUB_ADMIN_DESC,
@@ -60,4 +60,3 @@ function dispatch()
 	require_once XOOPS_ROOT_PATH.'/footer.php';
 }
 }
-?>
