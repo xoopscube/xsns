@@ -1,6 +1,8 @@
 <?php
+
 class Xsns_List_View extends Xsns_Topic_View
 {
+
 function dispatch()
 {
 	require XSNS_FRAMEWORK_DIR.'/global.php';
@@ -27,5 +29,5 @@ function dispatch()
 	
 	require_once XOOPS_ROOT_PATH.'/footer.php';
 }
+
 }
-?>

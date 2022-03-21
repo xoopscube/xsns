@@ -126,9 +126,9 @@ define('_MD_XSNS_INDEX_CATEGORY_DEFAULT', 'Please select');
 define('_MD_XSNS_INDEX_COMMU_COUNT0', 'The groups are not found.');
 
 define('_MD_XSNS_INDEX_PUBLIC', 'Group Type');
-define('_MD_XSNS_INDEX_PUBLIC_L1', '(Public Group) Anyone can join. Forum: Public');
-define('_MD_XSNS_INDEX_PUBLIC_L2', "(Public Group) Members must be approved by the group's manager. Forum: Public");
-define('_MD_XSNS_INDEX_PUBLIC_L3', "(Private Group) Members must be approved by the group's manager. Forum: Private");
+define('_MD_XSNS_INDEX_PUBLIC_L1', 'Public Group - Anyone can join. Forum: Public');
+define('_MD_XSNS_INDEX_PUBLIC_L2', "Public Group - Members must be approved by the group's manager. Forum: Public");
+define('_MD_XSNS_INDEX_PUBLIC_L3', "Private Group - Members must be approved by the group's manager. Forum: Private");
 
 define('_MD_XSNS_INDEX_DEL', 'Delete a Group');
 define('_MD_XSNS_INDEX_DEL_DESC1', 'In order to delete the group, the topic must be deleted entirely.<br>If the topics exist, those after being deleted, please access this page.<br>(The deletion button is indicated.)');

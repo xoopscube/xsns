@@ -9,11 +9,11 @@ define('_AM_XSNS_POST_DATE', 'Posted Date');
 
 define('_AM_XSNS_PERM_ERR', 'Please create the following directory.<br>* Please set the permission of each directory to 777 when you use the UNIX/LINUX server.');
 
-define('_AM_XSNS_NOTICE_MYPAGE', '<span style="color:#ff0000;">Because PHP is executed with safe mode environment, replacement processing of the my page could not be executed.</span>');
+define('_AM_XSNS_NOTICE_MYPAGE', '<div class="error">Because PHP is executed with safe mode environment, replacement processing of the my page could not be executed.</div>');
 
-define('_AM_XSNS_NOTICE_FILE_PATH', '<span style="color:#ff0000;">The uploading directory of the image/file has been inside the open directory.<br>Because of security, we recommend that it modifies outside the open directory.</span>');
+define('_AM_XSNS_NOTICE_FILE_PATH', '<div class="error"">The uploading directory of the image/file has been inside the open directory.<br>Because of security, we recommend that it modifies outside the open directory.</div');
 
-define('_AM_XSNS_GD_ERR_NONE', '<span style="color:#ff0000;">Because the GD library is not installed, the uploading function of the image cannot be used. </span>');
+define('_AM_XSNS_GD_ERR_NONE', '<div class="error">Because the GD library is not installed, the uploading function of the image cannot be used. </div>');
 define('_AM_XSNS_GD_ERR_GIF', 'The GIF image is not supported. ');
 define('_AM_XSNS_GD_ERR_JPG', 'The JPEG image is not supported. ');
 define('_AM_XSNS_GD_ERR_PNG', 'The PNG image is not supported. ');

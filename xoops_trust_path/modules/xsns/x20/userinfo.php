@@ -1,6 +1,6 @@
 <?php
 
-// for XOOPS 2.0.x
+// for XOOPS2
 
 require_once 'mainfile.php';
 

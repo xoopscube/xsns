@@ -31,11 +31,11 @@ class Xsns_Category_del_exec_Action extends Xsns_Admin_Action
                 redirect_header(XSNS_URL_ADMIN, 2, _NOPERM);
             }
 
-            // �楫�ƥ���κ��
+            // Delete medium category
             $criteria = new Criteria('c_commu_category_parent_id', $id);
             $cat_obj_list =& $cat_handler->getObjects($criteria);
             foreach ($cat_obj_list as $cat_obj) {
-                // �����ƥ���κ��
+                // Delete small categories
                 $cat_handler->delete($cat_obj);
             }
             $ret = $cat_parent_handler->delete($cat_parent);
@@ -45,7 +45,7 @@ class Xsns_Category_del_exec_Action extends Xsns_Admin_Action
                 redirect_header(XSNS_URL_ADMIN, 2, _NOPERM);
             }
 
-            // �����ƥ���κ��
+            // Delete small categories
             $ret = $cat_handler->delete($cat);
         }
 
@@ -54,6 +54,5 @@ class Xsns_Category_del_exec_Action extends Xsns_Admin_Action
         }
         redirect_header(XSNS_URL_ADMIN . '?' . XSNS_ACTION_ARG . '=category', 2, $msg_ng);
     }
-//------------------------------------------------------------------------------
 
 }

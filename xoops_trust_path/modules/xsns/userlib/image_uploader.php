@@ -6,13 +6,11 @@ require_once XOOPS_ROOT_PATH.'/class/uploader.php';
 class XsnsImageUploader extends XoopsMediaUploader
 {
 
-	//--------------------------------------------------------------------------
 
 	function getExt()
 	{
 		return $this->ext;
 	}
-	//--------------------------------------------------------------------------
 
 	/**
 	 * Is the picture the right width?
@@ -34,7 +32,6 @@ class XsnsImageUploader extends XoopsMediaUploader
 		}
 		return true;
 	}
-	//--------------------------------------------------------------------------
 
 	/**
 	 * Is the picture the right height?
@@ -56,7 +53,6 @@ class XsnsImageUploader extends XoopsMediaUploader
 		}
 		return true;
 	}
-	//--------------------------------------------------------------------------
 
 	function checkFileNameLength($filename)
 	{
@@ -66,6 +62,5 @@ class XsnsImageUploader extends XoopsMediaUploader
 		return true;
 	}
 	
-	//--------------------------------------------------------------------------
-	
+
 }

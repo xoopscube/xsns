@@ -1,5 +1,4 @@
-/* p2 - °úÍÑ¥ì¥¹ÈÖ¤ò¥Ý¥Ã¥×¥¢¥Ã¥×¤¹¤ë¤¿¤á¤ÎJavaScript */
-
+/* p2 - ï¿½ï¿½ï¿½Ñ¥ì¥¹ï¿½Ö¤ï¿½Ý¥Ã¥×¥ï¿½ï¿½Ã¥×¤ï¿½ï¿½ë¤¿ï¿½ï¿½ï¿½JavaScript */
 // isSafari?
 // @return  boolean
 function isSafari() {
@@ -12,16 +11,16 @@ function isSafari() {
 }
 
 //=============================
-// ÀßÄê
+// ï¿½ï¿½ï¿½ï¿½
 //=============================
-cDelayShowSec = 0.1 * 1000;	// ¥ì¥¹¥Ý¥Ã¥×¥¢¥Ã¥×¤òÉ½¼¨¤¹¤ëÃÙ±ä»þ´Ö¡£
-cDelayHideSec = 0.3 * 1000;	// ¥ì¥¹¥Ý¥Ã¥×¥¢¥Ã¥×¤òÈóÉ½¼¨¤Ë¤¹¤ëÃÙ±ä»þ´Ö
+cDelayShowSec = 0.1 * 1000;	// ï¿½ì¥¹ï¿½Ý¥Ã¥×¥ï¿½ï¿½Ã¥×¤ï¿½É½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù±ï¿½ï¿½ï¿½Ö¡ï¿½
+cDelayHideSec = 0.3 * 1000;	// ï¿½ì¥¹ï¿½Ý¥Ã¥×¥ï¿½ï¿½Ã¥×¤ï¿½ï¿½ï¿½É½ï¿½ï¿½ï¿½Ë¤ï¿½ï¿½ï¿½ï¿½Ù±ï¿½ï¿½ï¿½ï¿½
 
 //=============================
-// ÆâÉôÊÑ¿ô
+// ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¿ï¿½
 //=============================
-// gPOPS -- ResPopUp ¥ª¥Ö¥¸¥§¥¯¥È¤ò³ÊÇ¼¤¹¤ëÇÛÎó¡£
-// ÇÛÎó gPOPS ¤ÎÍ×ÁÇ¿ô¤¬¡¢¸½ºßÀ¸¤­¤Æ¤¤¤ë ResPopUp ¥ª¥Ö¥¸¥§¥¯¥È¤Î¿ô¤È¤Ê¤ë¡£
+// gPOPS -- ResPopUp ï¿½ï¿½ï¿½Ö¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¤ï¿½ï¿½Ç¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+// ï¿½ï¿½ï¿½ï¿½ gPOPS ï¿½ï¿½ï¿½ï¿½ï¿½Ç¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¤ï¿½ï¿½ï¿½ ResPopUp ï¿½ï¿½ï¿½Ö¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¤Î¿ï¿½ï¿½È¤Ê¤ë¡£
 gPOPS = new Array(); 
 
 gShowTimerIds = new Object();
@@ -32,22 +31,22 @@ gOnPopSpaceId = null;
 zNum = 0;
 
 //=============================
-// ¥¹¥¿¥Æ¥£¥Ã¥¯¥á¥½¥Ã¥ÉÄêµÁ
+// ï¿½ï¿½ï¿½ï¿½ï¿½Æ¥ï¿½ï¿½Ã¥ï¿½ï¿½á¥½ï¿½Ã¥ï¿½ï¿½ï¿½ï¿½
 //=============================
 
-// ResPopUp ¥ª¥Ö¥¸¥§¥¯¥È¤ò¼è¤ê°·¤¦
+// ResPopUp ï¿½ï¿½ï¿½Ö¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¤ï¿½ï¿½ê°·ï¿½ï¿½
 var ResPopUpManager = {
 
-	// ÇÛÎó gPOPS ¤Ë¿·µ¬ ResPopUp ¥ª¥Ö¥¸¥§¥¯¥È ¤òÄÉ²Ã¤¹¤ë
+	// ï¿½ï¿½ï¿½ï¿½ gPOPS ï¿½Ë¿ï¿½ï¿½ï¿½ ResPopUp ï¿½ï¿½ï¿½Ö¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½É²Ã¤ï¿½ï¿½ï¿½
 	// @return  ResPopUp
 	addResPopUp: function (popId) {
 		zNum++;
 		var aResPopUp = new ResPopUp(popId);
-		// gPOPS.push(aResPopUp); Array.push ¤ÏIE5.5Ì¤ËþÌ¤ÂÐ±þ¤Ê¤Î¤ÇÂåÂØ½èÍý
+		// gPOPS.push(aResPopUp); Array.push ï¿½ï¿½IE5.5Ì¤ï¿½ï¿½Ì¤ï¿½Ð±ï¿½ï¿½Ê¤Î¤ï¿½ï¿½ï¿½ï¿½Ø½ï¿½ï¿½ï¿½
 		return gPOPS[gPOPS.length] = aResPopUp;
 	},
 
-	// ÇÛÎó gPOPS ¤«¤é »ØÄê¤Î ResPopUp ¥ª¥Ö¥¸¥§¥¯¥È ¤òºï½ü¤¹¤ë
+	// ï¿½ï¿½ï¿½ï¿½ gPOPS ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ResPopUp ï¿½ï¿½ï¿½Ö¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	// @return  boolean
 	rmResPopUp: function (popId) {
 		for (i = 0; i < gPOPS.length; i++) {
@@ -59,7 +58,7 @@ var ResPopUpManager = {
 		return false;
 	},
 
-	// ÇÛÎó gPOPS ¤Ç»ØÄê popId ¤Î ResPopUp ¥ª¥Ö¥¸¥§¥¯¥È¤òÊÖ¤¹
+	// ï¿½ï¿½ï¿½ï¿½ gPOPS ï¿½Ç»ï¿½ï¿½ï¿½ popId ï¿½ï¿½ ResPopUp ï¿½ï¿½ï¿½Ö¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¤ï¿½ï¿½Ö¤ï¿½
 	// @return  ResPopUp|false
 	getResPopUp: function (popId) {
 		for (i = 0; i < gPOPS.length; i++) {
@@ -72,20 +71,20 @@ var ResPopUpManager = {
 }
 
 //=============================
-// ¥¯¥é¥¹ÄêµÁ
+// ï¿½ï¿½ï¿½é¥¹ï¿½ï¿½ï¿½
 //=============================
 
-// ¥¯¥é¥¹ ¥ì¥¹¥Ý¥Ã¥×¥¢¥Ã¥×¡ÊÌ¾Á°¤ò ResPopup ¤Ë¤·¤¿¤¤µ¤»ý¤Á[Uu]¡Ë
+// ï¿½ï¿½ï¿½é¥¹ ï¿½ì¥¹ï¿½Ý¥Ã¥×¥ï¿½ï¿½Ã¥×¡ï¿½Ì¾ï¿½ï¿½ï¿½ï¿½ ResPopup ï¿½Ë¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½[Uu]ï¿½ï¿½
 function ResPopUp(popId)
 {
 	this.popId = popId;
 	this.zNum = zNum;
 	this.hideTimerID = 0;
 	
-	// IEÍÑ
+	// IEï¿½ï¿½
 	if (document.all) {
 		this.popOBJ = document.all[this.popId];
-	// DOMÂÐ±þÍÑ¡ÊMozilla¡Ë
+	// DOMï¿½Ð±ï¿½ï¿½Ñ¡ï¿½Mozillaï¿½ï¿½
 	} else if (document.getElementById) {
 		this.popOBJ = document.getElementById(this.popId);
 	}
@@ -93,18 +92,18 @@ function ResPopUp(popId)
 
 ResPopUp.prototype = {
 	
-	// ¥ì¥¹¥Ý¥Ã¥×¥¢¥Ã¥×¤Î°ÌÃÖ¤ò¥»¥Ã¥È¤¹¤ë
+	// ï¿½ì¥¹ï¿½Ý¥Ã¥×¥ï¿½ï¿½Ã¥×¤Î°ï¿½ï¿½Ö¤ò¥»¥Ã¥È¤ï¿½ï¿½ï¿½
 	// @return  void
 	setPosResPopUp: function (x, y)
 	{
-		var x_adjust = 10;	// x¼´°ÌÃÖÄ´À°
-		var y_adjust = -68;	// y¼´°ÌÃÖÄ´À°
+		var x_adjust = 10;	// xï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä´ï¿½ï¿½
+		var y_adjust = -68;	// yï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä´ï¿½ï¿½
 	
-		if (document.all) { // IEÍÑ
+		if (document.all) { // IEï¿½ï¿½
 			var body = (document.compatMode=='CSS1Compat') ? document.documentElement : document.body;
-			//x = body.scrollLeft + event.clientX; // ¸½ºß¤Î¥Þ¥¦¥¹°ÌÃÖ¤ÎXºÂÉ¸
-			//y = body.scrollTop + event.clientY; // ¸½ºß¤Î¥Þ¥¦¥¹°ÌÃÖ¤ÎYºÂÉ¸
-			this.popOBJ.style.pixelLeft  = x + x_adjust; //¥Ý¥Ã¥×¥¢¥Ã¥×°ÌÃÖ
+			//x = body.scrollLeft + event.clientX; // ï¿½ï¿½ï¿½ß¤Î¥Þ¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¤ï¿½Xï¿½ï¿½É¸
+			//y = body.scrollTop + event.clientY; // ï¿½ï¿½ï¿½ß¤Î¥Þ¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¤ï¿½Yï¿½ï¿½É¸
+			this.popOBJ.style.pixelLeft  = x + x_adjust; //ï¿½Ý¥Ã¥×¥ï¿½ï¿½Ã¥×°ï¿½ï¿½ï¿½
 			this.popOBJ.style.pixelTop  = y + y_adjust;
 		
 			if (this.popOBJ.offsetTop + this.popOBJ.offsetHeight > body.scrollTop + body.clientHeight) {
@@ -114,10 +113,10 @@ ResPopUp.prototype = {
 				this.popOBJ.style.pixelTop = body.scrollTop -2;
 			}
 		
-		} else if (document.getElementById) { // DOMÂÐ±þÍÑ¡ÊMozilla¡Ë
-			//x = ev.pageX; // ¸½ºß¤Î¥Þ¥¦¥¹°ÌÃÖ¤ÎXºÂÉ¸
-			//y = ev.pageY; // ¸½ºß¤Î¥Þ¥¦¥¹°ÌÃÖ¤ÎYºÂÉ¸
-			this.popOBJ.style.left = x + x_adjust + "px"; //¥Ý¥Ã¥×¥¢¥Ã¥×°ÌÃÖ
+		} else if (document.getElementById) { // DOMï¿½Ð±ï¿½ï¿½Ñ¡ï¿½Mozillaï¿½ï¿½
+			//x = ev.pageX; // ï¿½ï¿½ï¿½ß¤Î¥Þ¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¤ï¿½Xï¿½ï¿½É¸
+			//y = ev.pageY; // ï¿½ï¿½ï¿½ß¤Î¥Þ¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¤ï¿½Yï¿½ï¿½É¸
+			this.popOBJ.style.left = x + x_adjust + "px"; //ï¿½Ý¥Ã¥×¥ï¿½ï¿½Ã¥×°ï¿½ï¿½ï¿½
 			this.popOBJ.style.top = y + y_adjust + "px";
 		
 			if ((this.popOBJ.offsetTop + this.popOBJ.offsetHeight) > (window.pageYOffset + window.innerHeight)) {
@@ -129,7 +128,7 @@ ResPopUp.prototype = {
 		}
 	},
 
-	// ¥ì¥¹¥Ý¥Ã¥×¥¢¥Ã¥×¤òÉ½¼¨¤¹¤ë
+	// ï¿½ì¥¹ï¿½Ý¥Ã¥×¥ï¿½ï¿½Ã¥×¤ï¿½É½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	// @return  void
 	showResPopUp: function (x, y)
 	{
@@ -142,28 +141,28 @@ ResPopUp.prototype = {
 	
 		this.opacity = 1;
 		
-		this.popOBJ.style.visibility = "visible"; // ¥ì¥¹¥Ý¥Ã¥×¥¢¥Ã¥×É½¼¨
+		this.popOBJ.style.visibility = "visible"; // ï¿½ì¥¹ï¿½Ý¥Ã¥×¥ï¿½ï¿½Ã¥ï¿½É½ï¿½ï¿½
 		this.popOBJ.onmouseout = function () {
 			hideResPopUp(this.id)
 		}
 	},
 
-	// ¥ì¥¹¥Ý¥Ã¥×¥¢¥Ã¥×¤òÈóÉ½¼¨¥¿¥¤¥Þ¡¼¤¹¤ë
+	// ï¿½ì¥¹ï¿½Ý¥Ã¥×¥ï¿½ï¿½Ã¥×¤ï¿½ï¿½ï¿½É½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ¡ï¿½ï¿½ï¿½ï¿½ï¿½
 	// @return  void
 	hideResPopUp: function ()
 	{
-		// °ìÄê»þ´ÖÉ½¼¨¤·¤¿¤é¾Ã¤¹
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¤ï¿½
 		this.hideTimerID = setTimeout("doHideResPopUp('" + this.popId + "')", cDelayHideSec);
 	},
 
-	// ¥ì¥¹¥Ý¥Ã¥×¥¢¥Ã¥×¤òÈóÉ½¼¨¤Ë¤¹¤ë ½çÈÖÂÔ¤Á
+	// ï¿½ì¥¹ï¿½Ý¥Ã¥×¥ï¿½ï¿½Ã¥×¤ï¿½ï¿½ï¿½É½ï¿½ï¿½ï¿½Ë¤ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½
 	// @return  void
 	doHideResPopUp: function ()
 	{
 		for (i = 0; i < gPOPS.length; i++) {
-			// ¼«Ê¬¤è¤êÉ½¼¨½ç°Ì¤Î¹â¤¤¤Î¤¬¤¢¤ì¤Ð¡¢¾Ã¤¹¤Î¤òÃÙ±ä¤¹¤ë
+			// ï¿½ï¿½Ê¬ï¿½ï¿½ï¿½É½ï¿½ï¿½ï¿½ï¿½Ì¤Î¹â¤¤ï¿½Î¤ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½Ã¤ï¿½ï¿½Î¤ï¿½ï¿½Ù±ä¤¹ï¿½ï¿½
 			if (this.zNum < gPOPS[i].zNum) {
-				// °ìÄê»þ´ÖÉ½¼¨¤·¤¿¤é¾Ã¤¹
+				// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¤ï¿½
 				this.hideTimerID = setTimeout("hideResPopUp('" + this.popId + "')", cDelayHideSec);
 				return;
 			}
@@ -171,25 +170,25 @@ ResPopUp.prototype = {
 		this.nowHideResPopUp();
 	},
 
-	// ¥ì¥¹¥Ý¥Ã¥×¥¢¥Ã¥×¤òÈóÉ½¼¨¤Ë¤¹¤ë Â¨
+	// ï¿½ì¥¹ï¿½Ý¥Ã¥×¥ï¿½ï¿½Ã¥×¤ï¿½ï¿½ï¿½É½ï¿½ï¿½ï¿½Ë¤ï¿½ï¿½ï¿½ Â¨
 	// @return  void
 	nowHideResPopUp: function ()
 	{
 		delete gHideTimerIds[this.popId];
 		if(this.popOBJ != null){
-			this.popOBJ.style.visibility = "hidden"; // ¥ì¥¹¥Ý¥Ã¥×¥¢¥Ã¥×ÈóÉ½¼¨
+			this.popOBJ.style.visibility = "hidden"; // ï¿½ì¥¹ï¿½Ý¥Ã¥×¥ï¿½ï¿½Ã¥ï¿½ï¿½ï¿½É½ï¿½ï¿½
 		}
 		ResPopUpManager.rmResPopUp(this.popId);
 	}
 }
 
 //=============================
-// ´Ø¿ôÄêµÁ
+// ï¿½Ø¿ï¿½ï¿½ï¿½ï¿½
 //=============================
 /**
  * arraySplice
  *
- * anArray.splice(i, 1); Array.splice ¤ÏIE5.5Ì¤ËþÌ¤ÂÐ±þ¤Ê¤Î¤ÇÂåÂØ½èÍý
+ * anArray.splice(i, 1); Array.splice ï¿½ï¿½IE5.5Ì¤ï¿½ï¿½Ì¤ï¿½Ð±ï¿½ï¿½Ê¤Î¤ï¿½ï¿½ï¿½ï¿½Ø½ï¿½ï¿½ï¿½
  * @return array
  */
 function arraySplice(anArray, i)
@@ -205,24 +204,24 @@ function arraySplice(anArray, i)
 }
 
 /**
- * ¥ì¥¹¥Ý¥Ã¥×¥¢¥Ã¥×¤òÉ½¼¨¥¿¥¤¥Þ¡¼¤¹¤ë
+ * ï¿½ì¥¹ï¿½Ý¥Ã¥×¥ï¿½ï¿½Ã¥×¤ï¿½É½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ¡ï¿½ï¿½ï¿½ï¿½ï¿½
  *
- * °úÍÑ¥ì¥¹ÈÖ¤Ë onMouseover ¤Ç¸Æ¤Ó½Ð¤µ¤ì¤ë
- * [memo] Âè°ì°ú¿ô¤òevent¥ª¥Ö¥¸¥§¥¯¥È¤Ë¤·¤¿Êý¤¬¤è¤¤¤À¤í¤¦¤«¡£
+ * ï¿½ï¿½ï¿½Ñ¥ì¥¹ï¿½Ö¤ï¿½ onMouseover ï¿½Ç¸Æ¤Ó½Ð¤ï¿½ï¿½ï¿½ï¿½
+ * [memo] ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½eventï¿½ï¿½ï¿½Ö¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¤Ë¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½è¤¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  *
- * @param  boolean  onPopSpace  ¥Ý¥Ã¥×¥¢¥Ã¥×¥¹¥Ú¡¼¥¹¤Ø¤Îonmouseover¤Ç¤Î¸Æ¤Ó½Ð¤·¤Ê¤é¡£½ÅÊ£¸Æ¤Ó½Ð¤·²óÈò¤Î¤¿¤á¡£
+ * @param  boolean  onPopSpace  ï¿½Ý¥Ã¥×¥ï¿½ï¿½Ã¥×¥ï¿½ï¿½Ú¡ï¿½ï¿½ï¿½ï¿½Ø¤ï¿½onmouseoverï¿½Ç¤Î¸Æ¤Ó½Ð¤ï¿½ï¿½Ê¤é¡£ï¿½ï¿½Ê£ï¿½Æ¤Ó½Ð¤ï¿½ï¿½ï¿½ï¿½ï¿½Î¤ï¿½ï¿½á¡£
  */
 function showResPopUp(popId, ev, onPopSpace)
 {
-	if (popId.indexOf("-") != -1) { return; } // Ï¢ÈÖ (>>1-100) ¤ÏÈóÂÐ±þ¤Ê¤Î¤ÇÈ´¤±¤ë
+	if (popId.indexOf("-") != -1) { return; } // Ï¢ï¿½ï¿½ (>>1-100) ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½Ê¤Î¤ï¿½È´ï¿½ï¿½ï¿½ï¿½
 	
-	if (document.all) { // IEÍÑ
+	if (document.all) { // IEï¿½ï¿½
 		var body = (document.compatMode=='CSS1Compat') ? document.documentElement : document.body;
-		var x = body.scrollLeft + event.clientX; // ¸½ºß¤Î¥Þ¥¦¥¹°ÌÃÖ¤ÎXºÂÉ¸
-		var y = body.scrollTop + event.clientY; // ¸½ºß¤Î¥Þ¥¦¥¹°ÌÃÖ¤ÎYºÂÉ¸
-	} else if (document.getElementById) { // DOMÂÐ±þÍÑ¡ÊMozilla¡Ë
-		var x = ev.pageX; // ¸½ºß¤Î¥Þ¥¦¥¹°ÌÃÖ¤ÎXºÂÉ¸
-		var y = ev.pageY; // ¸½ºß¤Î¥Þ¥¦¥¹°ÌÃÖ¤ÎYºÂÉ¸
+		var x = body.scrollLeft + event.clientX; // ï¿½ï¿½ï¿½ß¤Î¥Þ¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¤ï¿½Xï¿½ï¿½É¸
+		var y = body.scrollTop + event.clientY; // ï¿½ï¿½ï¿½ß¤Î¥Þ¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¤ï¿½Yï¿½ï¿½É¸
+	} else if (document.getElementById) { // DOMï¿½Ð±ï¿½ï¿½Ñ¡ï¿½Mozillaï¿½ï¿½
+		var x = ev.pageX; // ï¿½ï¿½ï¿½ß¤Î¥Þ¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¤ï¿½Xï¿½ï¿½É¸
+		var y = ev.pageY; // ï¿½ï¿½ï¿½ß¤Î¥Þ¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¤ï¿½Yï¿½ï¿½É¸
 	} else {
 		return;
 	}
@@ -234,7 +233,7 @@ function showResPopUp(popId, ev, onPopSpace)
 	var aResPopUp = ResPopUpManager.getResPopUp(popId);
 	if (aResPopUp) {
 		delete gHideTimerIds[popId];
-		if (aResPopUp.hideTimerID) { clearTimeout(aResPopUp.hideTimerID); } // ÈóÉ½¼¨¥¿¥¤¥Þ¡¼¤ò²ò½ü
+		if (aResPopUp.hideTimerID) { clearTimeout(aResPopUp.hideTimerID); } // ï¿½ï¿½É½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ¡ï¿½ï¿½ï¿½ï¿½ï¿½
 
 		if (onPopSpace) {
 			if (gOnPopSpaceId == popId) {
@@ -244,14 +243,14 @@ function showResPopUp(popId, ev, onPopSpace)
 			}
 		}
 		
-		// ºÆÉ½¼¨»þ¤Î zIndex ½èÍý
+		// ï¿½ï¿½É½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ zIndex ï¿½ï¿½ï¿½ï¿½
 		if (aResPopUp.zNum < zNum) {
 			aResPopUp.zNum = ++zNum;
 			aResPopUp.popOBJ.style.zIndex = aResPopUp.zNum;
 		}
 		
 		if (!onPopSpace) {
-			// Safari¤Ç¤Ï¹âÂ®¤Ç¥Þ¥¦¥¹¥ª¡¼¥Ð¡¼¡¢¥Þ¥¦¥¹¥¢¥¦¥È¤¬È¯À¸¤·¤Æ¥Þ¥¦¥¹¤Ë¤Ä¤¤¤Æ¤­¤Æ¤·¤Þ¤¦¡Ê·ù¤Ê»ÅÍÍ¤À¡Ë
+			// Safariï¿½Ç¤Ï¹ï¿½Â®ï¿½Ç¥Þ¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½Þ¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¤ï¿½È¯ï¿½ï¿½ï¿½ï¿½ï¿½Æ¥Þ¥ï¿½ï¿½ï¿½ï¿½Ë¤Ä¤ï¿½ï¿½Æ¤ï¿½ï¿½Æ¤ï¿½ï¿½Þ¤ï¿½ï¿½Ê·ï¿½ï¿½Ê»ï¿½ï¿½Í¤ï¿½ï¿½ï¿½
 			if (!isSafari()) {
 				aResPopUp.setPosResPopUp(x,y);
 			}
@@ -266,14 +265,14 @@ function showResPopUp(popId, ev, onPopSpace)
 	aShowTimer.x = x;
 	aShowTimer.y = y;
 	
-	// °ìÄê»þ´Ö¤·¤¿¤éÉ½¼¨¤¹¤ë
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¤ï¿½ï¿½ï¿½ï¿½ï¿½É½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	aShowTimer.timerID = setTimeout("doShowResPopUp('" + popId + "')", cDelayShowSec);
 	
 	gShowTimerIds[popId] = aShowTimer;
 }
 
 /**
- * ¥ì¥¹¥Ý¥Ã¥×¥¢¥Ã¥×¤òÉ½¼¨¤¹¤ë
+ * ï¿½ì¥¹ï¿½Ý¥Ã¥×¥ï¿½ï¿½Ã¥×¤ï¿½É½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  */
 function doShowResPopUp(popId)
 {
@@ -282,25 +281,25 @@ function doShowResPopUp(popId)
 	
 	var aResPopUp = ResPopUpManager.getResPopUp(popId);
 	if (aResPopUp) {
-		if (aResPopUp.hideTimerID) { clearTimeout(aResPopUp.hideTimerID); } // ÈóÉ½¼¨¥¿¥¤¥Þ¡¼¤ò²ò½ü
+		if (aResPopUp.hideTimerID) { clearTimeout(aResPopUp.hideTimerID); } // ï¿½ï¿½É½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ¡ï¿½ï¿½ï¿½ï¿½ï¿½
 		return;
 	}
 	
-	aResPopUp = ResPopUpManager.addResPopUp(popId); // ¿·¤·¤¤¥Ý¥Ã¥×¥¢¥Ã¥×¤òÄÉ²Ã
+	aResPopUp = ResPopUpManager.addResPopUp(popId); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¥Ã¥×¥ï¿½ï¿½Ã¥×¤ï¿½ï¿½É²ï¿½
 
 	aResPopUp.showResPopUp(x, y);
 }
 
 /**
- * ¥ì¥¹¥Ý¥Ã¥×¥¢¥Ã¥×¤òÈóÉ½¼¨¥¿¥¤¥Þ¡¼¤¹¤ë
+ * ï¿½ì¥¹ï¿½Ý¥Ã¥×¥ï¿½ï¿½Ã¥×¤ï¿½ï¿½ï¿½É½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ¡ï¿½ï¿½ï¿½ï¿½ï¿½
  *
- * °úÍÑ¥ì¥¹ÈÖ¤«¤é onMouseout ¤Ç¸Æ¤Ó½Ð¤µ¤ì¤ë
+ * ï¿½ï¿½ï¿½Ñ¥ì¥¹ï¿½Ö¤ï¿½ï¿½ï¿½ onMouseout ï¿½Ç¸Æ¤Ó½Ð¤ï¿½ï¿½ï¿½ï¿½
  */
 function hideResPopUp(popId)
 {
-	if (popId.indexOf("-") != -1) { return; } // Ï¢ÈÖ (>>1-100) ¤ÏÈóÂÐ±þ¤Ê¤Î¤ÇÈ´¤±¤ë
+	if (popId.indexOf("-") != -1) { return; } // Ï¢ï¿½ï¿½ (>>1-100) ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½Ê¤Î¤ï¿½È´ï¿½ï¿½ï¿½ï¿½
 	
-	if (gShowTimerIds[popId].timerID) { clearTimeout(gShowTimerIds[popId].timerID); } // É½¼¨¥¿¥¤¥Þ¡¼¤ò²ò½ü
+	if (gShowTimerIds[popId].timerID) { clearTimeout(gShowTimerIds[popId].timerID); } // É½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ¡ï¿½ï¿½ï¿½ï¿½ï¿½
 	
 	var aResPopUp = ResPopUpManager.getResPopUp(popId);
 	if (aResPopUp) {
@@ -309,7 +308,7 @@ function hideResPopUp(popId)
 }
 
 /**
- * ¥ì¥¹¥Ý¥Ã¥×¥¢¥Ã¥×¤òÈóÉ½¼¨¤Ë¤¹¤ë
+ * ï¿½ì¥¹ï¿½Ý¥Ã¥×¥ï¿½ï¿½Ã¥×¤ï¿½ï¿½ï¿½É½ï¿½ï¿½ï¿½Ë¤ï¿½ï¿½ï¿½
  */
 function doHideResPopUp(popId)
 {
@@ -320,7 +319,7 @@ function doHideResPopUp(popId)
 }
 
 /**
- * ¥ì¥¹¤ò½ñ¤¯¡Ê¥Æ¥­¥¹¥È¥¨¥ê¥¢¤Ë°úÍÑ¥³¡¼¥É¤òÁÞÆþ¡Ë
+ * ï¿½ì¥¹ï¿½ï¿½ñ¤¯¡Ê¥Æ¥ï¿½ï¿½ï¿½ï¿½È¥ï¿½ï¿½ê¥¢ï¿½Ë°ï¿½ï¿½Ñ¥ï¿½ï¿½ï¿½ï¿½É¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  */
 function Xsns_addResCode(res_id)
 {

@@ -20,7 +20,7 @@ class Xsns_Category_add_exec_Action extends Xsns_Admin_Action
         $mode = $this->getTextRequest('mode');
 
         if ($mode == 'parent') {
-            // �楫�ƥ���κ���
+            // Creating a medium category
             $cat_parent =& $cat_parent_handler->create();
             $cat_parent->setVars(array(
                 'name' => $title,
@@ -33,7 +33,7 @@ class Xsns_Category_add_exec_Action extends Xsns_Admin_Action
             if ($pid < 0) {
                 redirect_header(XSNS_URL_ADMIN, 2, _AM_XSNS_CATEGORY_ADD_NG);
             }
-            // �����ƥ���κ���
+            // Creating small categories
             $cat =& $cat_handler->create();
             $cat->setVars(array(
                 'name' => $title,
