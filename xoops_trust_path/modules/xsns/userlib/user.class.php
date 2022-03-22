@@ -49,7 +49,7 @@ class XsnsUser extends XoopsUser
     function getAvatar()
     {
         //$image_default = '/images/cm_no_avatar.gif';
-        $image_default = 'no_avatar.gif';
+        $image_default = '/no_avatar.gif';
 
         if ($this->getVar('user_avatar') != 'blank.gif') {
             $image_url = XOOPS_UPLOAD_URL . '/' . $this->getVar('user_avatar');

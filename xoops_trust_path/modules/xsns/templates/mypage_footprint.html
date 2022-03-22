@@ -1,31 +1,26 @@
 <div class="ui-dev-mode"><{$smarty.template}></div>
 
+<{if $mydirname}><{include file="db:`$mydirname`_inc_breadcrumbs.html"}><{/if}>
+
+
 <!-- User Menu -->
 <{if $mydirname}><{include file="db:`$mydirname`_inc_mypage_menu.html"}><{/if}>
 
-<table class="outer">
-<th><{$smarty.const._MD_XSNS_TITLE_MYPAGE_FOOTPRINT}></th>
-<tr>
-<td class="head" style="padding:10px 0 10px 10px;">
+
+<h3><{$smarty.const._MD_XSNS_TITLE_MYPAGE_FOOTPRINT}></h3>
+
 <{$smarty.const._MD_XSNS_MYPAGE_FOOTPRINT_DESC|sprintf:"`$user_name`"}>
-</td>
-</tr>
 
-<{if $footprint_count > 0}>
-<tr>
-<td class="even" style="padding:10px 100px 10px 180px;">
+    <{if $footprint_count > 0}>
 
-<div style="padding:0 0 20px;"><{$smarty.const._MD_XSNS_MYPAGE_FOOTPRINT_COUNT}> <b><{$footprint_count|number_format}></b></div>
+    <div layout="column">
+        <div self="my-6">
+            <{$smarty.const._MD_XSNS_MYPAGE_FOOTPRINT_COUNT}> <span class="badge"><{$footprint_count|number_format}></span>
+        </div>
 
-<{foreach item=footprint from=$footprint_list}>
-<{$footprint.time|date_format:"%Y-%m-%d %H:%M:%S"}>&nbsp;&nbsp;<a href="<{$footprint.url}>"><{$footprint.uname}></a><br>
-<{/foreach}>
+        <{foreach item=footprint from=$footprint_list}>
+            <p><{$footprint.time|date_format:"%Y-%m-%d %H:%M:%S"}> <a href="<{$footprint.url}>"><{$footprint.uname}></a></p>
+        <{/foreach}>
 
-</td>
-</tr>
+    </div>
 <{/if}>
-
-</table>
-
-
-

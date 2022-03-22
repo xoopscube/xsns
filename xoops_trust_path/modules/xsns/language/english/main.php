@@ -71,7 +71,7 @@ define('_MD_XSNS_TITLE_MYPAGE', 'My page');
 define('_MD_XSNS_TITLE_MYPAGE_UNAME',"%s's My Page");
 define('_MD_XSNS_TITLE_MYPAGE_FRIEND', 'Friends list');
 define('_MD_XSNS_TITLE_MYPAGE_NEWS', 'Posted Logs');
-define('_MD_XSNS_TITLE_MYPAGE_CONFIG', 'Change in display settings of the modules');
+define('_MD_XSNS_TITLE_MYPAGE_CONFIG', 'Manage modules settings');
 define('_MD_XSNS_TITLE_MYPAGE_FOOTPRINT', 'Access logs');
 define('_MD_XSNS_TITLE_MYPAGE_PROFILE', 'Edit Profile');
 define('_MD_XSNS_TITLE_MYPAGE_INTRO', 'Write an introductory essay');
