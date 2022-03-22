@@ -35,7 +35,8 @@ class Xsns_Commu_list_Action extends Xsns_Mypage_Action
 
         $commu_list = array();
         for ($i = 0; $i < $count; $i++) {
-            $commu_list[] = isset($commu_list_temp[$i]) ? $commu_list_temp[$i] : array('exists' => false);
+            //$commu_list[] = isset($commu_list_temp[$i]) ? $commu_list_temp[$i] : array('exists' => false);
+            $commu_list[] = $commu_list_temp[$i] ?? array('exists' => false);
         }
 
         $pager = $this->getPageSelector(XSNS_URL_MYPAGE . '&' . XSNS_ACTION_ARG . '=commu_list&uid=' . $uid,

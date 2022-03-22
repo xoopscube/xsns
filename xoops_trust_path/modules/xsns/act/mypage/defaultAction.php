@@ -135,7 +135,7 @@ class Xsns_Default_Action extends Xsns_Mypage_Action
 
         // TODO @gigamaster update to XCL7
         if (is_object($xoopsUser)) {
-            $pmlink = "<a href=\"javascript:openWithSelfMain('" . XOOPS_URL . "/pmlite.php?send2=1&amp;to_userid=" . $uid . "', 'pmlite', 450, 380);\"><img src=\"" . XOOPS_URL . "/images/icons/pm.gif\" alt=\"" . sprintf(_SENDPMTO, $user->getVar('uname')) . "\" /></a>";
+            $pmlink = "<a href=\"javascript:openWithSelfMain('" . XOOPS_URL . "/pmlite.php?send2=1&amp;to_userid=" . $uid . "', 'pmlite', 450, 380);\"><img src=\"" . XOOPS_URL . "/images/icons/pm.gif\" alt=\"" . sprintf(_SENDPMTO, $user->getVar('uname')) . "\"></a>";
         } else {
             $pmlink = NULL;
         }
@@ -143,7 +143,7 @@ class Xsns_Default_Action extends Xsns_Mypage_Action
         $userrank = $user->rank();
         if ($userrank['image']) {
             $ranktitle = $userrank['title'];
-            $rankimage = '<img src="' . XOOPS_UPLOAD_URL . '/' . $userrank['image'] . '" alt="" />';
+            $rankimage = '<img src="' . XOOPS_UPLOAD_URL . '/' . $userrank['image'] . '" alt="">';
         } else {
             $ranktitle = $rankimage = NULL;
         }

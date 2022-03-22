@@ -9,14 +9,13 @@
 
 
 <{if $info_list|@count > 0}>
-<ul>
 	<{foreach item=info from=$info_list}>
-	<li>
+	<div class="confirm">
 		<a href="<{$info.url}>"><{$info.message}></a>
 		<span class="badge"><{$info.time|date_format:"%Y-%m-%d %H:%M:%S"}></span>
-	</li>
+	</div>
 	<{/foreach}>
-</ul>
+
 <{/if}>
 
 

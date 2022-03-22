@@ -6,89 +6,97 @@
 <!-- User Menu -->
 <{if $mydirname}><{include file="db:`$mydirname`_inc_mypage_menu.html"}><{/if}>
 
+
 <{foreach key=mode item=confirm_list_data from=$confirm_list_all}>
 
-<{if $confirm_list_data.request_count>0}>
 
-<table class="outer">
-<tr>
-<th colspan="5"><a name="#mode<{$mode}>"></a><{$confirm_list_data.lang_title}></th>
-</tr>
 
-<tr class="head">
-<td colspan="5" class="description">
-<{$confirm_list_data.lang_desc}>
-</td>
-</tr>
+    <{if $confirm_list_data.request_count>0}>
 
-<tr><td colspan="5" class="odd blankRow"></td></tr>
 
-<{foreach item=confirm_data from=$confirm_list_data.confirm_list}>
+    <h2><a id="#mode<{$mode}>"></a><{$confirm_list_data.lang_title}></h2>
 
-<tr class="even">
-<td rowspan="<{$confirm_data.rows}>" class="centerHV" style="width:85px; height:85px;">
-<a href="<{$confirm_data.member.page_url}>"><img src="<{$confirm_data.member.avatar_url}>" width="<{$confirm_data.member.avatar_width}>" height="<{$confirm_data.member.avatar_height}>" alt="<{$confirm_data.member.name}>"></a>
-</td>
-<td class="itemTitle"><{$smarty.const._MD_XSNS_USER_NAME}></td>
-<td colspan="3" class="itemValue"><a href="<{$confirm_data.member.page_url}>"><{$confirm_data.member.name}></a></td>
 
-<{if $confirm_data.show_commu}>
 
-<tr class="even">
-<td class="itemTitle"><{$smarty.const._MD_XSNS_CONFIRM_TARGET_COMMU}></td>
-<td colspan="3" class="itemValue"><a href="<{$confirm_data.commu.url}>"><{$confirm_data.commu.name}></a></td>
-</tr>
+    <div class="confirm description">
+        <{$confirm_list_data.lang_desc}>
+    </div>
 
-<{/if}>
 
-<{if $confirm_data.show_message}>
 
-<tr class="even">
-<td class="itemTitle"><{$smarty.const._MD_XSNS_MESSAGE}></td>
-<td colspan="3" class="itemValue"><{$confirm_data.message}></a></td>
-</tr>
+    <{foreach item=confirm_data from=$confirm_list_data.confirm_list}>
 
-<{/if}>
 
-<tr class="even">
-<td class="itemTitle"><{$smarty.const._MD_XSNS_CONFIRM_POST_DATETIME}></td>
-<td class="itemValue"><{$confirm_data.time|date_format:"%Y-%m-%d %H:%M:%S"}></td>
+        <small class="badge">confirm data rows : <{$confirm_data.rows}></small>
 
-<{if !$confirm_data.accept_only}>
+            <section layout="column mb-7" self="size-x1" class="card">
 
-<td class="buttonFrame">
-<{$confirm_data.form_accept}>
-<input type="submit" class="submit" value="<{$smarty.const._MD_XSNS_BTN_CONFIRM_ACCEPT}>">
-</form>
-</td>
 
-<td class="buttonFrame">
-<{$confirm_data.form_reject}>
-<input type="submit" class="submit" value="<{$smarty.const._MD_XSNS_BTN_CONFIRM_REJECT}>">
-</form>
-</td>
+                <div class="card-title">
+                        <a href="<{$confirm_data.member.page_url}>">
+                            <img src="<{$confirm_data.member.avatar_url}>"
+                                 width="<{$confirm_data.member.avatar_width}>"
+                                 height="<{$confirm_data.member.avatar_height}>"
+                                 alt="<{$confirm_data.member.name}>"
+                                 class="mail-list-avatar">
+                        </a>
+                        <{$smarty.const._MD_XSNS_USER_NAME}>
+                    <a href="<{$confirm_data.member.page_url}>"><{$confirm_data.member.name}></a>
+                </div>
 
-<{else}>
 
-<td colspan="2" class="buttonFrame">
-<{$confirm_data.form_accept}>
-<input type="submit" class="submit" value="<{$smarty.const._MD_XSNS_BTN_CONFIRM_ACCEPT}>">
-</form>
-</td>
+                <{if $confirm_data.show_commu}>
+                <div class="card-subtitle">
+                    <{$smarty.const._MD_XSNS_CONFIRM_TARGET_COMMU}> <a href="<{$confirm_data.commu.url}>"><{$confirm_data.commu.name}></a>
+                </div>
+                <{/if}>
 
-<{/if}>
 
-</tr>
+                <div class="card-content">
 
-<tr><td colspan="5" class="odd blankRow"></td></tr>
+                    <p><{$smarty.const._MD_XSNS_CONFIRM_POST_DATETIME}>
+                        <span class="badge"><{$confirm_data.time|date_format:"%Y-%m-%d %H:%M:%S"}></span>
+                    </p>
+
+                    <{if $confirm_data.show_message}>
+                    <div self="size-x1">
+                        <{$smarty.const._MD_XSNS_MESSAGE}><br>
+                        <blockquote>
+                            <{$confirm_data.message}>
+                        </blockquote>
+                    </div>
+                    <{/if}>
+
+
+
+                    <div class="card-footer" self="size-x1 inline">
+                    <{if !$confirm_data.accept_only}>
+
+                        <{$confirm_data.form_reject}>
+                        <input type="submit" class="ui-button delete" value="<{$smarty.const._MD_XSNS_BTN_CONFIRM_REJECT}>">
+                        </form>
+
+                        <{$confirm_data.form_accept}>
+                        <input type="submit" class="ui-button" value="<{$smarty.const._MD_XSNS_BTN_CONFIRM_ACCEPT}>">
+                        </form>
+
+                    <{else}>
+
+                        <{$confirm_data.form_accept}>
+                            <input type="submit" class="ui-button" value="<{$smarty.const._MD_XSNS_BTN_CONFIRM_ACCEPT}>">
+                        </form>
+
+                    <{/if}>
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+    <{/foreach}>
+
+    <{/if}>
 
 <{/foreach}>
-
-</table>
-
-<br>
-<{/if}>
-
-<{/foreach}>
-
-

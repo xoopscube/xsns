@@ -96,5 +96,3 @@ define($constpref.'_CATEGORY_3', 'Events');
 define($constpref.'_CATEGORY_4', 'Other');
 
 }
-
-?>

@@ -60,6 +60,7 @@ $mymenu_link = substr( strstr( $mymenu_uri , '/admin/' ) , 1 ) ;
 foreach( array_keys( $adminmenu ) as $i ) {
 	if( $mymenu_link == $adminmenu[$i]['link'] ) {
 		$adminmenu[$i]['color'] = '#FFCCCC' ;
+        $adminmenu[$i]['color'] = 'var(--color-red)' ;
 		$adminmenu_hilighted = true ;
 		$GLOBALS['altsysAdminPageTitle'] = $adminmenu[$i]['title'] ;
 	} else {
@@ -69,7 +70,8 @@ foreach( array_keys( $adminmenu ) as $i ) {
 if( empty( $adminmenu_hilighted ) ) {
 	foreach( array_keys( $adminmenu ) as $i ) {
 		if( stristr( $mymenu_uri , $adminmenu[$i]['link'] ) ) {
-			$adminmenu[$i]['color'] = '#FFCCCC' ;
+			//$adminmenu[$i]['color'] = '#FFCCCC' ;
+            $adminmenu[$i]['color'] = 'var(--color-red)' ;
 			$GLOBALS['altsysAdminPageTitle'] = $adminmenu[$i]['title'] ;
 			break ;
 		}

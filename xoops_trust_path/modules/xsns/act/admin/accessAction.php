@@ -28,7 +28,8 @@ class Xsns_Access_Action extends Xsns_Admin_Action
         $uid_url = ($uid > 0) ? '&uid=' . $uid : '';
 
         $pager = $this->getPageSelector('index.php?' . XSNS_ACTION_ARG . '=access' . $cid_url . $uid_url,
-            $start, $limit, count($access_log), $access_log_count, "#FFCCCC");
+            //$start, $limit, count($access_log), $access_log_count, "#FFCCCC");
+        $start, $limit, count($access_log), $access_log_count, "var(--color-red)");
         $this->context->setAttribute('access_log', $access_log);
         $this->context->setAttribute('pager', $pager);
     }

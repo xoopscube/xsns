@@ -81,8 +81,8 @@ class Xsns_Image_Action extends Xsns_Admin_Action
         }
 
         $pager = $this->getPageSelector('index.php?' . XSNS_ACTION_ARG . '=image',
-            $start, $limit, count($image_list), $image_handler->getCount(), "#FFCCCC");
-
+            //$start, $limit, count($image_list), $image_handler->getCount(), "#FFCCCC");
+        $start, $limit, count($image_list), $image_handler->getCount(), "var(--color-red)");
         $this->context->setAttribute('image_list', $image_list);
         $this->context->setAttribute('pager', $pager);
     }

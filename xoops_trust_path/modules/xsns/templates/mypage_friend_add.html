@@ -12,25 +12,28 @@
 
 <div class="tips"><{$smarty.const._MD_XSNS_FRIEND_ADD_DESC}></div>
 
+<h5><{$smarty.const._MD_XSNS_USER_NAME}></h5>
 
-<a href="<{$user.page_url}>"><img src="<{$user.avatar_url}>" width="<{$user.avatar_width}>" height="<{$user.avatar_height}>" alt=""></a>
-
-<{$smarty.const._MD_XSNS_USER_NAME}>
-
-<a href="<{$user.page_url}>"><{$user.name}></a>
-
-
-
-<{$smarty.const._MD_XSNS_MEMBER_LAST_LOGIN}>
-<{$user.last_login|date_format:"%Y-%m-%d %H:%M:%S"}>
+<p>
+    <a href="<{$user.page_url}>">
+        <img src="<{$user.avatar_url}>" width="<{$user.avatar_width}>" height="<{$user.avatar_height}>" alt="" class="mail-list-avatar">
+        <{$user.name}>
+    </a>
+</p>
 
 
-<{$smarty.const._MD_XSNS_MEMBER_REQUEST_MESSAGE}>
+<h5><{$smarty.const._MD_XSNS_MEMBER_LAST_LOGIN}></h5>
+<p><span class="badge"><{$user.last_login|date_format:"%Y-%m-%d %H:%M:%S"}></span></p>
+
+
+<p><{$smarty.const._MD_XSNS_MEMBER_REQUEST_MESSAGE}></p>
+
 <textarea name="message" cols="40" rows="5"></textarea>
 
-
-<input type="submit" class="submit" value="<{$smarty.const._MD_XSNS_BTN_SEND}>">&nbsp;&nbsp;
-<input type="button" class="submit" value="<{$smarty.const._MD_XSNS_BTN_CANCEL}>" onclick="javascript:history.go(-1);">
+<p>
+    <input type="button" class="ui-button" value="<{$smarty.const._MD_XSNS_BTN_CANCEL}>" onclick="javascript:history.go(-1);">
+    <input type="submit" class="ui-button" value="<{$smarty.const._MD_XSNS_BTN_SEND}>">&nbsp;&nbsp;
+</p>
 
 </form>
 

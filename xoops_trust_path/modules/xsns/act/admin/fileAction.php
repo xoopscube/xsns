@@ -78,8 +78,8 @@ class Xsns_File_Action extends Xsns_Admin_Action
         }
 
         $pager = $this->getPageSelector('index.php?' . XSNS_ACTION_ARG . '=file',
-            $start, $limit, count($file_list), $file_handler->getCount(), "#FFCCCC");
-
+            //$start, $limit, count($file_list), $file_handler->getCount(), "#FFCCCC");
+        $start, $limit, count($file_list), $file_handler->getCount(), "var(--color-red)");
         $this->context->setAttribute('file_list', $file_list);
         $this->context->setAttribute('pager', $pager);
     }
