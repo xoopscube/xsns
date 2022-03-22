@@ -1,4 +1,7 @@
-<div id="mainFrame">
+<div class="ui-dev-mode"><{$smarty.template}></div>
+
+
+
 
 <!-- User Menu -->
 <{if $mydirname}><{include file="db:`$mydirname`_inc_mypage_menu.html"}><{/if}>
@@ -8,32 +11,47 @@
 <{if $info_list|@count > 0}>
 
 <!-- Information Box : Start -->
-<table style="width:100%;"><tr><td>
-<table class="outer" style="width:100%;">
-<tr><th>INFORMATION</th></tr>
-<tr class="odd"><td>
-<ul>
-<{foreach item=info from=$info_list}>
-<li>
-<a href="<{$info.url}>"><font style="color:#ff0000; text-decoration:underline;"><{$info.message}></font></a>
-&nbsp(<{$info.time|date_format:"%Y-%m-%d %H:%M:%S"}>)
-</li>
-<{/foreach}>
-</ul>
-</td></tr>
+<table style="width:100%;">
+	<tr>
+		<td>
+			<table class="outer" style="width:100%;">
+				<tr>
+					<th>INFORMATION</th>
+				</tr>
+				<tr class="odd">
+					<td>
+					<ul>
+						<{foreach item=info from=$info_list}>
+						<li>
+							<a href="<{$info.url}>"><small style="color:#ff0000; text-decoration:underline;"><{$info.message}></small></a>
+							<span class="badge"><{$info.time|date_format:"%Y-%m-%d %H:%M:%S"}></span>
+						</li>
+						<{/foreach}>
+					</ul>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
 </table>
-</td></tr></table>
-<br>
+
+
+<hr>
+
+
 <!-- Information Box : End -->
 
 <{/if}>
 
 
 <!-- User Information : Start -->
-<table style="width:100%;"><tr><td>
-
-<table class="outer" style="width:100%;">
-<tr><th colspan="2"><{$smarty.const._MD_XSNS_MYPAGE_PROFILE|sprintf:"`$user_info.name`"}></th></tr>
+<table style="width:100%;">
+	<tr>
+		<td>
+			<table class="outer" style="width:100%;">
+				<tr>
+					<th colspan="2"><{$smarty.const._MD_XSNS_MYPAGE_PROFILE|sprintf:"`$user_info.name`"}></th>
+				</tr>
 
 <{if $user_info.avatarurl != NULL}>
 <tr class="even">
@@ -339,4 +357,4 @@
 
 </td></tr></table>
 
-</div>
+

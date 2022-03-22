@@ -37,9 +37,12 @@ class Xsns_Profile_avatar_up_exec_Action extends Xsns_Mypage_Action
             redirect_header(XSNS_URL_MYPAGE_PROFILE, 3, _US_NOEDITRIGHT);
         }
         if ($xoopsConfigUser['avatar_allow_upload'] == 1 && $xoopsUser->getVar('posts') >= $xoopsConfigUser['avatar_minposts']) {
+
             require_once XOOPS_ROOT_PATH . '/class/uploader.php';
+
             $uploader = new XoopsMediaUploader(XOOPS_UPLOAD_PATH, array('image/gif', 'image/jpeg', 'image/pjpeg', 'image/x-png', 'image/png'), $xoopsConfigUser['avatar_maxsize'], $xoopsConfigUser['avatar_width'], $xoopsConfigUser['avatar_height']);
             $uploader->setAllowedExtensions(array('gif', 'jpeg', 'jpg', 'png'));
+
             if ($uploader->fetchMedia($_POST['xoops_upload_file'][0])) {
                 $uploader->setPrefix('cavt');
                 if ($uploader->upload()) {

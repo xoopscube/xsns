@@ -1,13 +1,15 @@
-<div id="mainFrame">
+<div class="ui-dev-mode"><{$smarty.template}></div>
+
+
 <{if $mydirname}><{include file="db:`$mydirname`_inc_breadcrumbs.html"}><{/if}>
 
-<table class="outer commuEdit">
 
-<tr><th colspan="2"><{$smarty.const._MD_XSNS_TITLE_INDEX_ADD}></th></tr>
 
-<tr class="head">
-<td colspan="2"><div class="msgFrame"><{$smarty.const._MD_XSNS_INDEX_ADD_CONFIRM}><div></td>
-</tr>
+    <h2><{$smarty.const._MD_XSNS_TITLE_INDEX_ADD}></h2>
+
+    <div class="msgFrame"><{$smarty.const._MD_XSNS_INDEX_ADD_CONFIRM}><div>
+
+    <table class="outer commuEdit">
 
 <tr class="even">
 <td class="itemTitle bg0"><{$smarty.const._MD_XSNS_COMMU_NAME}></td>
@@ -50,5 +52,3 @@
     </tr>
     </tfoot>
 </table>
-
-</div>

@@ -1,22 +1,23 @@
-<div id="mainFrame">
+<div class="ui-dev-mode"><{$smarty.template}></div>
+
 <{if $mydirname}><{include file="db:`$mydirname`_inc_breadcrumbs.html"}><{/if}>
 
 <!-- Edit Form -->
 <{$form_topic_edit}>
 
+    <h2><{$topic.lang_page_title}></h2>
+
+    <{if $errors|@count > 0}>
+    <div class="error">
+        <ul>
+            <{foreach item=error_message from=$errors}>
+            <li><span class="red"><{$error_message}></span></li>
+            <{/foreach}>
+        </ul>
+    </div>
+    <{/if}>
+
 <table class="outer topic">
-
-<tr><th colspan="2"><{$topic.lang_page_title}></th></tr>
-
-<{if $errors|@count > 0}>
-<tr class="head"><td colspan="2" class="centerH">
-<ul>
-<{foreach item=error_message from=$errors}>
-<li><span class="red"><{$error_message}></span></li>
-<{/foreach}>
-</ul>
-</td></tr>
-<{/if}>
 
 <{if $comment.number == 0}>
 
@@ -132,18 +133,18 @@
 <br>
 
 <{if $comment.number==0}>
-
 <!-- Delete Form : Start -->
-<table class="outer topic">
-<tr><th><{$smarty.const._MD_XSNS_TOPIC_DEL_DESC}></th></tr>
-<tr class="foot"><td class="submitFrame">
-<{$form_topic_del}>
-<input type="submit" class="ui-button" value="<{$smarty.const._MD_XSNS_BTN_DEL}>">
-</form>
-</td></tr>
-</table>
-<!-- Delete Form : Start -->
+<h3><{$smarty.const._MD_XSNS_TOPIC_DEL_DESC}></h3>
 
+    <table class="outer topic">
+        <tr class="foot">
+            <td class="submitFrame">
+            <{$form_topic_del}>
+                <input type="submit" class="ui-button" value="<{$smarty.const._MD_XSNS_BTN_DEL}>">
+            </form>
+            </td>
+        </tr>
+    </table>
+<!-- Delete Form : Start -->
 <{/if}>
 
-</div>

@@ -52,7 +52,7 @@ class Xsns_Profile_Action extends Xsns_Mypage_Action
         $elements['avatar'] = array(
             'name' => 'user_avatar',
             'value' => $xoopsUser->getVar('user_avatar'),
-            'html' => '<img src="' . XOOPS_UPLOAD_URL . '/' . $xoopsUser->getVar('user_avatar') . '" alt="' . $xoopsUser->getVar('uname') . '" /><br>[<a href="' . XSNS_URL_MYPAGE . '&' . XSNS_ACTION_ARG . '=profile_avatar_up' . '">' . _MD_XSNS_PROFILE_AVATAR_EDIT . '</a>]',
+            'html' => '<img src="' . XOOPS_UPLOAD_URL . '/' . $xoopsUser->getVar('user_avatar') . '" alt="' . $xoopsUser->getVar('uname') . '"><br>[<a href="' . XSNS_URL_MYPAGE . '&' . XSNS_ACTION_ARG . '=profile_avatar_up' . '">' . _MD_XSNS_PROFILE_AVATAR_EDIT . '</a>]',
         );
 
         // E-mail

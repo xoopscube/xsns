@@ -1,56 +1,49 @@
-<div id="mainFrame">
+<div class="ui-dev-mode"><{$smarty.template}></div>
+
 <{if $mydirname}><{include file="db:`$mydirname`_inc_breadcrumbs.html"}><{/if}>
 
-<!-- Topic -->
+
+
 
 <{if $res_popup_list}>
 <!-- Response Popup (hidden) : Start -->
-<{foreach item=popup from=$res_popup_list}>
-	<span id="res<{$popup.id}>" class="respopup" style="width:400px;" onmouseover="showResPopUp('res<{$popup.id}>',event,true)">
-	<nobr><b><{$popup.id}>: <{$popup.uname}></b> [<{$popup.time|date_format:"%Y-%m-%d %H:%M:%S"}>]</nobr><br>
-	<{$popup.body}>
-	</span>
-<{/foreach}>
+	<{foreach item=popup from=$res_popup_list}>
+		<span id="res<{$popup.id}>" class="respopup" style="width:400px;" onmouseover="showResPopUp('res<{$popup.id}>',event,true)">
+		<nobr><b><{$popup.id}>: <{$popup.uname}></b> [<{$popup.time|date_format:"%Y-%m-%d %H:%M:%S"}>]</nobr><br>
+		<{$popup.body}>
+		</span>
+	<{/foreach}>
 <!-- Response Popup (hidden) : End -->
 <{/if}>
+
 
 <{if $comment_list.0}>
 
 <!-- Topic Table : Start -->
-<table class="outer topic">
+<h2><a id="<{$comment_list.0.number}>"></a><{$commu.name}> : <{$topic.name}></h2>
 
-<tr><th colspan="2"><a name="<{$comment_list.0.number}>"></a>[<{$commu.name}>] <{$smarty.const._MD_XSNS_TOPIC}></th></tr>
+<p><{$smarty.const._MD_XSNS_TOPIC}>
+	<a href="<{$comment_list.0.author.page_url}>">
+		<img src="<{$comment_list.0.author.avatar_url}>" alt="<{$comment_list.0.author.name}>"> <{$comment_list.0.author.name}>
+	</a>
+	<{$comment_list.0.time|date_format:"%Y-%m-%d %H:%M:%S"}></p>
 
-<tr class="even">
-<td class="date bg1" rowspan="3">
-<p><{$comment_list.0.time|date_format:"%Y-%m-%d %H:%M:%S"}></p>
-<!--
-<p><a href="<{$comment_list.0.author.page_url}>"><img src="<{$comment_list.0.author.avatar_url}>" alt="<{$comment_list.0.author.name}>"></a></p>
--->
-</td>
-<td class="name bg0"><b><{$topic.name}></b></td>
-</tr>
-
-<tr class="even">
-<td class="author bg0"><a href="<{$comment_list.0.author.page_url}>"><{$comment_list.0.author.name}></a></td>
-</tr>
-
-<tr class="even">
-<td class="body">
 
 <{if count($comment_list.0.images)>0}>
-<!-- Images : Start -->
-<p>
-<{foreach item=image from=$comment_list.0.images}>
-<a href="<{$image.url}>" target="_blank"><img src="<{$image.url_src}>" alt=""></a>&nbsp;&nbsp;
-<{/foreach}>
-</p>
-<!-- Images : End -->
+	<!-- Images : Start -->
+	<p>
+	<{foreach item=image from=$comment_list.0.images}>
+	<a href="<{$image.url}>" target="_blank"><img src="<{$image.url_src}>" alt=""></a>&nbsp;&nbsp;
+	<{/foreach}>
+	</p>
+	<!-- Images : End -->
 <{/if}>
 
+
 <!-- Body : Start -->
-<{$comment_list.0.body}>
+<div><{$comment_list.0.body}></div>
 <!-- Body : End -->
+
 
 <{if count($comment_list.0.files)>0}>
 <!-- Files : Start -->
@@ -62,17 +55,17 @@
 <!-- Files : End -->
 <{/if}>
 
+
 <{if $comment_list.0.show_edit}>
 <div style="text-align:right;"><a href="<{$comment_list.0.url_edit}>"><{$smarty.const._MD_XSNS_TOPIC_EDIT}></a></div>
 <{/if}>
-</td>
-</tr>
 
-</table>
 <!-- Topic Table : End -->
-<br>
+
 
 <{/if}>
+
+<hr>
 
 <{if $comment_count > 0}>
 
@@ -90,9 +83,14 @@
 <tr class="even">
 <td class="date bg1" rowspan="2">
 <p><{$comment.time|date_format:"%Y-%m-%d %H:%M:%S"}></p>
-<!--
+
+
+
 <p><a href="<{$comment.author.page_url}>"><img src="<{$comment.author.avatar_url}>" alt="<{$comment.author.name}>"></a></p>
--->
+
+	<p><a href="<{$comment_list.0.author.page_url}>"><img src="<{$comment_list.0.author.avatar_url}>" alt="<{$comment_list.0.author.name}>"></a></p>
+
+
 </td>
 <td class="author bg0">
 <b><{$comment.number}></b>: <a name="<{$comment.number}>" href="<{$comment.author.page_url}>"><{$comment.author.name}></a>
@@ -180,6 +178,7 @@
 <div id="image1" style="display:block;">
 <input type="file" name="images[]" size="40">
 </div>
+
 <{section name=cnt start=0 loop=$mod_config.image_form_limit-1}>
 <div id="image<{$smarty.section.cnt.iteration+1}>" style="display:none;">
 <input type="file" name="images[]" size="40">
@@ -239,4 +238,3 @@
 <a href="<{$mod_url}>/?cid=<{$commu.id}>">[<{$commu.name}>] <{$smarty.const._MD_XSNS_LINK_COMMU_TOP}></a>
 </div>
 
-</div>

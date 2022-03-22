@@ -16,7 +16,7 @@ define('_MD_XSNS_BODY', 'Description');
 define('_MD_XSNS_COMMENT', 'Comments');
 define('_MD_XSNS_AVATAR', 'Avatar');
 define('_MD_XSNS_REQUIRED_ITEM', '<span class="red">*</span>');
-define('_MD_XSNS_REQUIRED_ITEM_DESC', '<span class="red">(* required)</span>');
+define('_MD_XSNS_REQUIRED_ITEM_DESC', '<span class="red">* required</span>');
 define('_MD_XSNS_SELBOX_DEFAULT', 'Please Select');
 define('_MD_XSNS_MESSAGE', 'Massage');
 define('_MD_XSNS_SHOW_ALL', 'Show All');
@@ -93,10 +93,10 @@ define('_MD_XSNS_BTN_BACK', 'Back');
 define('_MD_XSNS_BTN_SEARCH', 'Search');
 define('_MD_XSNS_BTN_POST', 'Post');
 define('_MD_XSNS_BTN_INDEX_JOIN', 'Join');
-define('_MD_XSNS_BTN_INDEX_JOIN_NO', 'Not Join');
+define('_MD_XSNS_BTN_INDEX_JOIN_NO', 'Cancel');
 define('_MD_XSNS_BTN_INDEX_JOIN_REQUEST', 'Join');
 define('_MD_XSNS_BTN_INDEX_LEAVE', 'Leave Group');
-define('_MD_XSNS_BTN_INDEX_LEAVE_NO', 'Not Leave Group');
+define('_MD_XSNS_BTN_INDEX_LEAVE_NO', 'Cancel Leave Group');
 define('_MD_XSNS_BTN_CONFIRM_ACCEPT', 'Accept');
 define('_MD_XSNS_BTN_CONFIRM_REJECT', 'Reject');
 
@@ -120,7 +120,7 @@ define('_MD_XSNS_INDEX_JOIN_DESC_AUTH', "Members must be approved by the group's
 define('_MD_XSNS_INDEX_LEAVE', 'Leave Group');
 define('_MD_XSNS_INDEX_LEAVE_DESC', 'Do you want to leave this group?');
 define('_MD_XSNS_INDEX_ADD', 'Create a New Group');
-define('_MD_XSNS_INDEX_ADD_DESC', '(Please confirm whether there is the group that looks alike before making. )');
+define('_MD_XSNS_INDEX_ADD_DESC', 'Please look at the list of other community groups to make sure that the group you want to create does not already exist.');
 define('_MD_XSNS_INDEX_ADD_CONFIRM', 'Does it sound okay to you?');
 define('_MD_XSNS_INDEX_CATEGORY_DEFAULT', 'Please select');
 define('_MD_XSNS_INDEX_COMMU_COUNT0', 'The groups are not found.');
@@ -165,20 +165,20 @@ define('_MD_XSNS_INDEX_LEAVE_NG_AUTHOR', 'The manager/submanager of the group ca
 define('_MD_XSNS_INDEX_LEAVE_NG_ALREADY', 'You do not participate in this group.');
 
 define('_MD_XSNS_INDEX_DETAIL_MEMBER_LIST', 'Members');
-define('_MD_XSNS_INDEX_DETAIL_OPEN_DATE', 'Founded');
+define('_MD_XSNS_INDEX_DETAIL_OPEN_DATE', 'Created');
 define('_MD_XSNS_INDEX_DETAIL_AUTHOR', 'Manager');
 define('_MD_XSNS_INDEX_DETAIL_PUBLIC', 'Group Type');
-define('_MD_XSNS_INDEX_DETAIL_DESC', 'Information');
-define('_MD_XSNS_INDEX_DETAIL_TOPIC', 'Fourm');
+define('_MD_XSNS_INDEX_DETAIL_DESC', 'About');
+define('_MD_XSNS_INDEX_DETAIL_TOPIC', 'Topic');
 define('_MD_XSNS_INDEX_DETAIL_ADD_TOPIC', 'Create a Topic');
 define('_MD_XSNS_INDEX_DETAIL_ALL_TOPIC', 'View All Topics');
 define('_MD_XSNS_INDEX_DETAIL_SEND_MESSAGE', 'Send messages to members');
-define('_MD_XSNS_INDEX_DETAIL_EDIT_COMMU', 'Modify the group settings');
-define('_MD_XSNS_INDEX_DETAIL_ALL_MEMBER', 'View All Members');
+define('_MD_XSNS_INDEX_DETAIL_EDIT_COMMU', 'Group settings');
+define('_MD_XSNS_INDEX_DETAIL_ALL_MEMBER', 'View Members');
 define('_MD_XSNS_INDEX_DETAIL_EDIT_MEMBER', 'Members Management');
-define('_MD_XSNS_INDEX_DETAIL_PUBLIC_L1', "This is an open group. Anyone can join. (Public Group)");
-define('_MD_XSNS_INDEX_DETAIL_PUBLIC_L2', "This is an open group. Members must be approved by the group's manager. (Public Group)");
-define('_MD_XSNS_INDEX_DETAIL_PUBLIC_L3', "<span class='red'>This is a closed group. Members must be approved by the group's manager. (Private Group)</span>");
+define('_MD_XSNS_INDEX_DETAIL_PUBLIC_L1', "Public Group");
+define('_MD_XSNS_INDEX_DETAIL_PUBLIC_L2', "Public Group. Requires approval.");
+define('_MD_XSNS_INDEX_DETAIL_PUBLIC_L3', "<span class='red'>Private Group</span>");
 
 
 //******************************************************************************

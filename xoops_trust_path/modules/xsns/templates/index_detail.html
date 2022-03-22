@@ -1,221 +1,209 @@
-<div id="mainFrame">
+<div class="ui-dev-mode"><{$smarty.template}></div>
 
-<table style="width:100%;"><tr><td>
 <{if $mydirname}><{include file="db:`$mydirname`_inc_breadcrumbs.html"}><{/if}>
 
-<{if $commu.show_commu_join}>
 
-	<{* -----  Community Join : Start *}>
-<div style="padding:2px;">
-<table class="outer" style="width:100%;">
-<tr class="head"><td class="centerHV submitFrame">
-<{$smarty.const._MD_XSNS_INDEX_JOIN_DESC}>&nbsp;&nbsp;&nbsp;<{$smarty.const._MD_XSNS_ARROW}>
-<a href="<{$url.commu_join}>"><{$smarty.const._MD_XSNS_INDEX_JOIN}></a>
-</td></tr>
-</table>
-</div>
-<br>
-	<{* -----  Community Join : End *}>
+<section layout="column mb-7 sm-first" id="docs_container" class="category-top">
 
-<{/if}>
+	<div layout="rows center-justify">
+		<h3 self="size-x1"><{$commu.name|mb_truncate:25}></h3>
 
-<table style="width:100%;">
-
-<tr><!-- Top Row : Start -->
-
-<td style="width:50%;"><!-- Left Column : Start -->
-
-<table class="outer commuDetail" style="width:100%;">
-
-	<{* -----  Community Image : Start *}>
-<tr><th style="height:1.2em;"><{$commu.name|mb_truncate:25}></th></tr>
-<tr class="even"><td class="centerHV" style="padding:0;">
-<div style="height:274px;">
-<table><tr><td class="commuImage">
-<img src="<{$commu.image.url_src|default:"images/cm_commu_default3.gif"}>" alt="<{$commu.name}>"></a>
-</table></td></tr>
-</div>
-</td></tr>
-<{* -----  Community Image : End *}>
-
-<{* -----  Community Rank : Start *}>
-<tr class="even"><td>
-
-<div style="height:55px; margin:5px 0 0 10px;">
-<table cellspacing="0" cellpadding="0">
-<tr>
-<td><{$smarty.const._MD_XSNS_COMMU_POPULARITY}></td>
-<td><img src="<{$commu.statistics.popularity.image}>" alt=""></td>
-<td style="text-align:right;"><{$commu.statistics.popularity.value}> pts</td>
-</tr>
-<tr>
-<td><{$smarty.const._MD_XSNS_COMMU_UPDATE_FREQUENCY}></td>
-<td><img src="<{$commu.statistics.update_frequency.image}>" alt=""></td>
-<td style="text-align:right;"><{$commu.statistics.update_frequency.value}> pts</td>
-</tr>
-</table>
-</div>
-
-</td></tr>
-<{* -----  Community Rank : End *}>
-
-</table>
-
-<br>
-</td><!-- Left Column : End -->
-
-<td>&nbsp;</td><!-- Blank Column -->
-
-<td style="width:50%;"><!-- Right Column : Start -->
-
-<table class="outer commuDetail" style="width:100%;">
-
-<!-- Member List : Start -->
-<tr><th colspan="3" style="height:1.2em;"><{$smarty.const._MD_XSNS_INDEX_DETAIL_MEMBER_LIST}></th></tr>
-
-<tr class="even">
-<{section name=id loop=$commu.member_list}>
-
-<{if $smarty.section.id.index > 0 && $smarty.section.id.index is div by 3}>
-</tr><tr class="even">
-<{/if}>
-
-<td style="margin:0; padding:0;">
-<div style="width:90px; height:90px;">
-<{if $commu.member_list[id].page_url != ""}>
-<table><tr><td class="avatar">
-<a href="<{$commu.member_list[id].page_url}>"><img src="<{$commu.member_list[id].avatar_url}>" width="<{$commu.member_list[id].avatar_width}>" height="<{$commu.member_list[id].avatar_height}>" alt="<{$commu.member_list[id].name}>" title="<{$commu.member_list[id].name}>"></a>
-</td></tr></table>
-<{/if}>
-</div>
-</td>
-
-<{/section}>
-</tr>
-
-<tr class="even"><td colspan="3">
-
-<div class="centerV" style="height:20px; padding-left:120px;">
-<{$smarty.const._MD_XSNS_ARROW}>
-<a href="<{$url.all_member}>"><{$smarty.const._MD_XSNS_INDEX_DETAIL_ALL_MEMBER}> (<{$commu.member_count|default:0}>)</a><br>
-</div>
-
-<div class="centerV" style="height:20px; padding-left:120px;">
-<{if $commu.show_member_config}>
-<{$smarty.const._MD_XSNS_ARROW}>
-<a href="<{$url.member_config}>"><{$smarty.const._MD_XSNS_INDEX_DETAIL_EDIT_MEMBER}></a><br>
-<{/if}>
-</div>
-
-<div class="centerV" style="height:20px; padding-left:120px;">
-<!--
--->
-</div>
-
-</td></tr>
-<!-- Member List : End -->
-
-</table>
-<br>
-</td><!-- Right Column : End -->
-
-</tr><!-- Top Row : End -->
-</table>
-
-<table style="width:100%;">
-<tr><!-- Bottom Row : Start -->
-<td colspan="3">
-
-<!-- Community Information : Start -->
-<table class="outer commuDetail" style="width:100%;">
-
-	<tr class="even">
-	<th colspan="2"><{$smarty.const._MD_XSNS_COMMU}></th>
-	</tr>
-	<tr class="even">
-	<td class="itemTitle bg0"><{$smarty.const._MD_XSNS_COMMU_NAME}></td>
-	<td class="itemValue"><{$commu.name}></td>
-	</tr>
-	<tr class="even">
-	<td class="itemTitle bg0"><{$smarty.const._MD_XSNS_INDEX_DETAIL_DESC}></td>
-	<td class="itemValue"><{$commu.info}></td>
-	</tr>
-	<tr class="even">
-	<td class="itemTitle bg0"><{$smarty.const._MD_XSNS_INDEX_DETAIL_OPEN_DATE}></td>
-	<td class="itemValue"><{$commu.time|date_format:"%Y-%m-%d"}></td>
-	</tr>
-	<tr class="even">
-	<td class="itemTitle bg0"><{$smarty.const._MD_XSNS_INDEX_DETAIL_AUTHOR}></td>
-	<td class="itemValue"><a href="<{$commu.admin_url}>"><{$commu.admin_name}></a></td>
-	</tr>
-	<tr class="even">
-	<td class="itemTitle bg0"><{$smarty.const._MD_XSNS_CATEGORY}></td>
-	<td class="itemValue"><{$commu.category}></td>
-	</tr>
-	<tr class="even">
-	<td class="itemTitle bg0"><{$smarty.const._MD_XSNS_MEMBER_COUNT}></td>
-	<td class="itemValue"><{$commu.member_count}><{$smarty.const._MD_XSNS_PERSON}></td>
-	</tr>
-	<tr class="even">
-	<td class="itemTitle bg0"><{$smarty.const._MD_XSNS_INDEX_DETAIL_PUBLIC}></td>
-	<td class="itemValue"><{$commu.public}></td>
-	</tr>
-
-	<{if $commu.show_topic_list}>
-
-	<!-- Topic List : Start -->
-	<tr class="even">
-	<td class="itemTitle bg0"><{$smarty.const._MD_XSNS_INDEX_DETAIL_TOPIC}></td>
-	<td class="itemValue">
-	
-	<{foreach item=topic from=$commu.topic_list}>
-	<{$topic.time|date_format:"%Y-%m-%d"}> : <a href="<{$topic.page_url}>"><{$topic.name|mb_truncate:30}> (<{$topic.comment_count|default:0}>)</a><br>
-	<{/foreach}>
-	
-	<div style="padding-left:300px;">
-	<{$smarty.const._MD_XSNS_ARROW}>
-	<a href="<{$url.all_topic}>"><{$smarty.const._MD_XSNS_INDEX_DETAIL_ALL_TOPIC}> (<{$commu.topic_count|default:0}>)</a><br>
-	<{if $commu.show_topic_add}>
-	<{$smarty.const._MD_XSNS_ARROW}>
-	<a href="<{$url.add_topic}>"><{$smarty.const._MD_XSNS_INDEX_DETAIL_ADD_TOPIC}></a><br>
-	<{/if}>
+		<{$commu.public}>
 	</div>
-	
-	</td>
-	</tr>
-	<!-- Topic List : End -->
 
-	<{if $commu.show_commu_config || $commu.show_commu_leave}>
-	<tr class="even">
-	<td class="itemTitle bg0"></td>
-	<td>
-	<div style="padding-left:300px;">
-	
-	<{if $commu.show_commu_config}>
-	<{$smarty.const._MD_XSNS_ARROW}>
-	<a href="<{$url.commu_config}>"><{$smarty.const._MD_XSNS_INDEX_DETAIL_EDIT_COMMU}></a><br>
-	<{/if}>
-	
-	<{if $commu.show_commu_leave}>
-	<{$smarty.const._MD_XSNS_ARROW}>
-	<a href="<{$url.commu_leave}>"><{$smarty.const._MD_XSNS_INDEX_LEAVE}></a>
-	<{/if}>
-	
+	<div layout="row my-2" class="description">
+		<a href="<{$commu.page_url}>"><img src="<{$commu.image.url_src|default:"images/cm_commu_default3.gif"}>" alt="<{$commu.name}>"></a>
 	</div>
-	</td>
-	</tr>
-	<{/if}>
 
-	<{/if}>
 
-	</td></tr>
-</table>
+	<{* ////— Community Rank —\\\\ *}>
+
+	<div layout="row center-justify p-2 my-4 sm-column" class="activity">
+
+		<div self="px-2">
+
+			<{$smarty.const._MD_XSNS_COMMU_POPULARITY}>
+			<img src="<{$commu.statistics.popularity.image}>" alt="">
+			<span class="badge"><{$commu.statistics.popularity.value}> pts</span>
+			<{$smarty.const._MD_XSNS_COMMU_UPDATE_FREQUENCY}>
+			<img src="<{$commu.statistics.update_frequency.image}>" alt="">
+			<span class="badge"><{$commu.statistics.update_frequency.value}> pts</span>
+		</div>
+
+		<div self="px-2"><{* $smarty.const._MD_XSNS_ARROW *}>
+			<a href="<{$url.all_member}>"><{$smarty.const._MD_XSNS_INDEX_DETAIL_ALL_MEMBER}> <span class="badge"><{$commu.member_count|default:0}></span></a>
+		</div>
+
+	</div>
+	<{* -----  Community Rank *}>
+
+
+	<{* ////— ACTION CONTROL —\\\\ *}>
+
+	<div layout="row center-justify sm-column" aria-label="controls">
+
+		<div self="size-x1">
+		<a class="ui-button" href="<{$url.all_topic}>"><{$smarty.const._MD_XSNS_INDEX_DETAIL_ALL_TOPIC}> <span class="badge"><{$commu.topic_count|default:0}></span></a>
+		<{if $commu.show_topic_add}>
+			<a class="ui-button" href="<{$url.add_topic}>"><{$smarty.const._MD_XSNS_INDEX_DETAIL_ADD_TOPIC}></a>
+		<{/if}>
+		</div>
+
+		<div self="right mr-1 sm-full">
+
+			<{if $commu.show_member_config}>
+				<a class="ui-button" href="<{$url.member_config}>"><{$smarty.const._MD_XSNS_INDEX_DETAIL_EDIT_MEMBER}></a>
+			<{/if}>
+
+			<{if $commu.show_commu_config || $commu.show_commu_leave}>
+				<{if $commu.show_commu_config}>
+				<a class="ui-button" href="<{$url.commu_config}>"><{$smarty.const._MD_XSNS_INDEX_DETAIL_EDIT_COMMU}></a>
+				<{/if}>
+
+				<{if $commu.show_commu_leave}>
+				<a class="ui-button" href="<{$url.commu_leave}>"><{$smarty.const._MD_XSNS_INDEX_LEAVE}></a>
+				<{/if}>
+			<{/if}>
+
+			<{if $commu.show_commu_join}>
+				<a class="ui-button" href="<{$url.commu_join}>" title="<{$smarty.const._MD_XSNS_INDEX_JOIN_DESC}>"><{$smarty.const._MD_XSNS_INDEX_JOIN}></a>
+			<{/if}>
+
+		</div>
+
+	</div>
+
+</section>
+
+
+<div layout="row sm-column">
+
+	<div layout="column" self="size-x1 sm-full p-2 mr-2">
+
+		<{* ////— TOPICS LIST —\\\\ *}>
+
+		<{if $commu.show_topic_list}>
+
+		<h2><{$smarty.const._MD_XSNS_INDEX_DETAIL_TOPIC}></h2>
+
+		<div self="size-x1 center-right mr-1">
+
+		</div>
+
+		<{foreach item=topic from=$commu.topic_list}>
+		<div layout="row center-justify">
+			<h4><a href="<{$topic.page_url}>"><{$topic.name|mb_truncate:30}></a></h4>
+			<p><{$topic.author}>+uid+ <{$topic.time|date_format:"%Y-%m-%d"}> <span class="badge"><{$topic.comment_count|default:0}></span></p>
+		</div>
+		<{/foreach}>
+
+		<p>
+			<{* $smarty.const._MD_XSNS_ARROW *}>
+			<a class="ui-button" href="<{$url.all_topic}>"><{$smarty.const._MD_XSNS_INDEX_DETAIL_ALL_TOPIC}> <span class="badge"><{$commu.topic_count|default:0}></span></a>
+
+			<{if $commu.show_topic_add}>
+				<{* $smarty.const._MD_XSNS_ARROW *}>
+				<a class="ui-button" href="<{$url.add_topic}>"><{$smarty.const._MD_XSNS_INDEX_DETAIL_ADD_TOPIC}></a>
+			<{/if}>
+		</p>
+
+
+		<{/if}>
+		<{* -----  TOPICS LIST *}>
+
+	</div>
+
+
+
+
+	<div layout="column" self="size-1of3 sm-full p-2">
+
+		<{* ////— ABOUT —\\\\ *}>
+		<{* $smarty.const._MD_XSNS_COMMU *}>
+		<{* $smarty.const._MD_XSNS_COMMU_NAME *}>
+		<div class="card" self="sm-full mb-6">
+			<div class="card-title"><{$smarty.const._MD_XSNS_INDEX_DETAIL_DESC}> <{$commu.name}></div>
+			<div class="card-content">
+				<p><{$commu.info}></p>
+				<p><{$smarty.const._MD_XSNS_INDEX_DETAIL_PUBLIC}> : <{$commu.public}></p>
+				<p><{$smarty.const._MD_XSNS_INDEX_DETAIL_OPEN_DATE}> : <{$commu.time|date_format:"%Y-%m-%d"}></p>
+				<p><{$smarty.const._MD_XSNS_INDEX_DETAIL_AUTHOR}> : <a href="<{$commu.admin_url}>"><{$commu.admin_name}></a></p>
+				<p><{$smarty.const._MD_XSNS_CATEGORY}> : <{$commu.category}></p>
+				<p><{$smarty.const._MD_XSNS_MEMBER_COUNT}> : <{$commu.member_count}><{$smarty.const._MD_XSNS_PERSON}></p>
+
+			</div>
+		</div>
+		<{* -----  ABOUT *}>
+
+
+
+		<{* ////— MEMBERS —\\\\ *}>
+		<div class="card" self="sm-full mb-6">
+
+			<div class="card-title"><{$smarty.const._MD_XSNS_INDEX_DETAIL_MEMBER_LIST}></div>
+
+			<div layout="rows" class="card-content">
+				<{section name=id loop=$commu.member_list}>
+
+				<{*
+				if $smarty.section.id.index > 0 && $smarty.section.id.index is div by 3}>
+				</div><div layout="rows" style="border:1px solid green">3
+				<{/if
+				*}>
+
+<!--				<div style="width:80px; height:80px; border:1px solid darkcyan">-->
+				<{if $commu.member_list[id].page_url != ""}>
+				<div class="avatar">
+					<a href="<{$commu.member_list[id].page_url}>" title="<{$commu.member_list[id].name}>">
+						<img src="<{$commu.member_list[id].avatar_url}>" width="<{$commu.member_list[id].avatar_width}>" height="<{$commu.member_list[id].avatar_height}>" alt="<{$commu.member_list[id].name}>">
+					</a>
+				</div>
+				<{/if}>
+
+				<{/section}>
+			</div>
+
+			<{if $commu.show_member_config}>
+			<div layout="center p-2" class="card-footer">
+				<{* $smarty.const._MD_XSNS_ARROW *}>
+				<a class="ui-button" href="<{$url.member_config}>"><{$smarty.const._MD_XSNS_INDEX_DETAIL_EDIT_MEMBER}></a>
+			</div>
+			<{/if}>
+
+
+		</div>
+		<{* ----- MEMBERS *}>
+
+	</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- Community Information : End -->
 
-</td>
-</tr><!-- Bottom Row : End -->
 
-</table>
+
+
+		<!-- Bottom Row : End -->
+
+
+
 
 <{if $commu.show_commu_notify}>
 <p>
@@ -223,6 +211,7 @@
 </p>
 <{/if}>
 
-</td></tr></table>
 
-</div>
+
+
+

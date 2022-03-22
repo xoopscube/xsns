@@ -153,7 +153,7 @@ class Xsns_Default_Action extends Xsns_Mypage_Action
         // TODO #gigamaster custom profile
         $user_info = array(
             'id' => $uid,
-            'avatarurl' => '<img src="' . XOOPS_URL . '/uploads/' . $user->getVar('user_avatar') . '" alt="' . $uname . '" />',
+            'avatarurl' => '<img src="' . XOOPS_URL . '/uploads/' . $user->getVar('user_avatar') . '" alt="' . $uname . '">',
             'name' => $uname,
             'realname' => $user->getVar('name'),
             'rank' => $rankimage,

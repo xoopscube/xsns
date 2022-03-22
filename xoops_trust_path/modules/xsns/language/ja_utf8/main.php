@@ -119,7 +119,7 @@ define('_MD_XSNS_INDEX_JOIN_DESC_AUTH', 'このコミュニティに参加する
 define('_MD_XSNS_INDEX_LEAVE', 'コミュニティ退会');
 define('_MD_XSNS_INDEX_LEAVE_DESC', 'このコミュニティを退会しますか？');
 define('_MD_XSNS_INDEX_ADD', 'コミュニティ新規作成');
-define('_MD_XSNS_INDEX_ADD_DESC', '(作成の前に、似たコミュニティがないかご確認ください)');
+define('_MD_XSNS_INDEX_ADD_DESC', '他のコミュニティグループのリストを見て、作成したいグループがすでに存在しないことを確認してください。';
 define('_MD_XSNS_INDEX_ADD_CONFIRM', '以下の内容でよろしいですか？');
 define('_MD_XSNS_INDEX_CATEGORY_DEFAULT', '選択してください');
 define('_MD_XSNS_INDEX_COMMU_COUNT0', 'コミュニティが見つかりませんでした');

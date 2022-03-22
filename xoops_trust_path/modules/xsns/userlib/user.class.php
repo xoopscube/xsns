@@ -45,22 +45,26 @@ class XsnsUser extends XoopsUser
         return $ret;
     }
 
-
+    // TODO @gigamaster XCL avater
     function getAvatar()
     {
-        $image_default = '/images/cm_no_avatar.gif';
+        //$image_default = '/images/cm_no_avatar.gif';
+        $image_default = 'no_avatar.gif';
 
         if ($this->getVar('user_avatar') != 'blank.gif') {
             $image_url = XOOPS_UPLOAD_URL . '/' . $this->getVar('user_avatar');
             $image_path = XOOPS_UPLOAD_PATH . '/' . $this->getVar('user_avatar');
         } else {
-            $image_url = XSNS_BASE_URL . $image_default;
-            $image_path = XSNS_BASE_DIR . $image_default;
+            //$image_url = XSNS_BASE_URL . $image_default;
+            //$image_path = XSNS_BASE_DIR . $image_default;
+            $image_url = XOOPS_UPLOAD_URL . $image_default;
+            $image_path = XOOPS_UPLOAD_PATH . $image_default;
         }
 
         if (!function_exists('getimagesize') || !($imagesize = getimagesize($image_path))) {
             $ret = array(
-                'url' => XSNS_BASE_URL . $image_default,
+                //'url' => XSNS_BASE_URL . $image_default,
+                'url' => XOOPS_UPLOAD_URL . $image_default,
                 'width' => '',
                 'height' => '',
             );
