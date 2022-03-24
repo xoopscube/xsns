@@ -74,10 +74,10 @@ const _MD_XSNS_TITLE_MYPAGE_NEWS = 'Posted Logs';
 const _MD_XSNS_TITLE_MYPAGE_CONFIG = 'Manage modules settings';
 const _MD_XSNS_TITLE_MYPAGE_FOOTPRINT = 'Access logs';
 const _MD_XSNS_TITLE_MYPAGE_PROFILE = 'Edit Profile';
-const _MD_XSNS_TITLE_MYPAGE_INTRO = 'Write an introductory essay';
-const _MD_XSNS_TITLE_MYPAGE_INTRO_UNAME = 'Wrote an introductory essay about %s';
-const _MD_XSNS_TITLE_MYPAGE_INTRO_LIST = 'View all introductory essays';
-const _MD_XSNS_TITLE_MYPAGE_INTRO_DEL = 'Delete an introductory essay';
+const _MD_XSNS_TITLE_MYPAGE_INTRO = 'Write a Testimonial';
+const _MD_XSNS_TITLE_MYPAGE_INTRO_UNAME = 'Write a Testimonial about %s';
+const _MD_XSNS_TITLE_MYPAGE_INTRO_LIST = 'View all Testimonials';
+const _MD_XSNS_TITLE_MYPAGE_INTRO_DEL = 'Delete a Testimonial';
 
 
 //******************************************************************************
@@ -313,16 +313,16 @@ const _MD_XSNS_MYPAGE_TOPIC_LIST = 'Latest Topics';
 const _MD_XSNS_MYPAGE_TOPIC_LIST_ALL = 'View all topics of my groups';
 const _MD_XSNS_MYPAGE_FOOTPRINT_DESC = "They are the people who visited the %s's my page.<br>It indicates to newest 30 cases, access as of of identical person same one day is indicated just newest day and time.";
 const _MD_XSNS_MYPAGE_FOOTPRINT_COUNT = "My page's Traffic";
-const _MD_XSNS_MYPAGE_INTRO_LIST = 'Introductory Essays from Friends';
-const _MD_XSNS_MYPAGE_INTRO_BODY = 'Introductory Essay';
-const _MD_XSNS_MYPAGE_INTRO_DESC = '';
-const _MD_XSNS_MYPAGE_INTRO_ADD_BODY_NG = 'Please input an introductory essay.';
-const _MD_XSNS_MYPAGE_INTRO_ADD_OK = 'The introductory essay was created.';
-const _MD_XSNS_MYPAGE_INTRO_ADD_NG = 'ERROR: The introductory essay could not be created.';
+const _MD_XSNS_MYPAGE_INTRO_LIST = 'Testimonials from friends';
+const _MD_XSNS_MYPAGE_INTRO_BODY = 'Testimonial';
+const _MD_XSNS_MYPAGE_INTRO_DESC = 'Effective testimonials highlight the qualities, skills, and positive characteristics of friends.<br>Backing up these claims with facts and experience reinforces their reputation.';
+const _MD_XSNS_MYPAGE_INTRO_ADD_BODY_NG = 'Please add a testimonial.';
+const _MD_XSNS_MYPAGE_INTRO_ADD_OK = 'The testimonial was created.';
+const _MD_XSNS_MYPAGE_INTRO_ADD_NG = 'ERROR: The testimonial could not be created.';
 const _MD_XSNS_MYPAGE_INTRO_DEL = 'Delete';
-const _MD_XSNS_MYPAGE_INTRO_DEL_DESC = 'Do you want to delete this introductory essay?';
-const _MD_XSNS_MYPAGE_INTRO_DEL_OK = 'The introductory essay was deleted.';
-const _MD_XSNS_MYPAGE_INTRO_DEL_NG = 'ERROR: The introductory essay could not be deleted.';
+const _MD_XSNS_MYPAGE_INTRO_DEL_DESC = 'Do you want to delete this testimonial?';
+const _MD_XSNS_MYPAGE_INTRO_DEL_OK = 'The testimonial was deleted.';
+const _MD_XSNS_MYPAGE_INTRO_DEL_NG = 'ERROR: The testimonial could not be deleted.';
 
 const _MD_XSNS_CONFIG_MODULE = 'Display Setting of Modules';
 const _MD_XSNS_CONFIG_MODULE_COUNT = 'Number of Displays';

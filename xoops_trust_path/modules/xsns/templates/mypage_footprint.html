@@ -7,20 +7,27 @@
 <{if $mydirname}><{include file="db:`$mydirname`_inc_mypage_menu.html"}><{/if}>
 
 
-<h3><{$smarty.const._MD_XSNS_TITLE_MYPAGE_FOOTPRINT}></h3>
+<h2><{$smarty.const._MD_XSNS_TITLE_MYPAGE_FOOTPRINT}></h2>
 
-<{$smarty.const._MD_XSNS_MYPAGE_FOOTPRINT_DESC|sprintf:"`$user_name`"}>
+<div class="tips">
+    <{$smarty.const._MD_XSNS_MYPAGE_FOOTPRINT_DESC|sprintf:"`$user_name`"}>
+</div>
 
     <{if $footprint_count > 0}>
 
-    <div layout="column">
-        <div self="my-6">
-            <{$smarty.const._MD_XSNS_MYPAGE_FOOTPRINT_COUNT}> <span class="badge"><{$footprint_count|number_format}></span>
-        </div>
+    <h3>
+        <img class="svg" src="<{$xoops_url}>/images/icons/date-time.svg" width="1em" height="1em"> <{$smarty.const._MD_XSNS_MYPAGE_FOOTPRINT_COUNT}> <span class="badge"><{$footprint_count|number_format}></span>
+    </h3>
 
-        <{foreach item=footprint from=$footprint_list}>
-            <p><{$footprint.time|date_format:"%Y-%m-%d %H:%M:%S"}> <a href="<{$footprint.url}>"><{$footprint.uname}></a></p>
-        <{/foreach}>
+    <{foreach item=footprint from=$footprint_list}>
+    <p>
+        <a href="<{$footprint.url}>">
+            <img src="<{$footprint.uname|xoops_user_avatarize}>" width="20px" height="20px" class="avatar">
+            <{$footprint.uname}>
+            <span class="badge"><{$footprint.time|date_format:"%Y-%m-%d %H:%M:%S"}></span>
+        </a>
+    </p>
+    <{/foreach}>
 
-    </div>
+
 <{/if}>

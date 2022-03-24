@@ -8,8 +8,10 @@ class Xsns_Image_del_exec_Action extends Xsns_Admin_Action
             redirect_header(XSNS_URL_ADMIN, 2, _NOPERM);
         }
 
-        $del_id = isset($_POST['delete']) ? $_POST['delete'] : NULL;
-        if (is_null($del_id) || !is_array($del_id)) {
+        //$del_id = isset($_POST['delete']) ? $_POST['delete'] : NULL;
+        $del_id = $_POST['delete'] ?? NULL;
+        //if (is_null($del_id) || !is_array($del_id)) {
+        if (!is_array($del_id)) {
             redirect_header(XSNS_URL_ADMIN . '?' . XSNS_ACTION_ARG . '=image', 2, _AM_XSNS_IMAGE_SELECT_NG);
         }
 

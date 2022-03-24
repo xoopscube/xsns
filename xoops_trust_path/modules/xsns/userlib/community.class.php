@@ -410,9 +410,9 @@ class XsnsCommunityHandler extends XsnsRootHandler
             $obj_list[$cid] = $obj;
             $cids[] = $cid;
         }
-        // TODO @gigamaster change to XSNS_IMAGE_SIZE_L
+        // TODO @gigamaster change to XSNS_IMAGE_SIZE_M
         //$image_list =& $image_handler->getListByIds(1, $cids, XSNS_IMAGE_SIZE_S);
-        $image_list =& $image_handler->getListByIds(1, $cids, XSNS_IMAGE_SIZE_L);
+        $image_list =& $image_handler->getListByIds(1, $cids, XSNS_IMAGE_SIZE_M);
         $category_list =& $category_handler->getNameList();
 
         foreach ($obj_list as $cid => $obj) {

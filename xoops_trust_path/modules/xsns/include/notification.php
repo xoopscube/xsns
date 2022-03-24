@@ -10,7 +10,7 @@ function xsns_main_trigger_event($category, $item_id, $event, $extra_tags = arra
 
     // language
     $language = empty($xoopsConfig['language']) ? 'japanese' : $xoopsConfig['language'];
-    $trustdirpath = dirname(dirname(__FILE__));
+    $trustdirpath = dirname(__FILE__, 2);
     if (file_exists("$mydirpath/language/$language/mail_template/")) {
         $mail_template_dir = "$mydirpath/language/$language/mail_template/";
     } else if (file_exists($trustdirpath . "/language/$language/mail_template/")) {

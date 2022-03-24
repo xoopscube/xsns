@@ -186,7 +186,7 @@ function b_xsns_information_show($options)
 		return array();
 	}
 	
-	require_once dirname(dirname(__FILE__)).'/userlib/utils.php';
+	require_once dirname(__FILE__, 2) .'/userlib/utils.php';
 	
 	while($row = $db->fetchArray($rs)){
 		$mode = intval($row['mode']);

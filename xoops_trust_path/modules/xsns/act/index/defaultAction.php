@@ -150,7 +150,8 @@ class Xsns_Default_Action extends Xsns_Index_Action
 
         if ($c_member_handler->getOne($cid, $own_uid)) {
             $is_member = true;
-            $is_admin = ($own_uid == $uid_admin) ? true : false;
+            //$is_admin = ($own_uid == $uid_admin) ? true : false;
+            $is_admin = $own_uid == $uid_admin;
         } else {
             $is_member = $is_admin = false;
         }
@@ -182,16 +183,23 @@ class Xsns_Default_Action extends Xsns_Index_Action
             'member_count' => $community->getMemberCount(),
             'topic_list' => $community->getTopicList($topic_limit),
             'topic_count' => $community->getTopicCount(),
-
+// TODO @gigamaster
             //'show_commu_join' => (!$is_member && $commu_auth > XSNS_AUTH_GUEST) ? true : false,
             'show_commu_join' => !$is_member && $commu_auth > XSNS_AUTH_GUEST,
-            'show_commu_leave' => ($is_member && !$is_admin) ? true : false,
-            'show_commu_notify' => ($is_member) ? true : false,
-            'show_commu_config' => ($commu_auth >= XSNS_AUTH_ADMIN) ? true : false,
-            'show_topic_list' => ($public_flag != 3 || $commu_auth >= XSNS_AUTH_MEMBER) ? true : false,
-            'show_topic_add' => ($commu_auth >= XSNS_AUTH_MEMBER) ? true : false,
-            'show_send_message' => ($commu_auth >= XSNS_AUTH_MEMBER) ? true : false,
-            'show_member_config' => ($commu_auth >= XSNS_AUTH_ADMIN) ? true : false,
+            //'show_commu_leave' => ($is_member && !$is_admin) ? true : false,
+            'show_commu_leave' => $is_member && !$is_admin,
+            //'show_commu_notify' => ($is_member) ? true : false,
+            'show_commu_notify' => $is_member,
+            //'show_commu_config' => ($commu_auth >= XSNS_AUTH_ADMIN) ? true : false,
+            'show_commu_config' => $commu_auth >= XSNS_AUTH_ADMIN,
+            //'show_topic_list' => ($public_flag != 3 || $commu_auth >= XSNS_AUTH_MEMBER) ? true : false,
+            'show_topic_list' => $public_flag != 3 || $commu_auth >= XSNS_AUTH_MEMBER,
+            //'show_topic_add' => ($commu_auth >= XSNS_AUTH_MEMBER) ? true : false,
+            'show_topic_add' => $commu_auth >= XSNS_AUTH_MEMBER,
+            //'show_send_message' => ($commu_auth >= XSNS_AUTH_MEMBER) ? true : false,
+            'show_send_message' => $commu_auth >= XSNS_AUTH_MEMBER,
+            //'show_member_config' => ($commu_auth >= XSNS_AUTH_ADMIN) ? true : false,
+            'show_member_config' => $commu_auth >= XSNS_AUTH_ADMIN,
         );
         return $ret;
     }

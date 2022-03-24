@@ -42,13 +42,13 @@ class Xsns_Friend_list_Action extends Xsns_Mypage_Action
             if ($own_uid == $uid) {
                 $friend_user =& $user_handler->get($friend['uid']);
                 if (is_object($friend_user) && $friend_user->isFriend($own_uid)) {
-                    $edit_menu = "<li><a href='" . XSNS_URL_MYPAGE . "&" . XSNS_ACTION_ARG . "=intro_add&uid=" . $friend['uid'] . "'>" . _MD_XSNS_TITLE_MYPAGE_INTRO . "</a></li>";
+                    $edit_menu = '<li><a class="ui-button" href="' . XSNS_URL_MYPAGE . '&' . XSNS_ACTION_ARG . '=intro_add&uid=' . $friend['uid'] . '">' . _MD_XSNS_TITLE_MYPAGE_INTRO . '</a></li>';
                 } else {
-                    $edit_menu = "";
+                    $edit_menu = '';
                 }
-                $edit_menu = "<ul>" . $edit_menu . "<li><a href='" . XSNS_URL_MYPAGE . "&" . XSNS_ACTION_ARG . "=friend_del&uid=" . $friend['uid'] . "'>" . _MD_XSNS_FRIEND_DELETE . "</a></li></ul>";
+                $edit_menu = '<ul>' . $edit_menu . '<li><a class="ui-button" href="' . XSNS_URL_MYPAGE . '&' . XSNS_ACTION_ARG . '=friend_del&uid=' . $friend['uid'] . '">' . _MD_XSNS_FRIEND_DELETE . '</a></li></ul>';
             } else {
-                $edit_menu = "";
+                $edit_menu = '';
             }
 
             $friend_list[$i] = $friend;

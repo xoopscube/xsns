@@ -47,7 +47,7 @@ class Xsns_Profile_avatar_sel_exec_Action extends Xsns_Mypage_Action
             $user_avatar = $avatars[0]->getVar('avatar_file');
         } else {
             $user_avatar_object = false;
-            $user_avatar = 'blank.gif';
+            $user_avatar = XOOPS_UPLOAD_PATH . '/no_avatar.gif'; // @gigamaster default avatar
         }
         $user_avatarpath = str_replace("\\", "/", realpath(XOOPS_UPLOAD_PATH . '/' . $user_avatar));
 

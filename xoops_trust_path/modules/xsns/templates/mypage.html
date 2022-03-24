@@ -7,8 +7,7 @@
 <{if $mydirname}><{include file="db:`$mydirname`_inc_mypage_menu.html"}><{/if}>
 
 
-
-<{if $info_list|@count > 0}>
+<{if !empty($info_list)}>
 	<{foreach item=info from=$info_list}>
 	<div class="confirm">
 		<a href="<{$info.url}>"><{$info.message}></a>
@@ -31,132 +30,96 @@
 				<!-- User Information : Start -->
 
 				<{if $user_info.avatarurl != NULL}>
-				<div layout="row">
-				<div class="itemTitle bg0"><{$smarty.const._US_AVATAR}></div>
-				<div class="even"><{$user_info.avatarurl}></div>
-				</div>
+				<h6><{$smarty.const._US_AVATAR}></h6>
+				<div><{$user_info.avatarurl}></div>
 				<{/if}>
 
 				<{if $user_info.name != NULL}>
-				<div layout="row">
-				<div class="itemTitle bg0"><{$smarty.const._US_USERNAME}></div>
-				<div class="even"><{$user_info.name}></div>
-				</div>
+				<h6><{$smarty.const._US_USERNAME}></h6>
+				<div><{$user_info.name}></div>
 				<{/if}>
 
 				<{if $user_info.realname != NULL}>
-				<div layout="row">
-				<div class="itemTitle bg0"><{$smarty.const._US_REALNAME}></div>
-				<div class="even"><{$user_info.realname}></div>
-				</div>
+				<h6><{$smarty.const._US_REALNAME}></h6>
+				<div><{$user_info.realname}></div>
 				<{/if}>
 
 				<{if $user_info.rank != NULL}>
-				<div layout="row">
-				<div class="itemTitle bg0"><{$smarty.const._US_RANK}></div>
-				<div class="even"><{$user_info.rank}>&nbsp;<{$user_info.ranktitle}>&nbsp;(<{$smarty.const._US_POSTS}>:<{$user_info.posts}>)</div>
-				</div>
+				<h6><{$smarty.const._US_RANK}></h6>
+				<div><{$user_info.rank}>&nbsp;<{$user_info.ranktitle}>&nbsp;(<{$smarty.const._US_POSTS}>:<{$user_info.posts}>)</div>
 				<{/if}>
 
 				<{if $user_info.websiteurl != NULL}>
-				<div layout="row">
-				<div class="itemTitle bg0"><{$smarty.const._US_WEBSITE}></div>
-				<div class="even"><{$user_info.websiteurl}></div>
-				</div>
+				<h6><{$smarty.const._US_WEBSITE}></h6>
+				<div><{$user_info.websiteurl}></div>
 				<{/if}>
 
 				<{if $user_info.email != NULL}>
-				<div layout="row">
-				<div class="itemTitle bg0"><{$smarty.const._US_EMAIL}></div>
-				<div class="even"><{$user_info.email}></div>
-				</div>
+				<h6><{$smarty.const._US_EMAIL}></h6>
+				<div><{$user_info.email}></div>
 				<{/if}>
 
 				<{if $user_info.pmlink != NULL}>
-				<div layout="row">
-				<div class="itemTitle bg0"><{$smarty.const._US_PM}></div>
-				<div class="even"><{$user_info.pmlink}></div>
-				</div>
+				<h6><{$smarty.const._US_PM}></h6>
+				<div><{$user_info.pmlink}></div>
 				<{/if}>
 
 				<{if $user_info.icq != NULL}>
-				<div layout="row">
-				<div class="itemTitle bg0"><{$smarty.const._US_ICQ}></div>
-				<div class="even"><{$user_info.icq}></div>
-				</div>
+				<h6><{$smarty.const._US_ICQ}></h6>
+				<div><{$user_info.icq}></div>
 				<{/if}>
 
 				<{if $user_info.aim != NULL}>
-				<div layout="row">
-				<div class="itemTitle bg0"><{$smarty.const._US_AIM}></div>
-				<div class="even"><{$user_info.aim}></div>
-				</div>
+				<h6><{$smarty.const._US_AIM}></h6>
+				<div><{$user_info.aim}></div>
 				<{/if}>
 
 				<{if $user_info.yim != NULL}>
-				<div layout="row">
-				<div class="itemTitle bg0"><{$smarty.const._US_YIM}></div>
-				<div class="even"><{$user_info.yim}></div>
-				</div>
+				<h6><{$smarty.const._US_YIM}></h6>
+				<div><{$user_info.yim}></div>
 				<{/if}>
 
 				<{if $user_info.msnm != NULL}>
-				<div layout="row">
-				<div class="itemTitle bg0"><{$smarty.const._US_MSNM}></div>
-				<div class="even"><{$user_info.msnm}></div>
-				</div>
+				<h6><{$smarty.const._US_MSNM}></h6>
+				<div><{$user_info.msnm}></div>
 				<{/if}>
 
 				<{if $user_info.location != NULL}>
-				<div layout="row">
-				<div class="itemTitle bg0"><{$smarty.const._US_LOCATION}></div>
-				<div class="even"><{$user_info.location}></div>
-				</div>
+				<h6><{$smarty.const._US_LOCATION}></h6>
+				<div><{$user_info.location}></div>
 				<{/if}>
 
 				<{if $user_info.occupation != NULL}>
-				<div layout="row">
-				<div class="itemTitle bg0"><{$smarty.const._US_OCCUPATION}></div>
-				<div class="even"><{$user_info.occupation}></div>
-				</div>
+				<h6><{$smarty.const._US_OCCUPATION}></h6>
+				<div><{$user_info.occupation}></div>
 				<{/if}>
 
 				<{if $user_info.interest != NULL}>
-				<div layout="row">
-				<div class="itemTitle bg0"><{$smarty.const._US_INTEREST}></div>
-				<div class="even"><{$user_info.interest}></div>
-				</div>
+				<h6><{$smarty.const._US_INTEREST}></h6>
+				<div><{$user_info.interest}></div>
 				<{/if}>
 
 				<{if $user_info.signature != NULL}>
-				<div layout="row">
-				<div class="itemTitle bg0"><{$smarty.const._US_SIGNATURE}></div>
-				<div class="even"><{$user_info.signature}></div>
-				</div>
+				<h6><{$smarty.const._US_SIGNATURE}></h6>
+				<div><{$user_info.signature}></div>
 				<{/if}>
 
 				<{if $user_info.extrainfo != NULL}>
-				<div layout="row">
-				<div class="itemTitle bg0"><{$smarty.const._US_EXTRAINFO}></div>
-				<div class="even"><{$user_info.extrainfo}></div>
-				</div>
+				<h6><{$smarty.const._US_EXTRAINFO}></h6>
+				<div><{$user_info.extrainfo}></div>
 				<{/if}>
 
-				<!--
+
                 <{if $user_info.reg_date != NULL}>
-                <tr class="even">
-                <td class="itemTitle bg0"><{$smarty.const._US_MEMBERSINCE}></td>
-                <td class="even"><{$user_info.reg_date|date_format:"%Y-%m-%d %H:%M:%S"}></td>
-                </tr>
+                <h6><{$smarty.const._US_MEMBERSINCE}></h6>
+                <div><{$user_info.reg_date|date_format:"%Y-%m-%d %H:%M:%S"}></div>
                 <{/if}>
 
                 <{if $user_info.last_login != NULL}>
-                <tr class="even">
-                <td class="itemTitle bg0"><{$smarty.const._US_LASTLOGIN}></td>
-                <td class="even"><{$user_info.last_login|date_format:"%Y-%m-%d %H:%M:%S"}></td>
-                </tr>
+                <h6><{$smarty.const._US_LASTLOGIN}></h6>
+                <div><{$user_info.last_login|date_format:"%Y-%m-%d %H:%M:%S"}></div>
                 <{/if}>
-                -->
+
 			</div><{* ----- Card content *}>
 <!--			<div class="card-footer"></div>-->
 		</div><{* ----- Card *}>
@@ -178,12 +141,16 @@
 				<{section name=id loop=$friend_list}>
 
 				<{if $smarty.section.id.index > 0 && $smarty.section.id.index is div by 3}>
-				</div><div class="even">
+				</div><div>
 				<{/if}>
 
 				<div style="width:50px; height:50px;">
 					<{if $friend_list[id]}>
-					<a href="<{$friend_list[id].page_url}>"><img src="<{$friend_list[id].avatar_url}>" width="<{$friend_list[id].avatar_width}>" height="<{$friend_list[id].avatar_height}>" alt="<{$friend_list[id].name}>" title="<{$friend_list[id].name}>"><br><small><{$friend_list[id].name|truncate:11}></small></a>
+					<a href="<{$friend_list[id].page_url}>">
+						<img src="<{$friend_list[id].avatar_url}>" width="<{$friend_list[id].avatar_width}>" height="<{$friend_list[id].avatar_height}>" alt="<{$friend_list[id].name}>" title="<{$friend_list[id].name}>">
+						<br>
+						<small><{$friend_list[id].name|truncate:11}></small>
+					</a>
 					<{/if}>
 				</div>
 
@@ -212,16 +179,20 @@
 
 			<div class="card-content">
 
-				<div class="even">
+				<div>
 				<{section name=id loop=$commu_list}>
 
 				<{if $smarty.section.id.index > 0 && $smarty.section.id.index is div by 3}>
-				</div><div class="even">
+				</div><div>
 				<{/if}>
 
 				<div class="centerHV" style="width:85px;height:85px;">
 					<{if $commu_list[id]}>
-					<a href="<{$commu_list[id].page_url}>"><img src="<{$commu_list[id].image.url_src|default:"$xoops_url/modules/$mydirname/images/cm_commu_default1.gif"}>" alt="<{$commu_list[id].name}> (<{$commu_list[id].member_count}>)" title="<{$commu_list[id].name}> (<{$commu_list[id].member_count}>)"><!--<br><small><{$commu_list[id].name}> (<{$commu_list[id].member_count}>)</small>--></a>
+					<a href="<{$commu_list[id].page_url}>">
+						<img src="<{$commu_list[id].image.url_src|default:"$xoops_url/modules/$mydirname/images/cm_commu_default1.gif"}>" alt="<{$commu_list[id].name}>
+						(<{$commu_list[id].member_count}>)" title="<{$commu_list[id].name}> (<{$commu_list[id].member_count}>)">
+						<!--<br><small><{$commu_list[id].name}> (<{$commu_list[id].member_count}>)</small>-->
+					</a>
 					<{/if}>
 				</div>
 
@@ -315,7 +286,7 @@
 
 			<div class="card-content">
 			<{foreach item=intro from=$intro_list}>
-				<div class="even">
+				<div>
 					<{$intro.body}>
 					<div style="text-align:right"><a href="<{$intro.user_from.page_url}>"><{$intro.user_from.name}></a></div>
 				</div>

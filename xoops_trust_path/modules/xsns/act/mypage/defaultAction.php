@@ -133,9 +133,11 @@ class Xsns_Default_Action extends Xsns_Mypage_Action
             $email = NULL;
         }
 
-        // TODO @gigamaster update to XCL7
+        // Private message
+        // @gigamaster update to XCL7
         if (is_object($xoopsUser)) {
-            $pmlink = "<a href=\"javascript:openWithSelfMain('" . XOOPS_URL . "/pmlite.php?send2=1&amp;to_userid=" . $uid . "', 'pmlite', 450, 380);\"><img src=\"" . XOOPS_URL . "/images/icons/pm.gif\" alt=\"" . sprintf(_SENDPMTO, $user->getVar('uname')) . "\"></a>";
+            $pmlink    = '<a href="' . XOOPS_URL . '/modules/message/index.php?action=new&amp;to_userid=' . $uid . '">'
+                        .'<img class="svg" src="' . XOOPS_URL . '/images/icons/mail.svg" alt="' . sprintf(_SENDPMTO, $user->getVar('uname')) . '"></a>';
         } else {
             $pmlink = NULL;
         }
@@ -153,7 +155,7 @@ class Xsns_Default_Action extends Xsns_Mypage_Action
         // TODO #gigamaster custom profile
         $user_info = array(
             'id' => $uid,
-            'avatarurl' => '<img src="' . XOOPS_URL . '/uploads/' . $user->getVar('user_avatar') . '" alt="' . $uname . '">',
+            'avatarurl' => '<img src="' . XOOPS_URL . '/uploads/' . $user->getVar('user_avatar') . '" alt="' . $uname . '">', // @gigamaster default avatar
             'name' => $uname,
             'realname' => $user->getVar('name'),
             'rank' => $rankimage,

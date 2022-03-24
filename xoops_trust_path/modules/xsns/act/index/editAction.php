@@ -33,7 +33,9 @@ class Xsns_Edit_Action extends Xsns_Index_Action
             'id' => $cid,
             'name' => $community->getVar('name', 'e'),
             'info' => $community->getVar('info', 'e'),
-            'del_enabled' => ($community->getTopicCount() == 0) ? true : false,
+            //'del_enabled' => ($community->getTopicCount() == 0) ? true : false,
+            // TODO #gigamaster
+            'del_enabled' => $community->getTopicCount() == 0,
             'image' => $community->getImage(XSNS_IMAGE_SIZE_S),
         );
 

@@ -136,7 +136,7 @@ class XsnsImageHandler extends XsnsRootHandler
         require_once XSNS_USERLIB_DIR . '/image_uploader.php';
 
         $file_count = count($_FILES[$name]['name']);
-        $mime = "image/jpeg|image/pjpeg|image/gif|image/png|image/x-png|image/svg+xml"; // TODO SVG @gigamaster
+        $mime = "image/jpeg|image/pjpeg|image/gif|image/png|image/x-png"; // TODO SVG @gigamaster |image/svg+xml
         $mime_array = explode('|', $mime);
         $max_size = $this->module_config['file_upload_size'];
         $max_width = $this->module_config['image_width'];
@@ -300,8 +300,9 @@ class XsnsImageHandler extends XsnsRootHandler
             return false;
         }
 
-        $w_max_array = array(XSNS_IMAGE_SIZE_S => 80, XSNS_IMAGE_SIZE_M => 120, XSNS_IMAGE_SIZE_L => 300);
-        $h_max_array = array(XSNS_IMAGE_SIZE_S => 80, XSNS_IMAGE_SIZE_M => 120, XSNS_IMAGE_SIZE_L => 300);
+        // TODO @gigamaster IMAGE_SIZE ratio
+        $w_max_array = array(XSNS_IMAGE_SIZE_S => 120, XSNS_IMAGE_SIZE_M => 400, XSNS_IMAGE_SIZE_L => 900);
+        $h_max_array = array(XSNS_IMAGE_SIZE_S => 120, XSNS_IMAGE_SIZE_M => 400, XSNS_IMAGE_SIZE_L => 900);
 
         $w_max = $w_max_array[$thumb_id];
         $h_max = $h_max_array[$thumb_id];

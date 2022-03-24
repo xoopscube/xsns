@@ -18,7 +18,7 @@ class XsnsAvatar extends XoopsAvatar
 class XsnsAvatarHandler extends XoopsAvatarHandler
 {
 
-    function XsnsAvatarHandler()
+    function __construct()
     {
         $this->db =& Database::getInstance();
     }
@@ -49,7 +49,8 @@ class XsnsAvatarHandler extends XoopsAvatarHandler
         $ret[] = array(
             'id' => 0,
             'name' => _NONE,
-            'file' => 'blank.gif',
+            //'file' => 'blank.gif', @gigamaster default avatar
+            'file' => XOOPS_UPLOAD_PATH . '/no_avatar.gif',
         );
         if (is_array($avatars)) {
             foreach ($avatars as $id => $obj) {

@@ -19,9 +19,9 @@ span.red {
 	color: #ff0000;
 }
 
-div#mainFrame {
-	width: 600px;
-}
+/*div#mainFrame {*/
+/*	width: 600px;*/
+/*}*/
 
 input.submit {
 	width: 80px;

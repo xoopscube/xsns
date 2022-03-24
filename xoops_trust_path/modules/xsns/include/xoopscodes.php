@@ -54,10 +54,18 @@ function xsns_xoops_code_tarea($textarea_id, $cols = 60, $rows = 5, $suffix = nu
     }
     echo "</select><span id='" . $hiddentext . "'>" . _EXAMPLE . "</span>\n";
 
-    echo "<br />\n";
+    echo "<br>\n";
     //Hack smilies move for bold, italic ...
     $areacontent = isset($GLOBALS[$textarea_id]) ? $GLOBALS[$textarea_id] : '';
-    echo "<img src='" . XOOPS_URL . "/images/bold.gif' alt='bold' onmouseover='style.cursor=\"hand\"' onclick='setVisible(\"" . $hiddentext . "\");makeBold(\"" . $hiddentext . "\");' />&nbsp;<img src='" . XOOPS_URL . "/images/italic.gif' alt='italic' onmouseover='style.cursor=\"hand\"' onclick='setVisible(\"" . $hiddentext . "\");makeItalic(\"" . $hiddentext . "\");' />&nbsp;<img src='" . XOOPS_URL . "/images/underline.gif' alt='underline' onmouseover='style.cursor=\"hand\"' onclick='setVisible(\"" . $hiddentext . "\");makeUnderline(\"" . $hiddentext . "\");'/>&nbsp;<img src='" . XOOPS_URL . "/images/linethrough.gif' alt='linethrough' onmouseover='style.cursor=\"hand\"' onclick='setVisible(\"" . $hiddentext . "\");makeLineThrough(\"" . $hiddentext . "\");' />&nbsp;<input type='text' id='" . $textarea_id . "Addtext' size='20' />&nbsp;<input type='button' onclick='xoopsCodeText(\"$textarea_id\", \"" . $hiddentext . "\", \"" . htmlspecialchars(_ENTERTEXTBOX, ENT_QUOTES) . "\")' value='" . _ADD . "' /><br /><br /><textarea id='" . $textarea_id . "' name='" . $textarea_id . "' onselect=\"xoopsSavePosition('" . $textarea_id . "');\" onclick=\"xoopsSavePosition('" . $textarea_id . "');\" onkeyup=\"xoopsSavePosition('" . $textarea_id . "');\" cols='$cols' rows='$rows'>" . $areacontent . "</textarea><br />\n";
+    echo "<img src='" . XOOPS_URL . "/images/bold.gif' alt='bold' onmouseover='style.cursor=\"hand\"' onclick='setVisible(\"" . $hiddentext . "\");makeBold(\"" . $hiddentext . "\");'>&nbsp;"
+    ."<img src='" . XOOPS_URL . "/images/italic.gif' alt='italic' onmouseover='style.cursor=\"hand\"' onclick='setVisible(\"" . $hiddentext . "\");makeItalic(\"" . $hiddentext . "\");'>&nbsp;"
+    ."<img src='" . XOOPS_URL . "/images/underline.gif' alt='underline' onmouseover='style.cursor=\"hand\"' onclick='setVisible(\"" . $hiddentext . "\");makeUnderline(\"" . $hiddentext . "\");'>&nbsp;"
+    ."<img src='" . XOOPS_URL . "/images/linethrough.gif' alt='linethrough' onmouseover='style.cursor=\"hand\"' onclick='setVisible(\"" . $hiddentext . "\");makeLineThrough(\"" . $hiddentext . "\");'>&nbsp;"
+    ."<input type='text' id='" . $textarea_id . "Addtext' size='20'>&nbsp;"
+    ."<input type='button' onclick='xoopsCodeText(\"$textarea_id\", \"" . $hiddentext . "\", \"" . htmlspecialchars(_ENTERTEXTBOX, ENT_QUOTES) . "\")' value='" . _ADD . "'>"
+    ."<br><br>"
+    ."<textarea id='" . $textarea_id . "' name='" . $textarea_id . "' onselect=\"xoopsSavePosition('" . $textarea_id . "');\" onclick=\"xoopsSavePosition('" . $textarea_id . "');\" onkeyup=\"xoopsSavePosition('" . $textarea_id . "');\" cols='$cols' rows='$rows'>" . $areacontent . "</textarea>"
+    ."<br>\n";
     //Fin du hack
 }
 
@@ -78,7 +86,7 @@ function xsns_xoops_smilies($textarea_id)
         if ($result = $db->query('SELECT * FROM ' . $db->prefix('smiles') . ' WHERE display=1')) {
             while ($smile = $db->fetchArray($result)) {
                 //hack smilies move for the smilies !!
-                echo "<img src='" . XOOPS_UPLOAD_URL . "/" . htmlspecialchars($smile['smile_url']) . "' border='0' onmouseover='style.cursor=\"hand\"' alt='' onclick='xoopsCodeSmilie(\"" . $textarea_id . "\", \" " . $smile['code'] . " \");' />";
+                echo "<img src='" . XOOPS_UPLOAD_URL . "/" . htmlspecialchars($smile['smile_url']) . "' border='0' onmouseover='style.cursor=\"hand\"' alt='' onclick='xoopsCodeSmilie(\"" . $textarea_id . "\", \" " . $smile['code'] . " \");'>";
                 //fin du hack
             }
         }
@@ -87,7 +95,7 @@ function xsns_xoops_smilies($textarea_id)
         for ($i = 0; $i < $count; $i++) {
             if ($smiles[$i]['display'] == 1) {
                 // show smiley
-                echo "<img src='" . XOOPS_UPLOAD_URL . "/" . htmlspecialchars($smiles[$i]['smile_url']) . "' border='0' onmouseover='style.cursor=\"hand\"' alt='' onclick='xoopsCodeSmilie(\"" . $textarea_id . "\", \" " . $smiles[$i]['code'] . " \");' />";
+                echo "<img src='" . XOOPS_UPLOAD_URL . "/" . htmlspecialchars($smiles[$i]['smile_url']) . "' border='0' onmouseover='style.cursor=\"hand\"' alt='' onclick='xoopsCodeSmilie(\"" . $textarea_id . "\", \" " . $smiles[$i]['code'] . " \");'>";
             }
         }
     }

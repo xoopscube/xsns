@@ -22,7 +22,7 @@ if (!function_exists('xsns_new_base')) {
 
         $URL_MOD = XOOPS_URL . "/modules/" . $mydirname;
 
-        $mytrustdirpath = dirname(dirname(__FILE__));
+        $mytrustdirpath = dirname(__FILE__, 2);
 
         $db =& Database::getInstance();
         (method_exists('MyTextSanitizer', 'sGetInstance') and $myts =& MyTextSanitizer::sGetInstance()) || $myts =& MyTextSanitizer::getInstance();
