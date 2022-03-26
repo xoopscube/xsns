@@ -1,9 +1,11 @@
 <?php
 
-const _AM_MENU_MYTPLSADMIN = 'Templates Management';
-const _AM_MENU_MYBLOCKSADMIN = 'Blocks Management';
-const _AM_MENU_MYLANGADMIN = 'Language Constant Management';
-const _AM_MENU_MYPREFERENCES = 'Preferences';
+const _MD_A_MYMENU_MYBLOCKSADMIN= 'Blocks Management';
+
+//const _AM_MENU_MYTPLSADMIN = 'Templates Management';
+//const _AM_MENU_MYBLOCKSADMIN = 'Blocks Management';
+//const _AM_MENU_MYLANGADMIN = 'Language Constant Management';
+//const _AM_MENU_MYPREFERENCES = 'Preferences';
 
 const _AM_XSNS_POST_DATE = 'Posted Date';
 
@@ -11,24 +13,24 @@ const _AM_XSNS_PERM_ERR = 'Please create the following directory.<br>* Please se
 
 const _AM_XSNS_NOTICE_MYPAGE = '<div class="error">PHP Safe Mode. PHP executes scripts in a restricted environment. The replacement process of My Page could not be executed.</div>';
 
-const _AM_XSNS_NOTICE_FILE_PATH = '<div class="error"">Configuration for images and files uploads is set in public directory.<br>Due to security considerations, it is recommended to use Trust Path instead.</div';
+const _AM_XSNS_NOTICE_FILE_PATH = 'Configuration for images and files uploads is set in public directory.<br>Due to security considerations, the directory to which files are uploaded should be outside of the public html directory.';
 
 const _AM_XSNS_GD_ERR_NONE = '<div class="error">GD Library extension not available with this PHP installation. The uploading function for images cannot be used.</div>';
 const _AM_XSNS_GD_ERR_GIF = 'The GIF image is not supported. ';
 const _AM_XSNS_GD_ERR_JPG = 'The JPEG image is not supported. ';
 const _AM_XSNS_GD_ERR_PNG = 'The PNG image is not supported. ';
 
-const _AM_XSNS_TITLE_CATEGORY_CONFIG = 'Group Category Manager';
+const _AM_XSNS_TITLE_CATEGORY_CONFIG = 'Community Groups';
 const _AM_XSNS_TITLE_IMAGE_CONFIG = 'Image Manager';
 const _AM_XSNS_TITLE_FILE_CONFIG = 'File Manager';
 const _AM_XSNS_TITLE_ACCESS_LOG = 'Access logs';
 
-const _AM_XSNS_CATEGORY1 = 'Medium Categories ';
-const _AM_XSNS_CATEGORY2 = 'Small Categories ';
+const _AM_XSNS_CATEGORY1 = 'Main Categories ';
+const _AM_XSNS_CATEGORY2 = 'Subcategories ';
 const _AM_XSNS_CATEGORY_NAME = 'Category Name';
-const _AM_XSNS_CATEGORY_ORDER = 'The order of display';
+const _AM_XSNS_CATEGORY_ORDER = 'Display Order';
 const _AM_XSNS_CATEGORY_LIST = 'View';
-const _AM_XSNS_CATEGORY_OPERATION = 'Operation';
+const _AM_XSNS_CATEGORY_OPERATION = 'Action';
 const _AM_XSNS_CATEGORY_EDIT = 'Edit';
 const _AM_XSNS_CATEGORY_DEL = 'Delete';
 const _AM_XSNS_CATEGORY_ADD = 'Add';
@@ -40,7 +42,7 @@ const _AM_XSNS_CATEGORY_EDIT_OK = 'The category was changed. ';
 const _AM_XSNS_CATEGORY_EDIT_NG = 'Error: It failed in the change of the category.';
 const _AM_XSNS_CATEGORY_DEL_OK = 'The category was deleted.';
 const _AM_XSNS_CATEGORY_DEL_NG = 'Error: It failed in the deletion of the category.';
-const _AM_XSNS_CATEGORY_DEL_CONFIRM = 'When medium category is deleted, also the small category which corresponds is deleted everything. \\n\\nMay I delete it?';
+const _AM_XSNS_CATEGORY_DEL_CONFIRM = 'When the main category is deleted, all of its subcategories are deleted. \\n\\nConfirm delete?';
 
 const _AM_XSNS_IMAGE = 'Image';
 const _AM_XSNS_IMAGE_SIZE = 'Size';

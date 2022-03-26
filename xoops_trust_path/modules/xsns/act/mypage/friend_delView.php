@@ -6,8 +6,9 @@ class Xsns_Friend_del_View extends Xsns_Mypage_View
     function dispatch()
     {
         require XSNS_FRAMEWORK_DIR . '/global.php';
-        $xoopsOption['template_main'] = $mydirname . '_mypage_friend_del.html';
         require_once XOOPS_ROOT_PATH . '/header.php';
+
+        $xoopsOption['template_main'] = $mydirname . '_mypage_friend_del.html';
 
         $friend = $this->context->getAttribute('friend');
 

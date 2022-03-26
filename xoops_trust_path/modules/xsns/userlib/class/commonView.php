@@ -79,18 +79,15 @@ class XsnsCommonView extends XsnsView
 
     function assignFormHeader($form_name, $method = 'post', $target = '', $action = '', $upload = false, $hidden_vars = NULL, $token_name = NULL)
     {
-        $page_html = (empty($target)) ?
-            "" : "<input type=\"hidden\" name=\"" . XSNS_PAGE_ARG . "\" value=\"" . $target . "\">\n";
-        $action_html = (empty($action)) ?
-            "" : "<input type=\"hidden\" name=\"" . XSNS_ACTION_ARG . "\" value=\"" . $action . "\">\n";
+        $page_html = (empty($target)) ? '' : '<input type="hidden" name="' . XSNS_PAGE_ARG . '" value="' . $target . '">';
+        $action_html = (empty($action)) ? '' : '<input type="hidden" name="' . XSNS_ACTION_ARG . '" value="' . $action . '">';
         $upload_html = ($upload) ? " enctype=\"multipart/form-data\"" : "";
 
-        $form = "<form action=\"index.php\" method=\"" . $method . "\"" . $upload_html . ">\n" .
-            $page_html . $action_html;
+        $form = '<form action="index.php" method="' . $method . '"' . $upload_html . '>' . $page_html . $action_html;
 
         if (is_array($hidden_vars)) {
             foreach ($hidden_vars as $key => $value) {
-                $form .= "<input type=\"hidden\" name=\"" . $key . "\" value=\"" . $value . "\">\n";
+                $form .= '<input type="hidden" name="' . $key . '" value="' . $value . '">';
             }
         }
         if (!is_null($token_name)) {
@@ -106,8 +103,10 @@ class XsnsCommonView extends XsnsView
     function assignUploadFormJS($image_form_count = 1, $file_form_count = 1)
     {
         global $xoopsModuleConfig;
-        $image_form_limit = isset($xoopsModuleConfig['image_form_limit']) ? $xoopsModuleConfig['image_form_limit'] : 3;
-        $file_form_limit = isset($xoopsModuleConfig['file_form_limit']) ? $xoopsModuleConfig['file_form_limit'] : 3;
+        //$image_form_limit = isset($xoopsModuleConfig['image_form_limit']) ? $xoopsModuleConfig['image_form_limit'] : 3;
+        $image_form_limit = $xoopsModuleConfig['image_form_limit'] ?? 3;
+        //$file_form_limit = isset($xoopsModuleConfig['file_form_limit']) ? $xoopsModuleConfig['file_form_limit'] : 3;
+        $file_form_limit = $xoopsModuleConfig['file_form_limit'] ?? 3;
 
         if ($image_form_limit < 1 && $file_form_limit < 1) {
             return;

@@ -43,9 +43,11 @@ class XsnsCommonAction extends XsnsAction
     function getRequestVar($key, $req_type = XSNS_REQUEST_POST)
     {
         if ($req_type == XSNS_REQUEST_POST) {
-            $value = isset($_POST[$key]) ? $_POST[$key] : NULL;
+            //$value = isset($_POST[$key]) ? $_POST[$key] : NULL;
+            $value = $_POST[$key] ?? NULL;
         } elseif ($req_type == XSNS_REQUEST_GET) {
-            $value = isset($_GET[$key]) ? $_GET[$key] : NULL;
+            //$value = isset($_GET[$key]) ? $_GET[$key] : NULL;
+            $value = $_GET[$key] ?? NULL;
         } elseif ($req_type == XSNS_REQUEST_SESSION) {
             $sess_handler =& XsnsSessionHandler::getInstance();
             $value = $sess_handler->getVar($key);
@@ -78,18 +80,16 @@ class XsnsCommonAction extends XsnsAction
 
     function getFormHeader($method = 'post', $target = '', $action = '', $upload = false, $hidden_vars = NULL, $token_name = NULL)
     {
-        $page_html = (empty($target)) ?
-            "" : "<input type=\"hidden\" name=\"" . XSNS_PAGE_ARG . "\" value=\"" . $target . "\">\n";
-        $action_html = (empty($action)) ?
-            "" : "<input type=\"hidden\" name=\"" . XSNS_ACTION_ARG . "\" value=\"" . $action . "\">\n";
-        $upload_html = ($upload) ? " enctype=\"multipart/form-data\"" : "";
+        $page_html = (empty($target)) ? '' : '<input type="hidden" name="' . XSNS_PAGE_ARG . '" value="' . $target . '">';
+        $action_html = (empty($action)) ? '' : '<input type="hidden" name="' . XSNS_ACTION_ARG . '" value="' . $action . '">';
+        $upload_html = ($upload) ? ' enctype="multipart/form-data"' : '';
 
-        $form = "<form action=\"index.php\" method=\"" . $method . "\"" . $upload_html . ">\n" .
+        $form = '<form action="index.php" method="' . $method . '"' . $upload_html . '>' .
             $page_html . $action_html;
 
         if (is_array($hidden_vars)) {
             foreach ($hidden_vars as $key => $value) {
-                $form .= "<input type=\"hidden\" name=\"" . $key . "\" value=\"" . $value . "\">\n";
+                $form .= '<input type="hidden" name="' . $key . '" value="' . $value . '">';
             }
         }
         if (!is_null($token_name)) {
@@ -159,15 +159,15 @@ class XsnsCommonAction extends XsnsAction
 
         $pages = array();
 
-        $style = is_null($color) ? " class=\"selectedPage\"" : " style=\"background-color:" . $color . "\";";
-        $html = "|";
+        $style = is_null($color) ? ' class="selectedPage"' : ' style="background-color:' . $color . '";';
+        $html = '|';
         for ($i = $page_start; $i < $page_end; $i++) {
             if ($page_id == $i) {
-                $html .= "<span " . $style . "> " . ($i + 1) . " </span>|";
+                $html .= '<span ' . $style . '> ' . ($i + 1) . ' </span>|';
                 $selected = true;
             } else {
                 $url = $base_url . "&s=" . ($i * $limit);
-                $html .= "<a href=\"" . $url . "\"> " . ($i + 1) . " </a>|";
+                $html .= '<a href="' . $url . '"> ' . ($i + 1) . ' </a>|';
                 $selected = false;
             }
             $pages[] = array(

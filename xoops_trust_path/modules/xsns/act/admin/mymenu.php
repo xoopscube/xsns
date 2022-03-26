@@ -26,8 +26,7 @@ require_once( $langmanpath );
 $langman = D3LanguageManager::getInstance();
 $langman->read( 'modinfo.php', $mydirname, $mytrustdirname );
 
-// include admin menu in trust_path/
-include $mytrustdirpath.'/admin_menu.php' ;
+include dirname( __DIR__ ) . '/admin_menu.php';
 
 // Block Admin
 if ( file_exists( XOOPS_TRUST_PATH . '/libs/altsys/myblocksadmin.php' ) ) {

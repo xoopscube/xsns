@@ -90,14 +90,16 @@ class XsnsUser extends XoopsUser
     function isCommunityMember($cid)
     {
         $c_member =& $this->handler['member']->getOne($cid, $this->getVar('uid'));
-        return is_object($c_member) ? true : false;
+        //return is_object($c_member) ? true : false;
+        return is_object($c_member);
     }
 
 
     function isFriend($uid)
     {
         $friend =& $this->handler['friend']->getOne($this->getVar('uid'), $uid);
-        return is_object($friend) ? true : false;
+        //return is_object($friend) ? true : false;
+        return is_object($friend);
     }
 
 

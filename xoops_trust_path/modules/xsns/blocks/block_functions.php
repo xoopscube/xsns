@@ -4,7 +4,7 @@ function b_xsns_recent_topic_show($options)
 {
 	global $xoopsUser, $xoopsUserIsAdmin;
 	
-	require_once dirname(dirname(__FILE__)).'/include/common_functions.php';
+	require_once dirname(__FILE__, 2) .'/include/common_functions.php';
 	
 	$db =& Database::getInstance();
 	(method_exists('MyTextSanitizer', 'sGetInstance') and $myts =& MyTextSanitizer::sGetInstance()) || $myts =& MyTextSanitizer::getInstance();
@@ -66,7 +66,7 @@ function b_xsns_recent_topic_show($options)
 	
 	$today = date('Y-m-d');
 	$item_count = 0;
-	require_once dirname(dirname(__FILE__)).'/userlib/utils.php';
+	require_once dirname(__FILE__, 2) .'/userlib/utils.php';
 	
 	while($row = $db->fetchArray($rs)) {
 		
@@ -163,7 +163,7 @@ function b_xsns_information_show($options)
 		return array();
 	}
 	
-	require_once dirname(dirname(__FILE__)).'/include/common_functions.php';
+	require_once dirname(__FILE__, 2) .'/include/common_functions.php';
 	
 	$db =& Database::getInstance();
 	(method_exists('MyTextSanitizer', 'sGetInstance') and $myts =& MyTextSanitizer::sGetInstance()) || $myts =& MyTextSanitizer::getInstance();

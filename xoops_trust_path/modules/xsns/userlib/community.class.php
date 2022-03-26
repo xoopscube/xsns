@@ -440,7 +440,8 @@ class XsnsCommunityHandler extends XsnsRootHandler
     function nameExists($name)
     {
         $criteria = new Criteria('name', $name);
-        return ($this->getCount($criteria) > 0) ? true : false;
+        // return ($this->getCount($criteria) > 0) ? true : false;
+        return $this->getCount($criteria) > 0;
     }
 
 

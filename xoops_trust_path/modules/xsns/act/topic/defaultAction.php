@@ -122,8 +122,10 @@ class Xsns_Default_Action extends Xsns_Topic_Action
                 }
 
                 $id = intval($comment['c_commu_topic_comment_id']);
-                $images = isset($image_list[$id]) ? $image_list[$id] : array();
-                $files = isset($file_list[$id]) ? $file_list[$id] : array();
+                //$images = isset($image_list[$id]) ? $image_list[$id] : array();
+                $images = $image_list[$id] ?? array();
+                //$files = isset($file_list[$id]) ? $file_list[$id] : array();
+                $files = $file_list[$id] ?? array();
 
                 $comment_list[] = array(
                     'uid' => $comment_uid,

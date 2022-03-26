@@ -13,7 +13,7 @@ class Xsns_File_View extends Xsns_Admin_View
         $file_list = $this->context->getAttribute('file_list');
         $pager = $this->context->getAttribute('pager');
 
-        echo "<h4><p style='text-align:center;'>" . _AM_XSNS_TITLE_FILE_CONFIG . "</p></h4>";
+        echo "<h2>" . _AM_XSNS_TITLE_FILE_CONFIG . "</h2>";
 
         if (count($file_list) > 0) {
 
@@ -27,8 +27,8 @@ class Xsns_File_View extends Xsns_Admin_View
             );
             $header_count = count($header_list);
 
-            echo "<div style='width:90%; margin-left:auto; margin-right:auto;'>";
-            echo "<table class='outer' style='width:100%; text-align:center;'>";
+
+            echo "<table class='outer'>";
             echo "<form action='index.php' method='post'>" .
                 "<input type='hidden' name='" . XSNS_ACTION_ARG . "' value='file_del_exec'>";
 
@@ -71,7 +71,6 @@ class Xsns_File_View extends Xsns_Admin_View
 
             echo "</form>";
             echo "</table>";
-            echo "</div>";
         }
         xoops_cp_footer();
     }

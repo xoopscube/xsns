@@ -6,8 +6,9 @@ class Xsns_Del_View extends Xsns_Topic_View
     function dispatch()
     {
         require XSNS_FRAMEWORK_DIR . '/global.php';
-        $xoopsOption['template_main'] = $mydirname . '_topic_del.html';
         require_once XOOPS_ROOT_PATH . '/header.php';
+
+        $xoopsOption['template_main'] = $mydirname . '_topic_del.html';
 
         $commu = $this->context->getAttribute('commu');
         $topic = $this->context->getAttribute('topic');

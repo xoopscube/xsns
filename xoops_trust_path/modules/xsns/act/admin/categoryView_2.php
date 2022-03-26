@@ -15,7 +15,7 @@ function dispatch()
 	
 	echo '<h2>'._AM_XSNS_TITLE_CATEGORY_CONFIG.'</h2>';
 
-	echo '<div style="text-align:center; font-size:14px; padding-bottom:15px;"><b>'._AM_XSNS_CATEGORY1._AM_XSNS_CATEGORY_LIST.'</b></div>';
+	echo '<h3>'._AM_XSNS_CATEGORY1._AM_XSNS_CATEGORY_LIST.'</h3>';
 	echo '<table class="outer">';
 	
 	echo '<colgroup style="width:120px;"></colgroup>'.
@@ -43,9 +43,9 @@ function dispatch()
 		echo '<tr class="even">'.
 				'<td><input type="text" name="title'.$pid."' value='".$cat_p['name'].'"></td>'.
 				'<td><input type="text" name="order'.$pid."' size='10' value='".$cat_p['sort_order'].'"></td>'.
-				'<td><input type="submit" name="edit" value="'._AM_XSNS_CATEGORY_EDIT.'"></td>'.
-				'<td><input type="submit" name="delete" value="'._AM_XSNS_CATEGORY_DEL.'" onclick="javascript:return confirm("'._AM_XSNS_CATEGORY_DEL_CONFIRM.'");"></td>'.
-				'<td><a href="index.php?'.XSNS_ACTION_ARG."=category#".$pid."'>"._AM_XSNS_CATEGORY_LIST.'</a></td>'.
+				'<td><button class="ui-btn" type="submit" name="edit" value="'._AM_XSNS_CATEGORY_EDIT.'">'._AM_XSNS_CATEGORY_EDIT.'</button></td>'.
+				'<td><button class="ui-btn" type="submit" name="delete" value="'._AM_XSNS_CATEGORY_DEL.'" onclick="return confirm("'._AM_XSNS_CATEGORY_DEL_CONFIRM.'");">'._AM_XSNS_CATEGORY_DEL.'</button></td>'.
+				'<td><a class="ui-btn" href="index.php?'.XSNS_ACTION_ARG."=category#".$pid."'>"._AM_XSNS_CATEGORY_LIST.'</a></td>'.
 			 '</tr>';
 		
 		echo '</form>';

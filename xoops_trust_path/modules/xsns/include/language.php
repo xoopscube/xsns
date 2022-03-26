@@ -15,15 +15,15 @@ function xsns_load_language($file)
         }
     }
 
-    $language = empty($xoopsConfig['language']) ? 'japanese' : $xoopsConfig['language'];
+    $language = empty($xoopsConfig['language']) ? 'ja_utf8' : $xoopsConfig['language'];
     if (file_exists($mydirpath . '/language/' . $language . '/' . $file)) {
         include_once $mydirpath . '/language/' . $language . '/' . $file;
         return true;
     } elseif (file_exists($trustdirpath . '/language/' . $language . '/' . $file)) {
         include_once $trustdirpath . '/language/' . $language . '/' . $file;
         return true;
-    } elseif (file_exists($trustdirpath . '/language/japanese/' . $file)) {
-        include_once $trustdirpath . '/language/japanese/' . $file;
+    } elseif (file_exists($trustdirpath . '/language/ja_utf8/' . $file)) {
+        include_once $trustdirpath . '/language/ja_utf8/' . $file;
         return true;
     } else {
         return false;

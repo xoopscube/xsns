@@ -12,41 +12,51 @@ class Xsns_Category_View extends Xsns_Admin_View
 
         include $mytrustdirpath . '/mymenu.php';
 
-        echo "<h2>". _AM_XSNS_TITLE_CATEGORY_CONFIG ."</h2>";
+        echo '<h2>'. _AM_XSNS_TITLE_CATEGORY_CONFIG .'</h2>';
 
-        echo "<div style='width:500px; margin-left:auto; margin-right:auto;'>";
-        echo "<div style='text-align:center; font-size:14px; padding-bottom:15px;'><b>" . _AM_XSNS_CATEGORY1 . _AM_XSNS_CATEGORY_LIST . "</b></div>";
-        echo "<table border='1' cellpadding='8' style='width:100%; text-align:center;'>";
+        echo '<div layout="row center-justify" class="control-action">
+        <div></div>
+        <div class="control-view">
+        <a href="#" class="ui-btn ui-btn-small"><{$smarty.const._EDIT}></a>
+        <a href="#category_access" class="ui-btn ui-btn-small">CATEGORY PERMISSIONS</a>
+        <a href="#makecategory" class="ui-btn ui-btn-small">MAKE</a>
+        <a href="#makecontent>" class="ui-btn ui-btn-small">MAKE CONTENT</a>
+        <a href="#" class="ui-btn ui-btn-small">CATEGORY INDEX</a>
+        <button class="help-admin ui-btn" type="button" data-module="xsns" data-help-article="#help-xsns-category" title="Help">
+        <span class="ui-icon ui-icon-help"></span>
+        </button>
+        </div>
+        </div>';
 
-        echo "<colgroup style='width:120px;'></colgroup>" .
-            "<colgroup style='width:80px;'></colgroup>" .
-            "<colgroup span='2' style='width:50px;'></colgroup>" .
-            "<colgroup style='width:70px;'></colgroup>";
+        echo '<h3>' . _AM_XSNS_CATEGORY1 .'</h3>'
+            .'<table style="width:100%; text-align:center;">
+            <colgroup style="width:120px;"></colgroup>
+            <colgroup style="width:80px;"></colgroup>
+            <colgroup span="2" style="width:50px;"></colgroup>
+            <colgroup style="width:70px;"></colgroup>';
 
-        echo "<th colspan='5'>" . _AM_XSNS_CATEGORY1 . "</th>";
-
-        echo "<tr class='head'>" .
-            "<td>" . _AM_XSNS_CATEGORY_NAME . "</td>" .
-            "<td>" . _AM_XSNS_CATEGORY_ORDER . "</td>" .
-            "<td colspan='2'>" . _AM_XSNS_CATEGORY_OPERATION . "</td>" .
-            "<td>" . _AM_XSNS_CATEGORY2 . "</td>" .
-            "</tr>";
+        echo '<tr class=\'head\'>' .
+            '<td>' . _AM_XSNS_CATEGORY_NAME . '</td>' .
+            '<td>' . _AM_XSNS_CATEGORY_ORDER . '</td>' .
+            '<td colspan=\'2\'>' . _AM_XSNS_CATEGORY_OPERATION . '</td>' .
+            '<td>' . _AM_XSNS_CATEGORY2 . '</td>' .
+            '</tr>';
 
         foreach ($category_p as $cat_p) {
             $pid = $cat_p['c_commu_category_parent_id'];
 
-            echo "<form action='index.php' method='post'>";
-            echo "<input type='hidden' name='" . XSNS_ACTION_ARG . "' value='category_edit_exec'>";
-            echo "<input type='hidden' name='mode' value='parent'>";
-            echo "<input type='hidden' name='pid' value='" . $pid . "'>";
+            echo '<form action="index.php" method="post">';
+            echo '<input type="hidden" name="' . XSNS_ACTION_ARG . '" value="category_edit_exec">';
+            echo '<input type="hidden" name="mode" value="parent">';
+            echo '<input type="hidden" name="pid" value="' . $pid . '">';
 
-            echo "<tr class='even'>" .
-                "<td><input type='text' name='title" . $pid . "' value='" . $cat_p['name'] . "'></td>" .
-                "<td><input type='text' name='order" . $pid . "' size='10' value='" . $cat_p['sort_order'] . "'></td>" .
-                "<td><input type='submit' name='edit' value='" . _AM_XSNS_CATEGORY_EDIT . "'></td>" .
-                "<td><input type='submit' name='delete' value='" . _AM_XSNS_CATEGORY_DEL . "' onclick=\"javascript:return confirm('" . _AM_XSNS_CATEGORY_DEL_CONFIRM . "');\"></td>" .
-                "<td><a href='index.php?" . XSNS_ACTION_ARG . "=category#" . $pid . "'>" . _AM_XSNS_CATEGORY_LIST . "</a></td>" .
-                "</tr>";
+            echo '<tr>' .
+                '<td><input type="text" name="title' . $pid . '" value="' . $cat_p['name'] . '"></td>' .
+                '<td><input type="text" name="order' . $pid . '" size="10" value="' . $cat_p['sort_order'] . '"></td>' .
+                '<td><input class="ui-btn" type="submit" name="edit" value="' . _AM_XSNS_CATEGORY_EDIT . '"></td>' .
+                '<td><input class="ui-btn" type="submit" name="delete" value="' . _AM_XSNS_CATEGORY_DEL . '" onclick="return confirm("' . _AM_XSNS_CATEGORY_DEL_CONFIRM . '");"></td>' .
+                '<td><a class="ui-btn" href="index.php?' . XSNS_ACTION_ARG . '=category#' . $pid . '">' . _AM_XSNS_CATEGORY_LIST . '</a></td>' .
+                '</tr>';
 
             echo "</form>";
         }
@@ -65,14 +75,9 @@ class Xsns_Category_View extends Xsns_Admin_View
 
         echo "</table>";
 
-        echo "</div>";
-
-        echo "<hr>";
-
-        echo "<div style='width:400px; margin-left:auto; margin-right:auto;'>";
 
 
-        echo "<div style='text-align:center; font-size:14px; padding-bottom:15px;'><b>" . _AM_XSNS_CATEGORY2 . _AM_XSNS_CATEGORY_LIST . "</b></div>";
+        echo "<h3>" . _AM_XSNS_CATEGORY2 . "</h3>";
 
         $token_handler = new XoopsMultiTokenHandler();
         $token_add =& $token_handler->create('CATEGORY_ADD');
@@ -81,11 +86,9 @@ class Xsns_Category_View extends Xsns_Admin_View
         foreach ($category_p as $cat_p) {
             $pid = $cat_p['c_commu_category_parent_id'];
 
-            echo "<table style='width:100%; text-align:center;'>";
+            echo '<h3 id="' . $pid . '">' . $cat_p['name'] . '</h3>';
 
-            echo "<tr>" .
-                "<th colspan='4'><a name='" . $pid . "'>" . $cat_p['name'] . "</a></th>" .
-                "</tr>";
+            echo "<table style='width:100%; text-align:center;'>";
 
             echo "<colgroup style='width:120px;'></colgroup>" .
                 "<colgroup style='width:80px;'></colgroup>" .
@@ -127,10 +130,7 @@ class Xsns_Category_View extends Xsns_Admin_View
             echo "</table>";
             echo "</form>";
 
-            echo "<br><br>";
         }
-
-        echo "</div>";
 
         xoops_cp_footer();
     }

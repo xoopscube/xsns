@@ -6,8 +6,9 @@ class Xsns_Join_View extends Xsns_Index_View
     function dispatch()
     {
         require XSNS_FRAMEWORK_DIR . '/global.php';
-        $xoopsOption['template_main'] = $mydirname . '_index_join.html';
         require_once XOOPS_ROOT_PATH . '/header.php';
+
+        $xoopsOption['template_main'] = $mydirname . '_index_join.html';
 
         $commu = $this->context->getAttribute('commu');
         $hidden = array('cid' => $commu['id']);

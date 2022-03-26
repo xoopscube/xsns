@@ -11,7 +11,7 @@ const _AM_XSNS_PERM_ERR = '下記のディレクトリを、サーバによる�
 
 const _AM_XSNS_NOTICE_MYPAGE = '<span style="color:#ff0000;">PHPがセーフモード環境で実行されているため、マイページの置き換え処理を実行できませんでした。</span>';
 
-const _AM_XSNS_NOTICE_FILE_PATH = '<span style="color:#ff0000;">画像/ファイルのアップロード先が公開ディレクトリ内になっています。<br>セキュリティの関係上、公開ディレクトリ外に変更することを推奨します。</span>';
+const _AM_XSNS_NOTICE_FILE_PATH = '画像/ファイルのアップロード先が公開ディレクトリ内になっています。<br>セキュリティの関係上、公開ディレクトリ外に変更することを推奨します。';
 
 const _AM_XSNS_GD_ERR_NONE = '<span style="color:#ff0000;">GDライブラリがインストールされていないため、画像のアップロード機能は利用できません。</span>';
 const _AM_XSNS_GD_ERR_GIF = 'GIF画像はサポートされていません。';

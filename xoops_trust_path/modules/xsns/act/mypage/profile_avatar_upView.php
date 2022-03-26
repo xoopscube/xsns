@@ -6,9 +6,10 @@ class Xsns_Profile_avatar_up_View extends Xsns_Mypage_View
     function dispatch()
     {
         require XSNS_FRAMEWORK_DIR . '/global.php';
-        $xoopsOption['template_main'] = $mydirname . '_mypage_profile_avatar.html';
         require_once XOOPS_ROOT_PATH . '/header.php';
         require_once XOOPS_ROOT_PATH . '/language/' . $xoopsConfig['language'] . '/user.php';
+
+        $xoopsOption['template_main'] = $mydirname . '_mypage_profile_avatar.html';
 
         $this->assignCommonVars();
         $this->assignStyleSheet();

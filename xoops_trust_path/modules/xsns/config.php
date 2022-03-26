@@ -2,48 +2,48 @@
 
 define('XSNS_TRUST_PATH', dirname(__FILE__));
 
-// ���W���[���̃p�X
+// Module path
 define('XSNS_BASE_DIR', XOOPS_ROOT_PATH . '/modules/' . $mydirname);
 
-// ���W���[����URL
+// Module URL
 define('XSNS_BASE_URL', XOOPS_URL . '/modules/' . $mydirname);
 
-// �X�^�C���V�[�g��URL
+// Stylesheet URL
 const XSNS_CSS_URL = XSNS_BASE_URL . '/css.php?f=';
 
-// JavaScript��URL
+// JavaScript URL
 const XSNS_JS_URL = XSNS_BASE_URL . '/js.php?f=';
 
-// �t���[�����[�N�̃f�B���N�g��
+// Framework directory
 const XSNS_FRAMEWORK_DIR = XSNS_TRUST_PATH . '/framework';
 const XSNS_FRAMEWORK_CLASS_DIR = XSNS_FRAMEWORK_DIR . '/class';
 
-// ���[�U�[��`�̃N���X�t�@�C���̃p�X
+// Path of user-defined class files
 const XSNS_USERLIB_DIR = XSNS_TRUST_PATH . '/userlib';
 const XSNS_USERLIB_CLASS_DIR = XSNS_USERLIB_DIR . '/class';
 
-// �y�[�W�؂�ւ��p�̈�����
+// Argument name for page switching
 const XSNS_PAGE_ARG = 'p';
 
-// Action, View �؂�ւ��p�̈�����
+// Argument name for switching Action and View
 const XSNS_ACTION_ARG = 'act';
 
-// Action �t�@�C���̃f�B���N�g��
+// Action file directory
 const XSNS_ACTION_DIR = XSNS_TRUST_PATH . '/act/';
 
-// �f�t�H���g�� Action ��
+// Default Action name
 const XSNS_DEFAULT_ACTION = 'default';
 
-// �f�t�H���g�� Action �t�@�C��
+// Default Action file
 const XSNS_DEFAULT_ACTION_FILE = XSNS_ACTION_DIR . XSNS_DEFAULT_ACTION . 'Action.php';
 
-// View �t�@�C��������f�B���N�g��
+// Directory with View files
 const XSNS_VIEW_DIR = XSNS_TRUST_PATH . '/act/';
 
-// �f�t�H���g�� View ��
+// Default View name
 const XSNS_DEFAULT_VIEW = 'default';
 
-// �f�t�H���g�� View �t�@�C��
+// Default View file
 const XSNS_DEFAULT_VIEW_FILE = XSNS_VIEW_DIR . XSNS_DEFAULT_VIEW . 'View.php';
 
 const XSNS_REQUEST_POST = 1;

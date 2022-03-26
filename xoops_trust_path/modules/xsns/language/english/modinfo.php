@@ -13,13 +13,13 @@ define($constpref.'_MENU_MYPAGE', 'My Page');
 define($constpref.'_BLOCK_RECENT_TOPIC', 'LATEST TOPICS');
 define($constpref.'_BLOCK_INFORMATION', 'INFORMATION');
 
-define($constpref.'_AD_MENU_CATEGORY', 'Group Category Manager');
+define($constpref.'_AD_MENU_CATEGORY', 'Community Groups');
 define($constpref.'_AD_MENU_IMAGE', 'Image Manager');
 define($constpref.'_AD_MENU_FILE', 'File Manager');
 define($constpref.'_AD_MENU_ACCESS', 'Access Logs');
-define($constpref.'_AD_MENU_MYTPLSADMIN', 'Templates Management');
-define($constpref.'_AD_MENU_MYBLOCKSADMIN', 'Blocks Management/Access authority');
-define($constpref.'_AD_MENU_MYLANGADMIN', 'Language Constant Management');
+define($constpref.'_AD_MENU_MYTPLSADMIN', 'Templates');
+define($constpref.'_AD_MENU_MYBLOCKSADMIN', 'Blocks/Permissions');
+define($constpref.'_AD_MENU_MYLANGADMIN', 'Language');
 define($constpref.'_AD_MENU_MYPREFERENCES', 'Preferences');
 
 

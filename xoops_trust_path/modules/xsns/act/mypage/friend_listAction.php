@@ -28,7 +28,8 @@ class Xsns_Friend_list_Action extends Xsns_Mypage_Action
             redirect_header(XOOPS_URL, 2, _NOPERM);
         }
 
-        $is_own_page = ($own_uid == $uid) ? true : false;
+        //$is_own_page = ($own_uid == $uid) ? true : false;
+        $is_own_page = $own_uid == $uid;
 
         $friend_list_temp =& $user->getFriendList($limit, $start);
         $friend_count = $user->getFriendCount();

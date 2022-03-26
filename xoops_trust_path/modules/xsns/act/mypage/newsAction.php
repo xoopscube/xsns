@@ -19,7 +19,8 @@ class Xsns_News_Action extends Xsns_Mypage_Action
         if (!is_object($user)) {
             redirect_header(XOOPS_URL, 2, _NOPERM);
         }
-        $is_own_page = ($own_uid == $uid && $own_uid > 0) ? true : false;
+        //$is_own_page = ($own_uid == $uid && $own_uid > 0) ? true : false;
+        $is_own_page = $own_uid == $uid && $own_uid > 0;
 
         $this->context->setAttribute('user_menu', $user->getMypageMenu());
         $this->context->setAttribute('module_list', $user->getModuleList());

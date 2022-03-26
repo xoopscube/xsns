@@ -1,32 +1,32 @@
 <?php
 
 
-// ���Х�����ɽ��������
-const XSNS_AVATAR_MAX_WIDTH = 45;
-const XSNS_AVATAR_MAX_HEIGHT = 45;
+// Avatar display size
+const XSNS_AVATAR_MAX_WIDTH = 80;
+const XSNS_AVATAR_MAX_HEIGHT = 80;
 
 
-// �������ե������ɤ߹����ѥ�����ץ�
+// Script for reading images and files
 const XSNS_IMAGE_URL = XSNS_BASE_URL . '/image.php';
 const XSNS_FILE_URL = XSNS_BASE_URL . '/file.php';
 
 
-// ����ͥ���Υ��������
+// Thumbnail size constant
 const XSNS_IMAGE_SIZE_S = 1;
 const XSNS_IMAGE_SIZE_M = 2;
 const XSNS_IMAGE_SIZE_L = 3;
 
 
-// ���ߥ�˥ƥ��˴ؤ��븢��
-const XSNS_AUTH_XOOPS_ADMIN = 32;    // XOOPS������
-const XSNS_AUTH_ADMIN = 16;    // ���ߥ�˥ƥ�������
-const XSNS_AUTH_SUB_ADMIN = 8;    // ���ߥ�˥ƥ���������
-const XSNS_AUTH_MEMBER = 4;    // ���ߥ�˥ƥ����С�
-const XSNS_AUTH_NON_MEMBER = 2;    // �󥳥ߥ�˥ƥ����С�
-const XSNS_AUTH_GUEST = 1;    // ������
+// Community authority
+const XSNS_AUTH_XOOPS_ADMIN = 32;  // Administrator
+const XSNS_AUTH_ADMIN = 16;       // Community admin
+const XSNS_AUTH_SUB_ADMIN = 8;   // Community Manager
+const XSNS_AUTH_MEMBER = 4;     // Community members
+const XSNS_AUTH_NON_MEMBER = 2;// Non-community members
+const XSNS_AUTH_GUEST = 1;    // Guests
 
 
-// �ڡ���URL���
+// Page URL constant
 const XSNS_URL_COMMU = XSNS_BASE_URL . '/';
 const XSNS_URL_ADMIN = XSNS_BASE_URL . '/admin/index.php';
 const XSNS_URL_TOPIC = XSNS_BASE_URL . '/?' . XSNS_PAGE_ARG . '=topic';

@@ -7,15 +7,19 @@
 <{if $mydirname}><{include file="db:`$mydirname`_inc_mypage_menu.html"}><{/if}>
 
 
+<{* ////—— NOTIFICATIONS & REQUESTS ——\\\\ *}>
+
+
 <{if !empty($info_list)}>
 	<{foreach item=info from=$info_list}>
 	<div class="confirm">
 		<a href="<{$info.url}>"><{$info.message}></a>
-		<span class="badge"><{$info.time|date_format:"%Y-%m-%d %H:%M:%S"}></span>
+		<span class="badge"><{$info.time|date_format:"%Y-%m-%d %H:%M"}></span>
 	</div>
 	<{/foreach}>
 
 <{/if}>
+
 
 
 <div layout="rows sm-column">
@@ -24,44 +28,62 @@
 	<div layout="column" self="size-1of3 mr-2">
 
 
+<{* ////—— NOTIFICATIONS & REQUESTS ——\\\\ *}>
+
+
 		<div class="card" self="mb-7">
 			<div class="card-title"><{$smarty.const._MD_XSNS_MYPAGE_PROFILE|sprintf:"`$user_info.name`"}></div>
 			<div class="card-content">
 				<!-- User Information : Start -->
+				<{if $user_info.extrainfo != NULL}>
+				<h6><{$smarty.const._US_EXTRAINFO}></h6>
+				<div><{$user_info.extrainfo}></div>
+				<{/if}>
 
 				<{if $user_info.avatarurl != NULL}>
-				<h6><{$smarty.const._US_AVATAR}></h6>
-				<div><{$user_info.avatarurl}></div>
+				<h6 aria-label="<{$smarty.const._US_AVATAR}>"><{$user_info.avatarurl}></h6>
 				<{/if}>
 
 				<{if $user_info.name != NULL}>
-				<h6><{$smarty.const._US_USERNAME}></h6>
-				<div><{$user_info.name}></div>
+				<h6 aria-label="<{$user_info.name}>"><{$smarty.const._US_USERNAME}></h6>
 				<{/if}>
 
 				<{if $user_info.realname != NULL}>
-				<h6><{$smarty.const._US_REALNAME}></h6>
-				<div><{$user_info.realname}></div>
+				<h6 aria-label="<{$user_info.realname}>"><{$smarty.const._US_REALNAME}></h6>
 				<{/if}>
 
 				<{if $user_info.rank != NULL}>
-				<h6><{$smarty.const._US_RANK}></h6>
-				<div><{$user_info.rank}>&nbsp;<{$user_info.ranktitle}>&nbsp;(<{$smarty.const._US_POSTS}>:<{$user_info.posts}>)</div>
+				<div layout="row center-justify mb-6">
+				<h6 aria-label=""><{$smarty.const._US_RANK}></h6>
+				<div><{$user_info.rank}> <{$user_info.ranktitle}></div>
+				</div>
 				<{/if}>
 
+				<div layout="row center-justify mb-6">
+				<h6 aria-label=""><{$smarty.const._US_POSTS}></h6>
+				<span class="badge"><{$user_info.posts}></span>
+				</div>
+
 				<{if $user_info.websiteurl != NULL}>
+				<div layout="row center-justify mb-6">
 				<h6><{$smarty.const._US_WEBSITE}></h6>
 				<div><{$user_info.websiteurl}></div>
+				</div>
 				<{/if}>
 
 				<{if $user_info.email != NULL}>
+				<div layout="row center-justify mb-6">
 				<h6><{$smarty.const._US_EMAIL}></h6>
-				<div><{$user_info.email}></div>
+<!--				<span><{$user_info.email}></span>-->
+					<span><{mailto address=$user_info.email encode='javascript' subject='Hello'}></span>
+				</div>
 				<{/if}>
 
 				<{if $user_info.pmlink != NULL}>
-				<h6><{$smarty.const._US_PM}></h6>
-				<div><{$user_info.pmlink}></div>
+				<div layout="row center-justify mb-6">
+				<h6><{$smarty.const._US_PM}> </h6>
+				<span><{$user_info.pmlink}></span>
+				</div>
 				<{/if}>
 
 				<{if $user_info.icq != NULL}>
@@ -104,27 +126,30 @@
 				<div><{$user_info.signature}></div>
 				<{/if}>
 
-				<{if $user_info.extrainfo != NULL}>
-				<h6><{$smarty.const._US_EXTRAINFO}></h6>
-				<div><{$user_info.extrainfo}></div>
-				<{/if}>
 
 
                 <{if $user_info.reg_date != NULL}>
+				<div layout="row center-justify mb-6">
                 <h6><{$smarty.const._US_MEMBERSINCE}></h6>
-                <div><{$user_info.reg_date|date_format:"%Y-%m-%d %H:%M:%S"}></div>
+				<span class="badge"><{$user_info.reg_date|date_format:"%Y-%m-%d"}></span>
+                <{* -- $user_info.reg_date|date_format:"%Y-%m-%d %H:%M:%S" *}>
+				</div>
                 <{/if}>
 
                 <{if $user_info.last_login != NULL}>
+				<div layout="row center-justify mb-6">
                 <h6><{$smarty.const._US_LASTLOGIN}></h6>
-                <div><{$user_info.last_login|date_format:"%Y-%m-%d %H:%M:%S"}></div>
+				<span class="badge"><{$user_info.last_login|date_format:"%Y-%m-%d %H:%M"}></span>
+                <{* $user_info.last_login|date_format:"%Y-%m-%d %H:%M:%S" *}>
+				</div>
                 <{/if}>
 
 			</div><{* ----- Card content *}>
 <!--			<div class="card-footer"></div>-->
 		</div><{* ----- Card *}>
-		<!-- User Information : End -->
 
+
+<{* ////—— LIST FRIENDS ——\\\\ *}>
 
 
 		<{if $friend_list|@count > 0}>
@@ -137,22 +162,24 @@
 
 			<div class="card-content">
 
-				<div>
+				<div layout="row center-justify">
 				<{section name=id loop=$friend_list}>
 
 				<{if $smarty.section.id.index > 0 && $smarty.section.id.index is div by 3}>
-				</div><div>
+				</div><div layout="row center-justify">
 				<{/if}>
 
-				<div style="width:50px; height:50px;">
 					<{if $friend_list[id]}>
-					<a href="<{$friend_list[id].page_url}>">
-						<img src="<{$friend_list[id].avatar_url}>" width="<{$friend_list[id].avatar_width}>" height="<{$friend_list[id].avatar_height}>" alt="<{$friend_list[id].name}>" title="<{$friend_list[id].name}>">
+					<a href="<{$friend_list[id].page_url}>" title="<{$friend_list[id].name}>">
+						<img src="<{$friend_list[id].avatar_url}>"
+							 width="<{$friend_list[id].avatar_width}>"
+							 height="<{$friend_list[id].avatar_height}>"
+							 alt="<{$friend_list[id].name}>"
+							 class="avatar">
 						<br>
 						<small><{$friend_list[id].name|truncate:11}></small>
 					</a>
 					<{/if}>
-				</div>
 
 				<{/section}>
 				</div>
@@ -160,7 +187,9 @@
 			</div><{* ----- Card content *}>
 
 				<div class="card-footer">
-					<a class="ui-button" href="<{$url.friend_list_all}>"><{$smarty.const._MD_XSNS_SHOW_ALL}> (<{$friend_count|default:0}>)</a>
+					<a class="ui-button" href="<{$url.friend_list_all}>">
+						<{$smarty.const._MD_XSNS_SHOW_ALL}> <span class="badge"><{$friend_count|default:0}></span>
+					</a>
 				</div>
 
 		</div><{* ----- Card *}>
@@ -168,9 +197,10 @@
 		<{/if}>
 
 
+<{* ////—— LIST COMMUNITY GROUPS ——\\\\ *}>
+
 
 		<{if $commu_list|@count > 0}>
-		<!-- Community List : Start -->
 		<div class="card" self="mb-7">
 
 			<div class="card-title">
@@ -179,22 +209,18 @@
 
 			<div class="card-content">
 
-				<div>
+				<div layout="row center-justify">
 				<{section name=id loop=$commu_list}>
 
 				<{if $smarty.section.id.index > 0 && $smarty.section.id.index is div by 3}>
-				</div><div>
+				</div><div layout="row center-justify">
 				<{/if}>
 
-				<div class="centerHV" style="width:85px;height:85px;">
 					<{if $commu_list[id]}>
-					<a href="<{$commu_list[id].page_url}>">
-						<img src="<{$commu_list[id].image.url_src|default:"$xoops_url/modules/$mydirname/images/cm_commu_default1.gif"}>" alt="<{$commu_list[id].name}>
-						(<{$commu_list[id].member_count}>)" title="<{$commu_list[id].name}> (<{$commu_list[id].member_count}>)">
-						<!--<br><small><{$commu_list[id].name}> (<{$commu_list[id].member_count}>)</small>-->
+					<a href="<{$commu_list[id].page_url}>" title="<{$commu_list[id].name}> (<{$commu_list[id].member_count}>">
+						<img src="<{$commu_list[id].image.url_src|default:"$xoops_url/modules/$mydirname/images/cm_commu_default1.gif"}>" alt="<{$commu_list[id].name}>">
 					</a>
 					<{/if}>
-				</div>
 
 				<{/section}>
 				</div>
@@ -202,22 +228,23 @@
 			</div><{* ----- Card content *}>
 
 			<div class="card-footer">
-				<a class="ui-button" href="<{$url.commu_list_all}>"><{$smarty.const._MD_XSNS_SHOW_ALL}> (<{$commu_count|default:0}>)</a>
+				<a class="ui-button" href="<{$url.commu_list_all}>">
+					<{$smarty.const._MD_XSNS_SHOW_ALL}> <span class="badge"><{$commu_count|default:0}></span>
+				</a>
 			</div>
 
 		</div><{* ----- Card *}>
-
-		<!-- Community List : End -->
 		<{/if}>
 
 	</div><{* ----- column left *}>
 
 
+<{* ////—— LIST BLOG ——\\\\ *}>
+
 
 	<div layout="column" self="size-x1 ml-2">
 
 		<{if $blog_list|@count > 0}>
-		<!-- Blog List : Start -->
 		<div class="card" self="mb-7">
 
 			<div class="card-title">
@@ -239,18 +266,24 @@
 
 			<div class="card-footer">
 			<{if $is_own_page}>
-				<a class="ui-button" href="<{$url.blog_list_all}>"><{$smarty.const._MD_XSNS_SHOW_ALL}> (<{$blog_count|default:0}>)</a>
+				<a class="ui-button" href="<{$url.blog_list_all}>">
+					<{$smarty.const._MD_XSNS_SHOW_ALL}> <span class="badge"><{$blog_count|default:0}></span>
+				</a>
 			<{else}>
-				<a class="ui-button" href="<{$blog_list.0.link_author}>"><{$smarty.const._MD_XSNS_SHOW_ALL}> (<{$blog_count|default:0}>)</a>
+				<a class="ui-button" href="<{$blog_list.0.link_author}>">
+					<{$smarty.const._MD_XSNS_SHOW_ALL}> <span class="badge"><{$blog_count|default:0}></span>
+				</a>
 			<{/if}>
 			</div>
-		<!-- Blog List : End -->
+
 		</div><{* ----- card *}>
 		<{/if}>
 
 
+<{* ////—— LIST TOPICS ——\\\\ *}>
+
+
 		<{if $topic_list|@count > 0}>
-		<!-- New Topic List : Start -->
 		<div class="card" self="mb-7">
 
 			<div class="card-title">
@@ -267,17 +300,19 @@
 			</div>
 
 			<div class="card-footer">
-				<a class="ui-button" href="<{$url.topic_list_all}>"><{$smarty.const._MD_XSNS_SHOW_ALL}> (<{$topic_count|default:0}>)</a>
+				<a class="ui-button" href="<{$url.topic_list_all}>">
+					<{$smarty.const._MD_XSNS_SHOW_ALL}> <span class="badge"><{$topic_count|default:0}></span>
+				</a>
 			</div>
 
-
 		</div><{* ----- card *}>
-		<!-- New Topic List : End -->
 		<{/if}>
 
 
+<{* ////—— LIST TESTIMONIALS ——\\\\ *}>
+
+
 		<{if $intro_list|@count > 0}>
-		<!-- Intro List : Start -->
 		<div class="card" self="mb-7">
 
 			<div class="card-title">
@@ -294,11 +329,12 @@
 			</div>
 
 			<div class="card-footer">
-				<a class="ui-button" href="<{$url.intro_list_all}>"><{$smarty.const._MD_XSNS_SHOW_ALL}> (<{$intro_count}>)</a>
+				<a class="ui-button" href="<{$url.intro_list_all}>">
+					<{$smarty.const._MD_XSNS_SHOW_ALL}> <span class="badge"><{$intro_count}></span>
+				</a>
 			</div>
 
 		</div><{* ----- card *}>
-		<!-- Intro List : End -->
 		<{/if}>
 
 	</div><{* ----- column *}>

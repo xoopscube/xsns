@@ -62,7 +62,7 @@ class Xsns_Add_confirm_Action extends Xsns_Topic_Action
             $this->context->setAttribute('default', $default);
             $this->context->setAttribute('errors', $errors);
 
-            return "add";    // �� topic/addView.php
+            return "add";    // topic/addView.php
         }
 
         $topic_vars_temp = array(

@@ -6,8 +6,9 @@ class Xsns_Config_View extends Xsns_Mypage_View
     function dispatch()
     {
         require XSNS_FRAMEWORK_DIR . '/global.php';
-        $xoopsOption['template_main'] = $mydirname . '_mypage_config.html';
         require_once XOOPS_ROOT_PATH . '/header.php';
+
+        $xoopsOption['template_main'] = $mydirname . '_mypage_config.html';
 
         $this->assignCommonVars();
         $this->assignStyleSheet('config.css');

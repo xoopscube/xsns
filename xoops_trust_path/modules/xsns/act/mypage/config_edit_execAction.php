@@ -35,9 +35,12 @@ class Xsns_Config_edit_exec_Action extends Xsns_Mypage_Action
 
     function getConfigArray()
     {
-        $mid = isset($_POST['mid']) ? $_POST['mid'] : NULL;
-        $oid = isset($_POST['order']) ? $_POST['order'] : NULL;
-        $view = isset($_POST['view']) ? $_POST['view'] : NULL;
+        //$mid = isset($_POST['mid']) ? $_POST['mid'] : NULL;
+        $mid = $_POST['mid'] ?? NULL;
+        //$oid = isset($_POST['order']) ? $_POST['order'] : NULL;
+        $oid = $_POST['order'] ?? NULL;
+        //$view = isset($_POST['view']) ? $_POST['view'] : NULL;
+        $view = $_POST['view'] ?? NULL;
 
         if (!is_array($mid) || !is_array($oid) || !is_array($view)) {
             return NULL;

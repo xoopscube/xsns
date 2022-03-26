@@ -152,6 +152,7 @@ class Xsns_Default_Action extends Xsns_Mypage_Action
         $websiteurl = $user->getVar('url');
         $uname = $user->getVar('uname');
 
+
         // TODO #gigamaster custom profile
         $user_info = array(
             'id' => $uid,
