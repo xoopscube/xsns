@@ -28,5 +28,3 @@ if(!headers_sent()){
 }
 
 exit;
-
-?>

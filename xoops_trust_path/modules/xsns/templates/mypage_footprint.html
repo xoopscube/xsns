@@ -1,30 +1,33 @@
-<div id="mainFrame">
+<div class="ui-dev-mode"><{$smarty.template}></div>
+
+<{if $mydirname}><{include file="db:`$mydirname`_inc_breadcrumbs.html"}><{/if}>
+
 
 <!-- User Menu -->
 <{if $mydirname}><{include file="db:`$mydirname`_inc_mypage_menu.html"}><{/if}>
 
-<table class="outer">
-<th><{$smarty.const._MD_XSNS_TITLE_MYPAGE_FOOTPRINT}></th>
-<tr>
-<td class="head" style="padding:10px 0 10px 10px;">
-<{$smarty.const._MD_XSNS_MYPAGE_FOOTPRINT_DESC|sprintf:"`$user_name`"}>
-</td>
-</tr>
 
-<{if $footprint_count > 0}>
-<tr>
-<td class="even" style="padding:10px 100px 10px 180px;">
+<h2><{$smarty.const._MD_XSNS_TITLE_MYPAGE_FOOTPRINT}></h2>
 
-<div style="padding:0 0 20px;"><{$smarty.const._MD_XSNS_MYPAGE_FOOTPRINT_COUNT}> <b><{$footprint_count|number_format}></b></div>
-
-<{foreach item=footprint from=$footprint_list}>
-<{$footprint.time|date_format:"%Y-%m-%d %H:%M:%S"}>&nbsp;&nbsp;<a href="<{$footprint.url}>"><{$footprint.uname}></a><br>
-<{/foreach}>
-
-</td>
-</tr>
-<{/if}>
-
-</table>
-
+<div class="tips">
+    <{$smarty.const._MD_XSNS_MYPAGE_FOOTPRINT_DESC|sprintf:"`$user_name`"}>
 </div>
+
+    <{if $footprint_count > 0}>
+
+    <h3>
+        <img class="svg" src="<{$xoops_url}>/images/icons/date-time.svg" width="1em" height="1em"> <{$smarty.const._MD_XSNS_MYPAGE_FOOTPRINT_COUNT}> <span class="badge"><{$footprint_count|number_format}></span>
+    </h3>
+
+    <{foreach item=footprint from=$footprint_list}>
+    <p>
+        <a href="<{$footprint.url}>">
+            <img src="<{$footprint.uname|xoops_user_avatarize}>" width="20px" height="20px" class="avatar">
+            <{$footprint.uname}>
+            <span class="badge"><{$footprint.time|date_format:"%Y-%m-%d %H:%M:%S"}></span>
+        </a>
+    </p>
+    <{/foreach}>
+
+
+<{/if}>

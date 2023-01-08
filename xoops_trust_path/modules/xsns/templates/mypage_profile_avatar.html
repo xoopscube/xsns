@@ -1,8 +1,11 @@
+<div class="ui-dev-mode"><{$smarty.template}></div>
+
+<{if $mydirname}><{include file="db:`$mydirname`_inc_breadcrumbs.html"}><{/if}>
+
+
 <{$avatarform.javascript}>
 
 <{$uploadavatar.javascript}>
-
-<div id="mainFrame">
 
 <!-- User Menu -->
 <{if $mydirname}><{include file="db:`$mydirname`_inc_mypage_menu.html"}><{/if}>
@@ -72,4 +75,3 @@
 
 <{/if}>
 
-</div>

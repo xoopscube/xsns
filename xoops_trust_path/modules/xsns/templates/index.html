@@ -1,111 +1,123 @@
-<div id="mainFrame">
+<div class="ui-dev-mode"><{$smarty.template}></div>
 
-<!-- Community Search -->
+<{if $mydirname}><{include file="db:`$mydirname`_inc_breadcrumbs.html"}><{/if}>
+
+
+<{* ----- Community Search *}>
+
 <{$form_search}>
 
-<table class="outer commuSearch">
+	<section layout="column my-4 sm-first" id="docs_container" class="category-top">
 
-<tr class="even"><th colspan="2"><{$smarty.const._MD_XSNS_INDEX_SEARCH}></th></tr>
+	<div layout="rows center-justify">
+		<h3 self="size-x1"><img class="svg" src="<{$xoops_url}>/images/icons/group.svg" alt="group"> <{$smarty.const._MD_XSNS_INDEX_SEARCH}></h3>
+		<span><!-- help --></span>
+	</div>
 
-<tr class="even">
-<td colspan="2">
-<{$smarty.const._MD_XSNS_INDEX_KEYWORD}>
-<input type="text" name="keyword" value="<{$keyword}>">&nbsp;
-<{$smarty.const._MD_XSNS_CATEGORY}>
+		<div self="size-x1 my-4" class="group-banner">
 
-<{$category_selector}>
+		</div>
 
-&nbsp;
-<input type="submit" class="submit" value="<{$smarty.const._MD_XSNS_BTN_SEARCH}>">
-</td>
-</tr>
+		<div layout="row center-justify p-2 my-4 sm-column" class="activity">
 
-<{if !$is_guest}>
-<tr class="even">
-<td colspan="2" style="text-align:right;">
-<a href="<{$xoops_url}>/modules/<{$mydirname}>/?act=add"><{$smarty.const._MD_XSNS_INDEX_ADD}></a>&nbsp;<{$smarty.const._MD_XSNS_INDEX_ADD_DESC}>
-</td>
-</tr>
-<{/if}>
+			<div self="px-2">
+				 <input type="text" name="keyword" value="<{$keyword}>" placeholder="<{$smarty.const._MD_XSNS_INDEX_KEYWORD}>">
+				<{$smarty.const._MD_XSNS_CATEGORY}> <{$category_selector}> <input type="submit" class="ui-button" value="<{$smarty.const._MD_XSNS_BTN_SEARCH}>">
+			</div>
 
-<tr class="even">
-<td colspan="2">
-<{$smarty.const._MD_XSNS_INDEX_SORT}>&nbsp;
-<a href="<{$url.sort_member}>"><{$smarty.const._MD_XSNS_INDEX_SORT_MEMBER}></a>&nbsp;|
-<a href="<{$url.sort_date}>"><{$smarty.const._MD_XSNS_INDEX_SORT_DATE}></a>&nbsp;|
-<a href="<{$url.sort_pop}>"><{$smarty.const._MD_XSNS_INDEX_SORT_POP}></a>&nbsp;|
-<a href="<{$url.sort_up}>"><{$smarty.const._MD_XSNS_INDEX_SORT_UP}></a>
-</td>
-</tr>
 
-<{foreach item=category from=$category_list}>
-<tr class="even">
-<td class="parentCategory"><{$category.name}></td>
-<td class="childCategory"><{$category.selector}></td>
-</tr>
-<{/foreach}>
+		</div>
+		<div layout="row center-justify sm-column">
 
-</table>
+			<{foreach item=category from=$category_list}>
+			<div layout="rows" class="parentCategory"><{$category.name}></div>
+			<div layout="rows" class="childCategory"><{$category.selector}></div>
+			<{/foreach}>
 
-</form>
+		</div>
 
-<br>
 
-<!-- Community List -->
-<table class="outer commuList">
+	</section>
 
-<tr><th><{$smarty.const._MD_XSNS_INDEX_LIST}></th></tr>
+	<{if !$is_guest}>
+	<div layout="row center-right" id="Controllers" class="description">
+		<a class="ui-button" href="<{$xoops_url}>/modules/<{$mydirname}>/?act=add"><{$smarty.const._MD_XSNS_INDEX_ADD}></a>
+	</div>
+	<{/if}>
 
-<{if $commu_list|@count > 0}>
-<tr><td class="odd centerH"><{$pager.selector}></td></tr>
-<{/if}>
-<tr><td class="odd" style="text-align:right;"><{$pager.description}></td></tr>
 
-<{if $commu_list|@count > 0}>
-<tr><td class="odd blankRow"></td></tr>
-<{/if}>
+</form><{* form search *}>
 
-<{foreach item=commu from=$commu_list}>
 
-<tr><td>
-<table class="outer" style="width:100%;">
+<hr>
 
-	<tr class="even">
-	<td rowspan="4" class="image">
-	<a href="<{$commu.page_url}>"><img src="<{$commu.image.url_src|default:"images/cm_commu_default1.gif"}>" alt=""></a>
-	</td>
-	<td class="itemTitle"><{$smarty.const._MD_XSNS_COMMU_NAME}></td>
-	<td colspan="2" class="centerV"><{$commu.name}></td>
-	</tr>
 
-	<tr class="even">
-	<td class="itemTitle"><{$smarty.const._MD_XSNS_MEMBER_COUNT}></td>
-	<td colspan="2"><{$commu.member_count}></td>
-	</tr>
+<{* ----- GROUP LIST *}>
 
-	<tr class="even">
-	<td class="itemTitle"><{$smarty.const._MD_XSNS_INDEX_DETAIL_DESC}></td>
-	<td colspan="2" class="centerV"><{$commu.info|mb_truncate:200}></td>
-	</tr>
+	<div layout="rows center-justify mb-7">
+		<h3 self="size-x1"><{$smarty.const._MD_XSNS_INDEX_LIST}></h3>
 
-	<tr class="even">
-	<td class="itemTitle"><{$smarty.const._MD_XSNS_CATEGORY}></td>
-	<td class="category"><{$commu.category_name}></td>
-	<td class="detail"><a href="<{$commu.page_url}>"><{$smarty.const._MD_XSNS_INDEX_DETAIL}></a></td>
-	</tr>
-	
+		<{* ----- SORT FILTER *}>
+		<div class="dropdown">
+			<a href="#" class="dropdown-toggle" aria-label="sort" title="<{$smarty.const._MD_XSNS_INDEX_SORT}>">
+				<img class="svg" src="<{$xoops_url}>/images/icons/filter.svg" alt="filter">
+			</a>
+			<div class="dropdown-content">
+				<a href="<{$url.sort_member}>"><{$smarty.const._MD_XSNS_INDEX_SORT_MEMBER}></a>
+				<a href="<{$url.sort_date}>"><{$smarty.const._MD_XSNS_INDEX_SORT_DATE}></a>
+				<a href="<{$url.sort_pop}>"><{$smarty.const._MD_XSNS_INDEX_SORT_POP}></a>
+				<a href="<{$url.sort_up}>"><{$smarty.const._MD_XSNS_INDEX_SORT_UP}></a>
+			</div>
+		</div>
+	</div>
 
-</table>
-</td></tr>
 
-<tr><td class="odd blankRow"></td></tr>
+	<{* <{if $commu_list|@count > 0}>
+	<div class="pagination"><{$pager.selector}><{$pager.description}></div>
+	<{/if}>
 
-<{/foreach}>
+	<p></p>
+	<{if $commu_list|@count > 0}>
+	<div class="odd blankRow"></div>
+	<{/if}> *}>
 
-<{if $commu_list|@count > 0}>
-<tr><td class="odd centerH"><{$pager.selector}></td></tr>
-<tr><td class="odd" style="text-align:right;"><{$pager.description}></td></tr>
-<{/if}>
+	<div layout="rows center-justify" class="">
+	<{foreach item=commu from=$commu_list}>
 
-</table>
-</div>
+		<{* Smarty Truncate : "|truncate:40" or module's "|mb_truncate:80"
+		This truncates a variable to a character length, the default is 80.
+		As an optional second parameter, you can specify a string of text to display at the end
+		if the variable was truncated. *}>
+	<div layout="column" self="size-1of3 sm-full mr-1 mb-6" class="card-box card">
+		<div class="card-media">
+		<{* if image is not upload, displays images default3 ref. userlib/config  *}>
+		<a href="<{$commu.page_url}>"><img src="<{$commu.image.url_src|default:"images/cm_commu_default3.gif"}>" alt=""></a>
+		</div>
+
+		<div class="card-title" title="<{$smarty.const._MD_XSNS_COMMU_NAME}>"><{$commu.name|truncate:20}></div>
+
+		<div class="card-subtitle">
+			<span class="badge"><{$commu.member_count}></span> <{$smarty.const._MD_XSNS_MEMBER_COUNT}>
+			<div title="<{$smarty.const._MD_XSNS_CATEGORY}>"><{$commu.category_name}></div>
+		</div>
+
+
+		<div class="card-content" title="<{$smarty.const._MD_XSNS_INDEX_DETAIL_DESC}>">
+			<{$commu.info|mb_truncate:74}>
+		</div>
+
+		<div class="card-footer ui-button"><a href="<{$commu.page_url}>"><{$smarty.const._MD_XSNS_INDEX_DETAIL}></a></div>
+
+	</div>
+
+	<{/foreach}>
+
+	</div><{* rows *}>
+
+
+	<{if $commu_list|@count > 0}>
+		<div class="odd centerH"><{$pager.selector}></div>
+		<p><{$pager.description}></p>
+	<{/if}>
+
+

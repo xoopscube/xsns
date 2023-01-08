@@ -13,13 +13,13 @@ define($constpref.'_MENU_MYPAGE', 'My Page');
 define($constpref.'_BLOCK_RECENT_TOPIC', 'LATEST TOPICS');
 define($constpref.'_BLOCK_INFORMATION', 'INFORMATION');
 
-define($constpref.'_AD_MENU_CATEGORY', 'Group Category Manager');
+define($constpref.'_AD_MENU_CATEGORY', 'Community Groups');
 define($constpref.'_AD_MENU_IMAGE', 'Image Manager');
 define($constpref.'_AD_MENU_FILE', 'File Manager');
 define($constpref.'_AD_MENU_ACCESS', 'Access Logs');
-define($constpref.'_AD_MENU_MYTPLSADMIN', 'Templates Management');
-define($constpref.'_AD_MENU_MYBLOCKSADMIN', 'Blocks Management/Access authority');
-define($constpref.'_AD_MENU_MYLANGADMIN', 'Language Constant Management');
+define($constpref.'_AD_MENU_MYTPLSADMIN', 'Templates');
+define($constpref.'_AD_MENU_MYBLOCKSADMIN', 'Blocks/Permissions');
+define($constpref.'_AD_MENU_MYLANGADMIN', 'Language');
 define($constpref.'_AD_MENU_MYPREFERENCES', 'Preferences');
 
 
@@ -64,6 +64,7 @@ define($constpref.'_BLOG1', 'Weblog');
 define($constpref.'_BLOG2', 'WeblodD3');
 define($constpref.'_BLOG3', 'WordPress ME (for XOOPS2)');
 define($constpref.'_BLOG4', 'd3blog');
+define($constpref.'_BLOG5', 'minidiary');
 
 define($constpref.'_BLOGDIR', 'Directory name of the blog module');
 define($constpref.'_BLOGDIRDSC', 'When directory name of the blog module has been modified, please input the value.<br>In case of blank it becomes directory name of default.');
@@ -95,5 +96,3 @@ define($constpref.'_CATEGORY_3', 'Events');
 define($constpref.'_CATEGORY_4', 'Other');
 
 }
-
-?>

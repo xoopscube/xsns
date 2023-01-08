@@ -1,6 +1,9 @@
-<{$profileform.javascript}>
+<div class="ui-dev-mode"><{$smarty.template}></div>
 
-<div id="mainFrame">
+<{if $mydirname}><{include file="db:`$mydirname`_inc_breadcrumbs.html"}><{/if}>
+
+
+<{$profileform.javascript}>
 
 <!-- User Menu -->
 <{if $mydirname}><{include file="db:`$mydirname`_inc_mypage_menu.html"}><{/if}>
@@ -172,4 +175,3 @@
 </div>
 <{/if}>
 
-</div>

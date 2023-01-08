@@ -11,5 +11,3 @@ $mydirname = basename($mydirpath);
 
 require $mydirpath.'/mytrustdirname.php';
 require XOOPS_TRUST_PATH.'/modules/'.$mytrustdirname.'/'.basename(__FILE__);
-
-?>

@@ -1,52 +1,49 @@
 <?php
 
 /**
- * Action ´ÉÍýÍÑ¥¯¥é¥¹
+ * Action ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¥ï¿½ï¿½é¥¹
  *
  * @package ActionManager
  */
 class XsnsActionManager
 {
-	/**
-	 * Å¬ÀÚ¤ÊAction¤ò¼Â¹Ô¤¹¤ë
-	 * 
-	 * @param &$context
-	 * @param $target_dir	Action¥Õ¥¡¥¤¥ë¤Î¥Ç¥£¥ì¥¯¥È¥êÌ¾
-	 * @return string		View¤ÎÌ¾Á°
-	 */
-	public static function dispatch(&$context, $target_dir="")
-	{
-		// ÂÐ¾ÝAction¤Î·èÄê
-		if(isset($_REQUEST[XSNS_ACTION_ARG])){
-			$target = preg_replace("/[^0-9a-zA-Z_]/", "", $_REQUEST[XSNS_ACTION_ARG]);
-		}
-		else{
-			$target = XSNS_DEFAULT_ACTION;
-		}
-		
-		if(!empty($target_dir)){
-			$target_dir = $target_dir.'/';
-		}
-		
-		// ÂÐ¾ÝAction¥¯¥é¥¹Ì¾¡¢¥Õ¥¡¥¤¥ëÌ¾¤ò·èÄê
-		$actionFile  = XSNS_ACTION_DIR. $target_dir. $target. "Action.php";
-		
-		// ÂÐ¾Ý¥Õ¥¡¥¤¥ëÆÉ¤ß¹þ¤ß
-		if (is_readable($actionFile) && is_file($actionFile)) {
-			require_once($actionFile);
-			$actionClass = "Xsns_".ucfirst($target)."_Action";
-			// ÂÐ¾Ý¥¯¥é¥¹¥¤¥ó¥¹¥¿¥ó¥¹ºîÀ®
-			if (class_exists($actionClass)) {
-				$o = new $actionClass($context);
-				// ÂÐ¾Ý¥¯¥é¥¹¤Îdispatch¥á¥½¥Ã¥É¼Â¹Ô
-				if (method_exists($o, "dispatch")) {
-					return $o->dispatch();
-				}
-			}
-		}
-		header('Location: '. XSNS_BASE_URL.'/index.php');
-		exit();
-	}
-}
+    /**
+     * Å¬ï¿½Ú¤ï¿½Actionï¿½ï¿½Â¹Ô¤ï¿½ï¿½ï¿½
+     *
+     * @param &$context
+     * @param $target_dir    Actionï¿½Õ¥ï¿½ï¿½ï¿½ï¿½ï¿½Î¥Ç¥ï¿½ï¿½ì¥¯ï¿½È¥ï¿½Ì¾
+     * @return string        Viewï¿½ï¿½Ì¾ï¿½ï¿½
+     */
+    public static function dispatch(&$context, $target_dir = "")
+    {
+        // ï¿½Ð¾ï¿½Actionï¿½Î·ï¿½ï¿½ï¿½
+        if (isset($_REQUEST[XSNS_ACTION_ARG])) {
+            $target = preg_replace("/[^0-9a-zA-Z_]/", "", $_REQUEST[XSNS_ACTION_ARG]);
+        } else {
+            $target = XSNS_DEFAULT_ACTION;
+        }
 
-?>
+        if (!empty($target_dir)) {
+            $target_dir = $target_dir . '/';
+        }
+
+        // ï¿½Ð¾ï¿½Actionï¿½ï¿½ï¿½é¥¹Ì¾ï¿½ï¿½ï¿½Õ¥ï¿½ï¿½ï¿½ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ï¿½ï¿½
+        $actionFile = XSNS_ACTION_DIR . $target_dir . $target . "Action.php";
+
+        // ï¿½Ð¾Ý¥Õ¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¤ß¹ï¿½ï¿½ï¿½
+        if (is_readable($actionFile) && is_file($actionFile)) {
+            require_once($actionFile);
+            $actionClass = "Xsns_" . ucfirst($target) . "_Action";
+            // ï¿½Ð¾Ý¥ï¿½ï¿½é¥¹ï¿½ï¿½ï¿½ó¥¹¥ï¿½ï¿½ó¥¹ºï¿½ï¿½ï¿½
+            if (class_exists($actionClass)) {
+                $o = new $actionClass($context);
+                // ï¿½Ð¾Ý¥ï¿½ï¿½é¥¹ï¿½ï¿½dispatchï¿½á¥½ï¿½Ã¥É¼Â¹ï¿½
+                if (method_exists($o, "dispatch")) {
+                    return $o->dispatch();
+                }
+            }
+        }
+        header('Location: ' . XSNS_BASE_URL . '/index.php');
+        exit();
+    }
+}

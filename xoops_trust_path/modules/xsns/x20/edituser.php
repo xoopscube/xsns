@@ -1,6 +1,6 @@
 <?php
 
-// for XOOPS 2.0.x
+// for XOOPS2
 
 require_once 'mainfile.php';
 
@@ -37,5 +37,3 @@ if (!is_object($xoopsUser)) {
 
 header('Location: '.XSNS_BASE_URL.'/?'.XSNS_PAGE_ARG.'=mypage&'.XSNS_ACTION_ARG.'=profile');
 exit();
-
-?>

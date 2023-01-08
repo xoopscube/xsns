@@ -10,12 +10,10 @@ define($constpref.'_YEAR', '/');
 define($constpref.'_MONTH', '/');
 define($constpref.'_DAY', '');
 
-define($constpref.'_INDEX_INFO_MSG_0', 'There is a participation demand to your group. (%d request(s)) ');
-define($constpref.'_INDEX_INFO_MSG_1', 'An alternation demand of the group manager was received.(%d request(s))');
-define($constpref.'_INDEX_INFO_MSG_2', 'There is an offer to become the submanager of the group.(%d request(s))');
-define($constpref.'_INDEX_INFO_MSG_3', 'There is an additional request to your friends list.(%d request(s))');
-define($constpref.'_INDEX_INFO_MSG_4', 'The registration of your friends list was canceled. (%d request(s)) ');
+define($constpref.'_INDEX_INFO_MSG_0', 'Review %d request(s) to join a group. ');
+define($constpref.'_INDEX_INFO_MSG_1', 'Review %d request(s) to change a group manager. ');
+define($constpref.'_INDEX_INFO_MSG_2', 'Review %d request(s) to manage a group. ');
+define($constpref.'_INDEX_INFO_MSG_3', 'Review %d pending friend request.');
+define($constpref.'_INDEX_INFO_MSG_4', '%d friend request was canceled.');
 
 }
-
-?>

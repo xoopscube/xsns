@@ -1,26 +1,25 @@
-<div id="mainFrame">
+<div class="ui-dev-mode"><{$smarty.template}></div>
+
+<{if $mydirname}><{include file="db:`$mydirname`_inc_breadcrumbs.html"}><{/if}>
+
 
 <!-- User Menu -->
 <{if $mydirname}><{include file="db:`$mydirname`_inc_mypage_menu.html"}><{/if}>
 
 <{$form_intro_add}>
 
-<table class="outer">
+<h2><{$smarty.const._MD_XSNS_TITLE_MYPAGE_INTRO_UNAME|sprintf:"`$user_name`"}></h2>
 
-<tr><th colspan="2"><{$smarty.const._MD_XSNS_TITLE_MYPAGE_INTRO_UNAME|sprintf:"`$user_name`"}></th></tr>
-<tr><td colspan="2" class="head" style="padding:10px 0 10px 10px;"><{$smarty.const._MD_XSNS_MYPAGE_INTRO_DESC}></th></tr>
+<div class="tips"><{$smarty.const._MD_XSNS_MYPAGE_INTRO_DESC}></div>
 
-<tr>
-<td class="itemTitle bg0 centerH"><{$smarty.const._MD_XSNS_MYPAGE_INTRO_BODY}></td>
-<td class="even"><textarea name="body" cols="40" rows="6"><{$body}></textarea></td>
-</tr>
+<p><{$smarty.const._MD_XSNS_MYPAGE_INTRO_BODY}></p>
 
-<tr><td class="foot submitFrame" colspan="2">
-<input type="submit" class="submit" value="<{$smarty.const._MD_XSNS_BTN_ADD}>">
-</td></tr>
+<p><textarea name="body" cols="40" rows="6"><{$body}></textarea></p>
 
-</table>
+
+<p><input type="submit" class="ui-button" value="<{$smarty.const._MD_XSNS_BTN_ADD}>"></p>
 
 </form>
 
-</div>
+
+

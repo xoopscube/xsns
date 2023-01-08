@@ -1,97 +1,69 @@
+<div class="ui-dev-mode"><{$smarty.template}></div>
+
+
 <{if $user_menu}>
-<table>
 
-<tr>
-<th colspan="<{$user_menu.url|@count}>" class="userMenu"><{$user_menu.title}></th>
-</tr>
+<h2><{$user_menu.title}></h2>
 
-<{if $user_menu.is_own_page}>
+<div layout="row mb-6">
 
-<!-- Own Mypage Menu : Start -->
-<tr class="even">
+    <{if $user_menu.is_own_page}>
+    <!-- Own My-page Menu : Start -->
 
-  <!-- Home -->
-  <td class="centerHV" style="width:<{$user_menu.width}>px;">
-  <a href="<{$user_menu.url.home}>"><{$smarty.const._MD_XSNS_MYPAGE_HOME}></a>
-  </td>
+        <!-- Home -->
+        <a class="ui-button" href="<{$user_menu.url.home}>"><{$smarty.const._MD_XSNS_MYPAGE_HOME}></a>
 
-  <!-- Friend -->
-  <td class="centerHV" style="width:<{$user_menu.width}>px;">
-  <a href="<{$user_menu.url.friend}>"><{$smarty.const._MD_XSNS_TITLE_MYPAGE_FRIEND}></a>
-  </td>
+        <!-- Friend -->
+        <a class="ui-button" href="<{$user_menu.url.friend}>"><{$smarty.const._MD_XSNS_TITLE_MYPAGE_FRIEND}></a>
 
- <{if $mod_config.blog_module_name}>
-  <!-- Blog -->
-  <td class="centerHV" style="width:<{$user_menu.width}>px;">
-  <a href="<{$user_menu.url.blog}>"><{$smarty.const._MD_XSNS_BLOG}></a>
-  </td>
- <{/if}>
+        <{if $mod_config.blog_module_name}>
+        <!-- Blog -->
+        <a class="ui-button" href="<{$user_menu.url.blog}>"><{$smarty.const._MD_XSNS_BLOG}></a>
+        <{/if}>
 
-  <!-- News -->
-  <td class="centerHV" style="width:<{$user_menu.width}>px;">
-  <a href="<{$user_menu.url.news}>"><{$smarty.const._MD_XSNS_TITLE_MYPAGE_NEWS}></a>
-  </td>
+        <!-- News -->
+        <a class="ui-button" href="<{$user_menu.url.news}>"><{$smarty.const._MD_XSNS_TITLE_MYPAGE_NEWS}></a>
 
- <{if $mod_config.use_footprint}>
-  <!-- Footprint -->
-  <td class="centerHV" style="width:<{$user_menu.width}>px;">
-  <a href="<{$user_menu.url.footprint}>"><{$smarty.const._MD_XSNS_TITLE_MYPAGE_FOOTPRINT}></a>
-  </td>
- <{/if}>
 
-  <!-- Profile edit -->
-  <td class="centerHV" style="width:<{$user_menu.width_large}>px;">
-  <a href="<{$user_menu.url.profile}>"><{$smarty.const._MD_XSNS_TITLE_MYPAGE_PROFILE}></a>
-  </td>
+        <{if $mod_config.use_footprint}>
+        <!-- Footprint -->
+            <a class="ui-button" href="<{$user_menu.url.footprint}>"><{$smarty.const._MD_XSNS_TITLE_MYPAGE_FOOTPRINT}></a>
+        <{/if}>
 
-</tr>
-<!-- Own Mypage Menu : End -->
+        <!-- Profile edit -->
+        <a class="ui-button" href="<{$user_menu.url.profile}>"><{$smarty.const._MD_XSNS_TITLE_MYPAGE_PROFILE}></a>
 
-<{else}>
+        <!-- Own My-page Menu : End -->
 
-<!-- Others Mypage Menu : Start -->
-<tr class="odd">
+    <{else}>
 
-  <!-- Home -->
-  <td class="centerHV" style="width:<{$user_menu.width}>px;">
-  <a href="<{$user_menu.url.home}>"><{$smarty.const._MD_XSNS_MYPAGE_HOME}></a>
-  </td>
+        <!-- Others My-page Menu : Start -->
+        <!-- Home -->
+        <a class="ui-button" href="<{$user_menu.url.home}>"><{$smarty.const._MD_XSNS_MYPAGE_HOME}></a>
 
-  <!-- Friend -->
-  <td class="centerHV" style="width:<{$user_menu.width}>px;">
-  <a href="<{$user_menu.url.friend}>"><{$smarty.const._MD_XSNS_TITLE_MYPAGE_FRIEND}></a>
-  </td>
+        <!-- Friend -->
+        <a class="ui-button" href="<{$user_menu.url.friend}>"><{$smarty.const._MD_XSNS_TITLE_MYPAGE_FRIEND}></a>
 
- <{if $mod_config.blog_module_name}>
-  <!-- Blog -->
-  <td class="centerHV" style="width:<{$user_menu.width}>px;">
-  <a href="<{$user_menu.url.blog}>"><{$smarty.const._MD_XSNS_READ_BLOG}></a>
-  </td>
- <{/if}>
+        <{if $mod_config.blog_module_name}>
+        <!-- Blog -->
+            <a class="ui-button" href="<{$user_menu.url.blog}>"><{$smarty.const._MD_XSNS_READ_BLOG}></a>
+        <{/if}>
 
-  <!-- News -->
-  <td class="centerHV" style="width:<{$user_menu.width}>px;">
-  <a href="<{$user_menu.url.news}>"><{$smarty.const._MD_XSNS_TITLE_MYPAGE_NEWS}></a>
-  </td>
+        <!-- News -->
+        <a class="ui-button" href="<{$user_menu.url.news}>"><{$smarty.const._MD_XSNS_TITLE_MYPAGE_NEWS}></a>
 
- <{if $user_menu.is_friend_page}>
-  <!-- Introduction -->
-  <td class="centerHV" style="width:<{$user_menu.width_large}>px;">
-  <a href="<{$user_menu.url.intro}>"><{$smarty.const._MD_XSNS_TITLE_MYPAGE_INTRO}></a>
-  </td>
- <{else}>
-  <!-- Friend Add -->
-  <td class="centerHV" style="width:<{$user_menu.width_large}>px;">
-  <a href="<{$user_menu.url.friend_add}>"><{$smarty.const._MD_XSNS_FRIEND_ADD}></a>
-  </td>
- <{/if}>
-  
-</tr>
-<!-- Others Mypage Menu : End -->
+        <{if $user_menu.is_friend_page}>
+        <!-- Introduction -->
+            <a class="ui-button" href="<{$user_menu.url.intro}>"><{$smarty.const._MD_XSNS_TITLE_MYPAGE_INTRO}></a>
+        <{else}>
+        <!-- Friend Add -->
+            <a class="ui-button" href="<{$user_menu.url.friend_add}>"><{$smarty.const._MD_XSNS_FRIEND_ADD}></a>
+        <{/if}>
 
-<{/if}>
+        <!-- Others My-page Menu : End -->
+    <{/if}>
 
-</table>
 
-<br>
+</div>
+
 <{/if}>

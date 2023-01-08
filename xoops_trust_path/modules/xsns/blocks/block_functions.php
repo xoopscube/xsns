@@ -4,7 +4,7 @@ function b_xsns_recent_topic_show($options)
 {
 	global $xoopsUser, $xoopsUserIsAdmin;
 	
-	require_once dirname(dirname(__FILE__)).'/include/common_functions.php';
+	require_once dirname(__FILE__, 2) .'/include/common_functions.php';
 	
 	$db =& Database::getInstance();
 	(method_exists('MyTextSanitizer', 'sGetInstance') and $myts =& MyTextSanitizer::sGetInstance()) || $myts =& MyTextSanitizer::getInstance();
@@ -22,7 +22,7 @@ function b_xsns_recent_topic_show($options)
 	$own_uid = is_object($xoopsUser) ? $xoopsUser->getVar('uid') : -1;
 	
 	// naao from
-	//³Æ¥È¥Ô¤ÎºÇ¿·¥³¥á¥ó¥ÈID¤ò¼èÆÀ
+	//ï¿½Æ¥È¥Ô¤ÎºÇ¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½IDï¿½ï¿½ï¿½ï¿½ï¿½
 	$sql = "SELECT c_commu_topic_id AS tid, MAX(c_commu_topic_comment_id) AS com_id FROM ". $db->prefix($mydirname.'_c_commu_topic_comment')." GROUP BY tid;";
 
 	$result = $db->query($sql);
@@ -66,7 +66,7 @@ function b_xsns_recent_topic_show($options)
 	
 	$today = date('Y-m-d');
 	$item_count = 0;
-	require_once dirname(dirname(__FILE__)).'/userlib/utils.php';
+	require_once dirname(__FILE__, 2) .'/userlib/utils.php';
 	
 	while($row = $db->fetchArray($rs)) {
 		
@@ -87,8 +87,7 @@ function b_xsns_recent_topic_show($options)
 				continue;
 			}
 		}
-		
-		//$date_arr = explode(' ', XsnsUtils::getUserDatetime($row['max_r_datetime']), 2);
+
 		$date_arr = explode(' ', XsnsUtils::getUserDatetime($row['r_datetime']), 2);	//naao
 		if(!is_array($date_arr)){
 			continue;
@@ -116,7 +115,6 @@ function b_xsns_recent_topic_show($options)
 			'body' => $myts->htmlSpecialChars($row['tcbody']),
 			'comment_count' => intval($row['comment_count']),
 			'datetime' => $r_time,
-		//	'time' => XsnsUtils::getUserTimestamp($row['max_r_datetime']),	//naao
 			'time' => XsnsUtils::getUserTimestamp($row['r_datetime']),	//naao
 			'uid' => intval($row['tcuid']),
 			'community' => array(
@@ -139,7 +137,7 @@ function b_xsns_recent_topic_show($options)
 		return $block;
 	}
 }
-//------------------------------------------------------------------------------
+
 
 function b_xsns_recent_topic_edit($options)
 {
@@ -156,7 +154,7 @@ function b_xsns_recent_topic_edit($options)
 	));
 	return $tpl->fetch( 'db:'.$mydirname.'_block_recent_topic_edit.html' ) ;
 }
-//------------------------------------------------------------------------------
+
 
 function b_xsns_information_show($options)
 {
@@ -165,7 +163,7 @@ function b_xsns_information_show($options)
 		return array();
 	}
 	
-	require_once dirname(dirname(__FILE__)).'/include/common_functions.php';
+	require_once dirname(__FILE__, 2) .'/include/common_functions.php';
 	
 	$db =& Database::getInstance();
 	(method_exists('MyTextSanitizer', 'sGetInstance') and $myts =& MyTextSanitizer::sGetInstance()) || $myts =& MyTextSanitizer::getInstance();
@@ -188,7 +186,7 @@ function b_xsns_information_show($options)
 		return array();
 	}
 	
-	require_once dirname(dirname(__FILE__)).'/userlib/utils.php';
+	require_once dirname(__FILE__, 2) .'/userlib/utils.php';
 	
 	while($row = $db->fetchArray($rs)){
 		$mode = intval($row['mode']);
@@ -208,7 +206,7 @@ function b_xsns_information_show($options)
 	$ret['content'] = $tpl->fetch('db:'.$mydirname.'_block_information.html');
 	return $ret;
 }
-//------------------------------------------------------------------------------
+
 
 function b_xsns_information_edit($options)
 {
@@ -223,6 +221,3 @@ function b_xsns_information_edit($options)
 	));
 	return $tpl->fetch( 'db:'.$mydirname.'_block_information_edit.html' ) ;
 }
-//------------------------------------------------------------------------------
-
-?>

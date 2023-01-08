@@ -1,13 +1,15 @@
-<div id="mainFrame">
+<div class="ui-dev-mode"><{$smarty.template}></div>
+
+
 <{if $mydirname}><{include file="db:`$mydirname`_inc_breadcrumbs.html"}><{/if}>
 
-<table class="outer commuEdit">
 
-<tr><th colspan="2"><{$smarty.const._MD_XSNS_TITLE_INDEX_ADD}></th></tr>
 
-<tr class="head">
-<td colspan="2"><div class="msgFrame"><{$smarty.const._MD_XSNS_INDEX_ADD_CONFIRM}><div></td>
-</tr>
+    <h2><{$smarty.const._MD_XSNS_TITLE_INDEX_ADD}></h2>
+
+    <div class="msgFrame"><{$smarty.const._MD_XSNS_INDEX_ADD_CONFIRM}><div>
+
+    <table class="outer commuEdit">
 
 <tr class="even">
 <td class="itemTitle bg0"><{$smarty.const._MD_XSNS_COMMU_NAME}></td>
@@ -39,16 +41,14 @@
 </td>
 </tr>
 <{/if}>
-
-<tr class="foot">
-<td colspan="2" class="submitFrame">
-<{$form_commu_add_submit}>
-<input type="submit" class="submit" value="<{$smarty.const._MD_XSNS_BTN_ADD}>">&nbsp;&nbsp;
-<input type="button" class="submit" value="<{$smarty.const._MD_XSNS_BTN_MODIFY}>" onclick="location.href='<{$url_modify}>'">
-</form>
-</td>
-</tr>
-
+    <tfoot>
+    <tr class="foot">
+        <td colspan="2" class="submitFrame">
+        <{$form_commu_add_submit}>
+            <input type="button" class="ui-button" value="<{$smarty.const._MD_XSNS_BTN_MODIFY}>" onclick="location.href='<{$url_modify}>'">
+            <input type="submit" class="ui-button" value="<{$smarty.const._MD_XSNS_BTN_ADD}>">&nbsp;&nbsp;
+        </form>
+        </td>
+    </tr>
+    </tfoot>
 </table>
-
-</div>

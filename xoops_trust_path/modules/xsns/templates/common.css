@@ -9,25 +9,19 @@ th.userMenu {
 }
 
 span.selectedPage{
-	background-color: #cceeff;
+	/*background-color: #cceeff;*/
+	color: var(--link);
 }
 
-tr td.bg0 {
-	background-color: #d6e1ea;
-}
-
-tr td.bg1 {
-	background-color: #c2cdd6;
-}
 
 span.red {
 	font-weight: normal;
 	color: #ff0000;
 }
 
-div#mainFrame {
-	width: 600px;
-}
+/*div#mainFrame {*/
+/*	width: 600px;*/
+/*}*/
 
 input.submit {
 	width: 80px;

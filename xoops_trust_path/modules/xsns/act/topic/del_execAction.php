@@ -1,80 +1,81 @@
 <?php
+
 class Xsns_Del_exec_Action extends Xsns_Topic_Action
 {
 
-function dispatch()
-{
-	global $xoopsUser;
-	if($this->isGuest() || !$this->validateToken('TOPIC_DELETE')){
-		redirect_header(XOOPS_URL, 2, _NOPERM);
-	}
-	$own_uid = $xoopsUser->getVar('uid');
-	
-	$tcid = $this->getIntRequest('tcid');
-	if(!isset($tcid)){
-		redirect_header(XOOPS_URL, 2, _NOPERM);
-	}
-	
-	$commu_handler =& XsnsCommunityHandler::getInstance();
-	$topic_handler =& XsnsTopicHandler::getInstance();
-	$comment_handler =& XsnsTopicCommentHandler::getInstance();
-	
-	// ¥³¥á¥ó¥È¤Î¼èÆÀ
-	$comment =& $comment_handler->get($tcid);
-	if(!is_object($comment)){
-		redirect_header(XOOPS_URL, 2, _NOPERM);
-	}
-	$tid = $comment->getVar('c_commu_topic_id');
-	$num = $comment->getNumber();
-	
-	// ¥È¥Ô¥Ã¥¯¤Î¼èÆÀ
-	$topic =& $topic_handler->get($tid);
-	if(!is_object($topic)){
-		redirect_header(XOOPS_URL, 2, _NOPERM);
-	}
-	$topic_uid = $topic->getVar('uid');
-	
-	// ¥³¥ß¥å¥Ë¥Æ¥£¤Î¼èÆÀ
-	$cid = $topic->getVar('c_commu_id');
-	$community =& $commu_handler->get($cid);
-	if(!is_object($community)){
-		redirect_header(XOOPS_URL, 2, _NOPERM);
-	}
-	$commu_auth = $community->getAuthority();
-	if($commu_auth < XSNS_AUTH_MEMBER){
-		redirect_header(XOOPS_URL, 2, _NOPERM);
-	}
-	
-	$comment_uid = $comment->getVar('uid');
-	if($comment_uid < 1 || ($commu_auth < XSNS_AUTH_SUB_ADMIN && $own_uid != $comment_uid && $own_uid != $topic_uid)){
-		redirect_header(XOOPS_URL, 2, _NOPERM);
-	}
-	
-	if($num > 0){
-		// ¥³¥á¥ó¥È¤Îºï½ü ¡¦¡¦¡¦ Åê¹Æ¼Ô¡¦ËÜÊ¸¥Ç¡¼¥¿¤Î¤ßºï½ü¤¹¤ë
-		$comment->setVar('uid', 0);
-		$comment->setVar('body', '');
-		
-		if($comment_handler->insert($comment)){
-			// ¥³¥á¥ó¥È¤ËÅºÉÕ¤µ¤ì¤¿²èÁü¡¦¥Õ¥¡¥¤¥ë¤òºï½ü
-			$criteria = new CriteriaCompo(new Criteria('target', 2));
-			$criteria->add(new Criteria('target_id', $tcid));
-			$image_handler =& XsnsImageHandler::getInstance();
-			$image_handler->deleteObjects($criteria);
-			$file_handler =& XsnsFileHandler::getInstance();
-			$file_handler->deleteObjects($criteria);
-			
-			redirect_header(XSNS_URL_TOPIC.'&tid='.$tid, 2, _MD_XSNS_TOPIC_DEL_RES_OK);
-		}
-		redirect_header(XSNS_URL_TOPIC.'&tid='.$tid, 2, _MD_XSNS_TOPIC_DEL_RES_NG);
-	}
-	else{
-		// ¥È¥Ô¥Ã¥¯¤Îºï½ü ¡¦¡¦¡¦ ¥È¥Ô¥Ã¥¯¤ª¤è¤Ó¥³¥á¥ó¥È¤ò´°Á´¤Ëºï½ü¤¹¤ë
-		if($topic->deleteCommentsAll() && $topic_handler->delete($topic)){
-			redirect_header(XSNS_URL_COMMU.'?cid='.$cid, 2, _MD_XSNS_TOPIC_DEL_OK);
-		}
-		redirect_header(XSNS_URL_TOPIC.'&tid='.$tid, 2, _MD_XSNS_TOPIC_DEL_NG);
-	}
+    function dispatch()
+    {
+        global $xoopsUser;
+        if ($this->isGuest() || !$this->validateToken('TOPIC_DELETE')) {
+            redirect_header(XOOPS_URL, 2, _NOPERM);
+        }
+        $own_uid = $xoopsUser->getVar('uid');
+
+        $tcid = $this->getIntRequest('tcid');
+        if (!isset($tcid)) {
+            redirect_header(XOOPS_URL, 2, _NOPERM);
+        }
+
+        $commu_handler =& XsnsCommunityHandler::getInstance();
+        $topic_handler =& XsnsTopicHandler::getInstance();
+        $comment_handler =& XsnsTopicCommentHandler::getInstance();
+
+        // ï¿½ï¿½ï¿½ï¿½ï¿½È¤Î¼ï¿½ï¿½ï¿½
+        $comment =& $comment_handler->get($tcid);
+        if (!is_object($comment)) {
+            redirect_header(XOOPS_URL, 2, _NOPERM);
+        }
+        $tid = $comment->getVar('c_commu_topic_id');
+        $num = $comment->getNumber();
+
+        // ï¿½È¥Ô¥Ã¥ï¿½ï¿½Î¼ï¿½ï¿½ï¿½
+        $topic =& $topic_handler->get($tid);
+        if (!is_object($topic)) {
+            redirect_header(XOOPS_URL, 2, _NOPERM);
+        }
+        $topic_uid = $topic->getVar('uid');
+
+        // ï¿½ï¿½ï¿½ß¥ï¿½Ë¥Æ¥ï¿½ï¿½Î¼ï¿½ï¿½ï¿½
+        $cid = $topic->getVar('c_commu_id');
+        $community =& $commu_handler->get($cid);
+        if (!is_object($community)) {
+            redirect_header(XOOPS_URL, 2, _NOPERM);
+        }
+        $commu_auth = $community->getAuthority();
+        if ($commu_auth < XSNS_AUTH_MEMBER) {
+            redirect_header(XOOPS_URL, 2, _NOPERM);
+        }
+
+        $comment_uid = $comment->getVar('uid');
+        if ($comment_uid < 1 || ($commu_auth < XSNS_AUTH_SUB_ADMIN && $own_uid != $comment_uid && $own_uid != $topic_uid)) {
+            redirect_header(XOOPS_URL, 2, _NOPERM);
+        }
+
+        if ($num > 0) {
+            // ï¿½ï¿½ï¿½ï¿½ï¿½È¤Îºï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ¼Ô¡ï¿½ï¿½ï¿½Ê¸ï¿½Ç¡ï¿½ï¿½ï¿½ï¿½Î¤ßºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+            $comment->setVar('uid', 0);
+            $comment->setVar('body', '');
+
+            if ($comment_handler->insert($comment)) {
+                // ï¿½ï¿½ï¿½ï¿½ï¿½È¤ï¿½Åºï¿½Õ¤ï¿½ï¿½ì¤¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+                $criteria = new CriteriaCompo(new Criteria('target', 2));
+                $criteria->add(new Criteria('target_id', $tcid));
+                $image_handler =& XsnsImageHandler::getInstance();
+                $image_handler->deleteObjects($criteria);
+                $file_handler =& XsnsFileHandler::getInstance();
+                $file_handler->deleteObjects($criteria);
+
+                redirect_header(XSNS_URL_TOPIC . '&tid=' . $tid, 2, _MD_XSNS_TOPIC_DEL_RES_OK);
+            }
+            redirect_header(XSNS_URL_TOPIC . '&tid=' . $tid, 2, _MD_XSNS_TOPIC_DEL_RES_NG);
+        } else {
+            // ï¿½È¥Ô¥Ã¥ï¿½ï¿½Îºï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½È¥Ô¥Ã¥ï¿½ï¿½ï¿½ï¿½ï¿½Ó¥ï¿½ï¿½ï¿½ï¿½È¤ï¿½ï¿½ï¿½ï¿½Ëºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+            if ($topic->deleteCommentsAll() && $topic_handler->delete($topic)) {
+                redirect_header(XSNS_URL_COMMU . '?cid=' . $cid, 2, _MD_XSNS_TOPIC_DEL_OK);
+            }
+            redirect_header(XSNS_URL_TOPIC . '&tid=' . $tid, 2, _MD_XSNS_TOPIC_DEL_NG);
+        }
+    }
+
 }
-}
-?>
+
